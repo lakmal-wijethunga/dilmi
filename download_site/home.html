@@ -205,7 +205,13 @@
         </div>
     </div>
 
-    <script>        // Sample file data - Replace with your actual Google Drive files
+    <script>        // File data with direct download links from Google Drive
+        // To get file IDs: 
+        // 1. Open file in Google Drive
+        // 2. Click "Share" -> "Copy Link" 
+        // 3. Extract ID from URL: https://drive.google.com/file/d/[FILE_ID]/view
+        // 4. Replace "YOUR_FILENAME_FILE_ID" with the actual ID
+        // 5. Make sure files are set to "Anyone with the link can view"
         const files = [
             {
                 id: 'warfare-2025',
@@ -223,18 +229,19 @@
                 director: 'Michael Bay',
                 cast: 'Chris Evans, Scarlett Johansson, Mark Wahlberg',
                 duration: '148 min',
-                language: 'English',
-                subtitles: {
+                language: 'English',                subtitles: {
                     sinhala: 'https://www.baiscope.com/subtitles/warfare-2025-sinhala',
                     english: 'Included in file'
                 },
+                poster: 'https://via.placeholder.com/300x450/e74c3c/ffffff?text=Warfare+2025',
+                trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
                     {
                         version: '4K UHD',
                         date: '2025-06-01',
                         size: '4.2 GB',
                         quality: '2160p',
-                        downloadUrl: 'https://drive.google.com/uc?id=YOUR_WARFARE_FILE_ID',
+                        downloadUrl: 'https://drive.google.com/uc?export=download&id=YOUR_WARFARE_FILE_ID',
                         changes: '4K Ultra HD version with HDR'
                     }
                 ]
@@ -255,18 +262,19 @@
                 director: 'Nancy Meyers',
                 cast: 'Ryan Reynolds, Jennifer Aniston, Owen Wilson',
                 duration: '112 min',
-                language: 'English',
-                subtitles: {
+                language: 'English',                subtitles: {
                     sinhala: 'https://www.baiscope.com/subtitles/tourist-family-2025-sinhala',
                     english: 'Included in file'
                 },
+                poster: 'https://via.placeholder.com/300x450/3498db/ffffff?text=Tourist+Family',
+                trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
                     {
                         version: 'HD',
                         date: '2025-06-03',
                         size: '2.8 GB',
                         quality: '1080p',
-                        downloadUrl: 'https://drive.google.com/uc?id=YOUR_TOURIST_FAMILY_FILE_ID',
+                        downloadUrl: 'https://drive.google.com/uc?export=download&id=YOUR_TOURIST_FAMILY_FILE_ID',
                         changes: 'Full HD version with enhanced audio'
                     }
                 ]
@@ -297,7 +305,7 @@
                         date: '2025-06-01',
                         size: '3.6 GB',
                         quality: '2160p',
-                        downloadUrl: 'https://drive.google.com/uc?id=YOUR_THUDARUM_FILE_ID',
+                        downloadUrl: 'https://drive.google.com/uc?export=download&id=YOUR_THUDARUM_FILE_ID',
                         changes: '4K version with Dolby Atmos audio'
                     }
                 ]
@@ -329,7 +337,7 @@
                         date: '2025-06-04',
                         size: '2.4 GB',
                         quality: '1080p',
-                        downloadUrl: 'https://drive.google.com/uc?id=YOUR_THRAYAM_FILE_ID',
+                        downloadUrl: 'https://drive.google.com/uc?export=download&id=YOUR_THRAYAM_FILE_ID',
                         changes: 'Director\'s cut with additional scenes'
                     }
                 ]
@@ -361,7 +369,7 @@
                         date: '2025-06-01',
                         size: '2.1 GB',
                         quality: '1080p',
-                        downloadUrl: 'https://drive.google.com/uc?id=YOUR_UGLY_STEPSISTER_FILE_ID',
+                        downloadUrl: 'https://drive.google.com/uc?export=download&id=YOUR_UGLY_STEPSISTER_FILE_ID',
                         changes: 'Extended edition with deleted scenes'
                     }
                 ]
@@ -393,7 +401,7 @@
                         date: '2025-06-09',
                         size: '3.8 GB',
                         quality: '2160p',
-                        downloadUrl: 'https://drive.google.com/uc?id=YOUR_LEGEND_OF_OCHI_FILE_ID',
+                        downloadUrl: 'https://drive.google.com/uc?export=download&id=YOUR_LEGEND_OF_OCHI_FILE_ID',
                         changes: '4K with enhanced CGI and surround sound'
                     }
                 ]
@@ -414,18 +422,19 @@
                 director: 'Francis Lawrence',
                 cast: 'Tom Blyth, Rachel Zegler, Viola Davis, Peter Dinklage',
                 duration: '157 min',
-                language: 'English',
-                subtitles: {
+                language: 'English',                subtitles: {
                     sinhala: 'https://www.zoom.lk/subtitles/hunger-games-ballad-sinhala',
                     english: 'Included in file'
                 },
+                poster: 'https://via.placeholder.com/300x450/8e44ad/ffffff?text=Hunger+Games+Ballad',
+                trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
                     {
                         version: '4K UHD',
                         date: '2025-06-10',
                         size: '4.1 GB',
                         quality: '2160p',
-                        downloadUrl: 'https://drive.google.com/uc?id=YOUR_HUNGER_GAMES_FILE_ID',
+                        downloadUrl: 'https://drive.google.com/uc?export=download&id=YOUR_HUNGER_GAMES_FILE_ID',
                         changes: '4K Ultra HD with IMAX enhanced scenes'
                     }
                 ]
@@ -457,7 +466,7 @@
                         date: '2025-06-12',
                         size: '2.9 GB',
                         quality: '1080p',
-                        downloadUrl: 'https://drive.google.com/uc?id=YOUR_AMATEUR_FILE_ID',
+                        downloadUrl: 'https://drive.google.com/uc?export=download&id=YOUR_AMATEUR_FILE_ID',
                         changes: 'Final theatrical release'
                     }
                 ]
@@ -489,7 +498,7 @@
                         date: '2025-06-12',
                         size: '2.7 GB',
                         quality: '1080p',
-                        downloadUrl: 'https://drive.google.com/uc?id=YOUR_SINNERS_FILE_ID',
+                        downloadUrl: 'https://drive.google.com/uc?export=download&id=YOUR_SINNERS_FILE_ID',
                         changes: 'Unrated director\'s cut'
                     }
                 ]
@@ -521,7 +530,7 @@
                         date: '2025-06-04',
                         size: '2.3 GB',
                         quality: '1080p',
-                        downloadUrl: 'https://drive.google.com/uc?id=YOUR_RETRO_FILE_ID',
+                        downloadUrl: 'https://drive.google.com/uc?export=download&id=YOUR_RETRO_FILE_ID',
                         changes: 'Special edition with 80s soundtrack'
                     }
                 ]
@@ -553,7 +562,7 @@
                         date: '2025-06-10',
                         size: '3.4 GB',
                         quality: '2160p',
-                        downloadUrl: 'https://drive.google.com/uc?id=YOUR_PREDATOR_FILE_ID',
+                        downloadUrl: 'https://drive.google.com/uc?export=download&id=YOUR_PREDATOR_FILE_ID',
                         changes: '4K with enhanced visual effects'
                     }
                 ]
@@ -585,7 +594,7 @@
                         date: '2025-06-04',
                         size: '2.6 GB',
                         quality: '1080p',
-                        downloadUrl: 'https://drive.google.com/uc?id=YOUR_PERSUAI_FILE_ID',
+                        downloadUrl: 'https://drive.google.com/uc?export=download&id=YOUR_PERSUAI_FILE_ID',
                         changes: 'Final cut with enhanced AI sequences'
                     }
                 ]
@@ -617,7 +626,7 @@
                         date: '2025-06-11',
                         size: '1.9 GB',
                         quality: '1080p',
-                        downloadUrl: 'https://drive.google.com/uc?id=YOUR_PADAKKALAM_FILE_ID',
+                        downloadUrl: 'https://drive.google.com/uc?export=download&id=YOUR_PADAKKALAM_FILE_ID',
                         changes: 'Original theatrical release'
                     }
                 ]
@@ -649,7 +658,7 @@
                         date: '2025-06-04',
                         size: '2.8 GB',
                         quality: '1080p',
-                        downloadUrl: 'https://drive.google.com/uc?id=YOUR_OFFICER_ON_DUTY_FILE_ID',
+                        downloadUrl: 'https://drive.google.com/uc?export=download&id=YOUR_OFFICER_ON_DUTY_FILE_ID',
                         changes: 'Extended action sequences'
                     }
                 ]
@@ -681,7 +690,7 @@
                         date: '2025-06-01',
                         size: '3.1 GB',
                         quality: '1080p',
-                        downloadUrl: 'https://drive.google.com/uc?id=YOUR_MARANAMASS_FILE_ID',
+                        downloadUrl: 'https://drive.google.com/uc?export=download&id=YOUR_MARANAMASS_FILE_ID',
                         changes: 'Director\'s cut with extended action'
                     }
                 ]
@@ -713,7 +722,7 @@
                         date: '2025-06-15',
                         size: '2.5 GB',
                         quality: '1080p',
-                        downloadUrl: 'https://drive.google.com/uc?id=YOUR_FINAL_DESTINATION_FILE_ID',
+                        downloadUrl: 'https://drive.google.com/uc?export=download&id=YOUR_FINAL_DESTINATION_FILE_ID',
                         changes: 'Unrated version with additional scenes'
                     }
                 ]
@@ -745,7 +754,7 @@
                         date: '2025-06-04',
                         size: '4.3 GB',
                         quality: '2160p',
-                        downloadUrl: 'https://drive.google.com/uc?id=YOUR_DRAGON_FILE_ID',
+                        downloadUrl: 'https://drive.google.com/uc?export=download&id=YOUR_DRAGON_FILE_ID',
                         changes: '4K Extended Edition with bonus content'
                     }
                 ]
@@ -765,17 +774,18 @@
                 genre: 'First-Person Shooter, Action',
                 developer: 'Infinity Ward',
                 publisher: 'Activision',
-                platform: 'PC (Windows)',
-                systemRequirements: 'Windows 10, GTX 1060/RX 580, 8GB RAM',
+                platform: 'PC (Windows)',                systemRequirements: 'Windows 10, GTX 1060/RX 580, 8GB RAM',
                 gameMode: 'Single-player, Multiplayer, Co-op',
                 esrbRating: 'M (Mature)',
+                poster: 'https://via.placeholder.com/300x450/e74c3c/ffffff?text=COD+MW+2019',
+                trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
                     {
                         version: 'Complete Edition',
                         date: '2025-06-01',
                         size: '65.2 GB',
                         quality: 'Full Game + DLCs',
-                        downloadUrl: 'https://drive.google.com/uc?id=YOUR_COD_MW_FILE_ID',
+                        downloadUrl: 'https://drive.google.com/uc?export=download&id=YOUR_COD_MW_FILE_ID',
                         changes: 'Includes all updates and DLC content'
                     }
                 ]
@@ -806,7 +816,7 @@
                         date: '2025-06-11',
                         size: '2.7 GB',
                         quality: '1080p',
-                        downloadUrl: 'https://drive.google.com/uc?id=YOUR_PERUSU_FILE_ID',
+                        downloadUrl: 'https://drive.google.com/uc?export=download&id=YOUR_PERUSU_FILE_ID',
                         changes: 'Director\'s cut with enhanced emotional scenes'
                     }
                 ]
@@ -836,7 +846,7 @@
                         date: '2025-06-11',
                         size: '58.7 GB',
                         quality: 'Full Game + Season Pass',
-                        downloadUrl: 'https://drive.google.com/uc?id=YOUR_COD_VANGUARD_FILE_ID',
+                        downloadUrl: 'https://drive.google.com/uc?export=download&id=YOUR_COD_VANGUARD_FILE_ID',
                         changes: 'Latest updates with all DLC packs'
                     }
                 ]
