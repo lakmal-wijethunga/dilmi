@@ -332,8 +332,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="index.html" class="back-button">
+    <div class="container">        <a href="home.html" class="back-button">
             <i class="fas fa-arrow-left"></i> Back to Files
         </a>
 
@@ -345,7 +344,7 @@
         </div>
     </div>
 
-    <script>        // Sample file data - This should match the data from index.html
+    <script>        // Sample file data - This should match the data from home.html
         const files = [
             {
                 id: 'warfare-2025',
@@ -518,13 +517,12 @@
         function loadFileDetails() {
             const fileId = localStorage.getItem('selectedFileId');
             const contentDiv = document.getElementById('content');
-            
-            if (!fileId) {
+              if (!fileId) {
                 contentDiv.innerHTML = `
                     <div class="no-file">
                         <h2><i class="fas fa-exclamation-triangle"></i> No File Selected</h2>
                         <p>Please go back to the home page and select a file to view its details.</p>
-                        <a href="index.html" class="download-btn">
+                        <a href="home.html" class="download-btn">
                             <i class="fas fa-home"></i> Go to Home Page
                         </a>
                     </div>
@@ -533,13 +531,12 @@
             }
 
             const file = files.find(f => f.id === fileId);
-            
-            if (!file) {
+              if (!file) {
                 contentDiv.innerHTML = `
                     <div class="no-file">
                         <h2><i class="fas fa-file-times"></i> File Not Found</h2>
                         <p>The requested file could not be found. It may have been moved or deleted.</p>
-                        <a href="index.html" class="download-btn">
+                        <a href="home.html" class="download-btn">
                             <i class="fas fa-home"></i> Go to Home Page
                         </a>
                     </div>

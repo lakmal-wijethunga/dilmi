@@ -23,7 +23,7 @@ A modern, responsive web interface for downloading files from Google Drive with 
    - Change access to "Anyone with the link can view"
    - Copy the file ID from the sharing link
 
-3. Update the file data in both `index.html` and `file-details.html`:
+3. Update the file data in both `home.html` and `file-details.html`:
    - Replace `YOUR_FILE_ID_X` with actual Google Drive file IDs
    - Update file information (names, descriptions, sizes, etc.)
 
@@ -40,7 +40,7 @@ A modern, responsive web interface for downloading files from Google Drive with 
 
 #### Adding New Files
 ```javascript
-// Add to the files array in both index.html and file-details.html
+// Add to the files array in both home.html and file-details.html
 {
     id: 'unique-file-id',
     name: 'File Name',
@@ -65,14 +65,14 @@ A modern, responsive web interface for downloading files from Google Drive with 
 
 #### Styling Customization
 - Colors: Update CSS custom properties in the `<style>` sections
-- Layout: Modify grid layouts and responsive breakpoints
+- Layout: Modify grid layouts and responsive breakpoints in home.html
 - Animations: Adjust transition durations and effects
 
 ## File Structure
 
 ```
 download_site/
-├── index.html          # Home page with file listings
+├── home.html           # Home page with file listings
 ├── file-details.html   # Individual file details and versions
 └── README.md          # This documentation
 ```
