@@ -76,14 +76,22 @@
             font-weight: 600;
             margin-bottom: 15px;
             color: #2c3e50;
-        }
-
-        .file-description {
+        }        .file-description {
             font-size: 1.2rem;
             color: #7f8c8d;
             margin-bottom: 20px;
             line-height: 1.6;
-        }        .file-meta {
+        }
+
+        .file-language {
+            font-size: 1rem;
+            color: #5a6c7d;
+            margin-bottom: 20px;
+            background: #ecf0f1;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }.file-meta {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
@@ -114,36 +122,6 @@
         .rating {
             color: #f39c12;
             font-weight: bold;
-        }
-
-        .subtitle-links {
-            background: #e8f5e8;
-            border: 1px solid #4caf50;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 20px 0;
-        }
-
-        .subtitle-links h4 {
-            color: #2e7d32;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .subtitle-links a {
-            color: #4caf50;
-            text-decoration: none;
-            font-weight: 600;
-            margin-right: 15px;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .subtitle-links a:hover {
-            text-decoration: underline;
         }
 
         .versions-section {
@@ -460,7 +438,8 @@
         </div>
     </div>
 
-    <script>        // Sample file data - This should match the data from home.html
+    <script>
+        // Sample file data - This should match the data from home.html
         const files = [
             {
                 id: 'warfare-2025',
@@ -477,13 +456,8 @@
                 genre: 'Action, Thriller, War',
                 director: 'Michael Bay',
                 cast: 'Chris Evans, Scarlett Johansson, Mark Wahlberg',
-                duration: '148 min',
-                language: 'English',
-                subtitles: {
-                    sinhala: 'https://www.baiscope.com/subtitles/warfare-2025-sinhala',
-                    english: 'Included in file'
-                },
-                poster: 'https://via.placeholder.com/300x450/e74c3c/ffffff?text=Warfare+2025',
+                duration: '148 min',                language: 'English',
+                poster: 'https://i.imgur.com/8rZ1Q5M.jpg',
                 trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
                     {
@@ -511,13 +485,8 @@
                 genre: 'Comedy, Family, Adventure',
                 director: 'Nancy Meyers',
                 cast: 'Ryan Reynolds, Jennifer Aniston, Owen Wilson',
-                duration: '112 min',
-                language: 'English',
-                subtitles: {
-                    sinhala: 'https://www.baiscope.com/subtitles/tourist-family-2025-sinhala',
-                    english: 'Included in file'
-                },
-                poster: 'https://via.placeholder.com/300x450/3498db/ffffff?text=Tourist+Family',
+                duration: '112 min',                language: 'English',
+                poster: 'https://i.imgur.com/9fX2K4L.jpg',
                 trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
                     {
@@ -545,13 +514,8 @@
                 genre: 'Action, Adventure, Sci-Fi',
                 director: 'Francis Lawrence',
                 cast: 'Tom Blyth, Rachel Zegler, Viola Davis, Peter Dinklage',
-                duration: '157 min',
-                language: 'English',
-                subtitles: {
-                    sinhala: 'https://www.zoom.lk/subtitles/hunger-games-ballad-sinhala',
-                    english: 'Included in file'
-                },
-                poster: 'https://via.placeholder.com/300x450/8e44ad/ffffff?text=Hunger+Games+Ballad',
+                duration: '157 min',                language: 'English',
+                poster: 'https://i.imgur.com/YzX8V3N.jpg',
                 trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
                     {
@@ -583,7 +547,7 @@
                 systemRequirements: 'Windows 10, GTX 1060/RX 580, 8GB RAM',
                 gameMode: 'Single-player, Multiplayer, Co-op',
                 esrbRating: 'M (Mature)',
-                poster: 'https://via.placeholder.com/300x450/e74c3c/ffffff?text=COD+MW+2019',
+                poster: 'https://i.imgur.com/3mK7R9P.jpg',
                 trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
                     {
@@ -641,13 +605,8 @@
                 genre: 'Comedy, Romance, Fantasy',
                 director: 'Greta Gerwig',
                 cast: 'Emma Stone, Rachel McAdams, Anne Hathaway',
-                duration: '98 min',
-                language: 'English',
-                subtitles: {
-                    sinhala: 'https://www.baiscope.com/subtitles/ugly-stepsister-2025-sinhala',
-                    english: 'Included in file'
-                },
-                poster: 'https://via.placeholder.com/300x450/f39c12/ffffff?text=The+Ugly+Stepsister',
+                duration: '98 min',                language: 'English',
+                poster: 'https://picsum.photos/300/450?random=3',
                 trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
                     {
@@ -675,13 +634,8 @@
                 genre: 'Fantasy, Adventure, Family',
                 director: 'Guillermo del Toro',
                 cast: 'Millie Bobby Brown, Jacob Tremblay, Tilda Swinton',
-                duration: '134 min',
-                language: 'English',
-                subtitles: {
-                    sinhala: 'https://www.baiscope.com/subtitles/legend-of-ochi-2025-sinhala',
-                    english: 'Included in file'
-                },
-                poster: 'https://via.placeholder.com/300x450/27ae60/ffffff?text=Legend+Of+Ochi',
+                duration: '134 min',                language: 'English',
+                poster: 'https://picsum.photos/300/450?random=4',
                 trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
                     {
@@ -711,10 +665,7 @@
                 cast: 'Rami Malek, Rachel Brosnahan, Caitríona Balfe',
                 duration: '115 min',
                 language: 'English',
-                subtitles: {
-                    sinhala: 'https://www.baiscope.com/subtitles/amateur-2025-sinhala',
-                    english: 'Included in file'
-                },
+
                 poster: 'https://via.placeholder.com/300x450/34495e/ffffff?text=The+Amateur',
                 trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
@@ -745,10 +696,7 @@
                 cast: 'Michael B. Jordan, Lupita Nyong\'o, Sterling K. Brown',
                 duration: '108 min',
                 language: 'English',
-                subtitles: {
-                    sinhala: 'https://www.baiscope.com/subtitles/sinners-2025-sinhala',
-                    english: 'Included in file'
-                },
+
                 poster: 'https://via.placeholder.com/300x450/c0392b/ffffff?text=Sinners+2025',
                 trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
@@ -779,10 +727,7 @@
                 cast: 'Anya Taylor-Joy, Michael Cera, Nick Offerman',
                 duration: '102 min',
                 language: 'English',
-                subtitles: {
-                    sinhala: 'https://www.baiscope.com/subtitles/retro-2025-sinhala',
-                    english: 'Included in file'
-                },
+
                 poster: 'https://via.placeholder.com/300x450/e91e63/ffffff?text=Retro+2025',
                 trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
@@ -813,10 +758,7 @@
                 cast: 'Boyd Holbrook, Jacob Tremblay, Yvonne Strahovski',
                 duration: '125 min',
                 language: 'English',
-                subtitles: {
-                    sinhala: 'https://www.baiscope.com/subtitles/predator-killer-of-killers-sinhala',
-                    english: 'Included in file'
-                },
+
                 poster: 'https://via.placeholder.com/300x450/ff5722/ffffff?text=Predator+Killer',
                 trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
@@ -847,10 +789,7 @@
                 cast: 'Talented Regional Cast',
                 duration: '128 min',
                 language: 'Regional Language',
-                subtitles: {
-                    sinhala: 'https://www.baiscope.com/subtitles/perusu-2025-sinhala',
-                    english: 'Available separately'
-                },
+
                 poster: 'https://via.placeholder.com/300x450/673ab7/ffffff?text=Perusu+2025',
                 trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
@@ -881,10 +820,7 @@
                 cast: 'Regional Cast Members',
                 duration: '135 min',
                 language: 'Local Language',
-                subtitles: {
-                    sinhala: 'https://www.baiscope.com/subtitles/padakkalam-2025-sinhala',
-                    english: 'Available separately'
-                },
+
                 poster: 'https://via.placeholder.com/300x450/795548/ffffff?text=Padakkalam+2025',
                 trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
@@ -915,10 +851,7 @@
                 cast: 'Mark Wahlberg, Idris Elba, Zoe Saldana',
                 duration: '112 min',
                 language: 'English',
-                subtitles: {
-                    sinhala: 'https://www.baiscope.com/subtitles/officer-on-duty-2025-sinhala',
-                    english: 'Included in file'
-                },
+
                 poster: 'https://via.placeholder.com/300x450/2196f3/ffffff?text=Officer+On+Duty',
                 trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
@@ -949,10 +882,7 @@
                 cast: 'Popular Action Stars',
                 duration: '142 min',
                 language: 'Regional Language',
-                subtitles: {
-                    sinhala: 'https://www.baiscope.com/subtitles/maranamass-2025-sinhala',
-                    english: 'Available separately'
-                },
+
                 poster: 'https://via.placeholder.com/300x450/ff9800/ffffff?text=Maranamass+2025',
                 trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
@@ -983,11 +913,8 @@
                 cast: 'Oscar Isaac, Rebecca Ferguson, Timothée Chalamet',
                 duration: '165 min',
                 language: 'English',
-                subtitles: {
-                    sinhala: 'https://www.baiscope.com/subtitles/thudarum-2025-sinhala',
-                    english: 'Included in file'
-                },
-                poster: 'https://via.placeholder.com/300x450/9b59b6/ffffff?text=Thudarum+2025',
+
+                poster: 'https://picsum.photos/300/450?random=1',
                 trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
                     {
@@ -1017,11 +944,8 @@
                 cast: 'Lupita Nyong\'o, Winston Duke, Elisabeth Moss',
                 duration: '121 min',
                 language: 'English',
-                subtitles: {
-                    sinhala: 'https://www.baiscope.com/subtitles/thrayam-2024-sinhala',
-                    english: 'Included in file'
-                },
-                poster: 'https://via.placeholder.com/300x450/e67e22/ffffff?text=Thrayam+2024',
+
+                poster: 'https://picsum.photos/300/450?random=2',
                 trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
                     {
@@ -1051,10 +975,7 @@
                 cast: 'Nicholas D\'Agosto, Emma Bell, Miles Fisher',
                 duration: '95 min',
                 language: 'English',
-                subtitles: {
-                    sinhala: 'https://www.baiscope.com/subtitles/final-destination-bloodlines-sinhala',
-                    english: 'Included in file'
-                },
+
                 poster: 'https://via.placeholder.com/300x450/9c27b0/ffffff?text=Final+Destination+Bloodlines',
                 trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
@@ -1085,10 +1006,7 @@
                 cast: 'Benedict Cumberbatch, Cate Blanchett, Ian McKellen',
                 duration: '168 min',
                 language: 'English',
-                subtitles: {
-                    sinhala: 'https://www.baiscope.com/subtitles/dragon-2025-sinhala',
-                    english: 'Included in file'
-                },
+
                 poster: 'https://via.placeholder.com/300x450/4caf50/ffffff?text=Dragon+2025',
                 trailer: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
                 versions: [
@@ -1137,9 +1055,9 @@
                 <div class="file-header">
                     <div class="file-icon" style="color: ${file.iconColor}">
                         <i class="${file.icon}"></i>
-                    </div>
-                    <h1 class="file-title">${file.name}</h1>
+                    </div>                    <h1 class="file-title">${file.name}</h1>
                     <p class="file-description">${file.description}</p>
+                    ${file.language ? `<p class="file-language"><strong>Language:</strong> ${file.language}</p>` : ''}
                     
                     <div class="file-meta">
                         <div class="meta-item">
@@ -1173,36 +1091,26 @@
                         <div class="meta-item">
                             <div class="meta-label">Last Updated</div>
                             <div class="meta-value">${file.lastModified}</div>
-                        </div>
-                    </div>
-
-                    ${file.cast ? `
-                        <div style="margin: 20px 0; text-align: left;">
-                            <strong style="color: #2c3e50;">Cast:</strong> ${file.cast}
-                        </div>
-                    ` : ''}
+                        </div>                    </div>
 
                     ${file.systemRequirements ? `
                         <div style="margin: 20px 0; text-align: left;">
                             <strong style="color: #2c3e50;">System Requirements:</strong> ${file.systemRequirements}
-                        </div>
-                    ` : ''}                    ${file.subtitles ? `
-                        <div class="subtitle-links">
-                            <h4><i class="fas fa-closed-captioning"></i> Subtitles</h4>
-                            ${file.subtitles.sinhala ? `<a href="${file.subtitles.sinhala}" target="_blank"><i class="fas fa-language"></i> Sinhala Subtitles</a>` : ''}
-                            ${file.subtitles.english ? `<span style="color: #666;"><i class="fas fa-check-circle"></i> ${file.subtitles.english}</span>` : ''}
-                        </div>
-                    ` : ''}
+                        </div>                    ` : ''}
                 </div>
 
                 ${file.poster || file.trailer ? `
                 <div class="media-section">
-                    <div class="media-content">
-                        ${file.poster ? `
+                    <div class="media-content">                        ${file.poster ? `
                         <div class="poster-container">
-                            <img src="${file.poster}" alt="${file.name} Poster" class="poster-image" onerror="this.src='https://via.placeholder.com/300x450/667eea/ffffff?text=${encodeURIComponent(file.name)}'">
+                            <img src="${file.poster}" alt="${file.name} Poster" class="poster-image" 
+                                 onerror="this.src='https://via.placeholder.com/300x450/667eea/ffffff?text=${encodeURIComponent(file.name)}'; console.log('Poster failed to load for ${file.name}');">
                         </div>
-                        ` : ''}
+                        ` : `
+                        <div class="poster-container">
+                            <img src="https://via.placeholder.com/300x450/667eea/ffffff?text=${encodeURIComponent(file.name)}" alt="${file.name} Poster" class="poster-image">
+                        </div>
+                        `}
                         
                         <div class="media-info">
                             <div class="action-buttons">
@@ -1227,12 +1135,10 @@
                             </div>
                             
                             <div class="media-details">
-                                ${file.category === 'movies' ? `
-                                <h3><i class="fas fa-users"></i> Cast & Crew</h3>
+                                ${file.category === 'movies' ? `                                <h3><i class="fas fa-users"></i> Cast & Crew</h3>
                                 <div class="cast-list">
                                     <strong>Director:</strong> ${file.director || 'Not specified'}<br>
-                                    <strong>Cast:</strong> ${file.cast || 'Not specified'}<br>
-                                    <strong>Language:</strong> ${file.language || 'Not specified'}
+                                    <strong>Cast:</strong> ${file.cast || 'Not specified'}
                                 </div>
                                 ` : `
                                 <h3><i class="fas fa-cog"></i> System Requirements</h3>
@@ -1290,12 +1196,17 @@
                     downloadBtn.innerHTML = originalText;
                 }, 2000);
             }, 1000);
-        }
-
-        function watchNow(fileId) {
+        }        function watchNow(fileId) {
             // Find the file
             const file = files.find(f => f.id === fileId);
             if (!file) return;
+
+            // Get Google Drive file ID from download URL
+            const fileUrl = file.versions[0]?.downloadUrl;
+            let driveFileId = '';
+            if (fileUrl && fileUrl.includes('id=')) {
+                driveFileId = fileUrl.split('id=')[1];
+            }
 
             // Create streaming options modal
             const modal = document.createElement('div');
@@ -1318,19 +1229,27 @@
                         <i class="fas fa-play-circle" style="color: #e74c3c;"></i>
                         Watch ${file.name}
                     </h2>
-                    <p style="color: #666; margin-bottom: 30px;">Choose your preferred streaming option:</p>
+                    <p style="color: #666; margin-bottom: 30px;">Choose your preferred viewing option:</p>
                     
                     <div style="display: flex; flex-direction: column; gap: 15px;">
+                        ${driveFileId ? `
+                        <a href="https://drive.google.com/file/d/${driveFileId}/view" 
+                           target="_blank" 
+                           style="background: linear-gradient(135deg, #4285f4, #34a853); color: white; padding: 15px 20px; border-radius: 10px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: 600; box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);">
+                            <i class="fab fa-google-drive"></i> Watch on Google Drive
+                        </a>
+                        ` : ''}
+                        
                         <a href="https://www.netflix.com/search?q=${encodeURIComponent(file.name)}" 
                            target="_blank" 
                            style="background: #e50914; color: white; padding: 15px 20px; border-radius: 10px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: 600;">
-                            <i class="fas fa-play"></i> Search on Netflix
+                            <i class="fab fa-netflix"></i> Search on Netflix
                         </a>
                         
                         <a href="https://www.primevideo.com/search/ref=atv_nb_sr?phrase=${encodeURIComponent(file.name)}" 
                            target="_blank"
                            style="background: #00a8e1; color: white; padding: 15px 20px; border-radius: 10px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: 600;">
-                            <i class="fas fa-play"></i> Search on Prime Video
+                            <i class="fas fa-video"></i> Search on Prime Video
                         </a>
                         
                         <a href="https://www.youtube.com/results?search_query=${encodeURIComponent(file.name + ' full movie')}" 
@@ -1342,7 +1261,7 @@
                         <a href="https://www.google.com/search?q=${encodeURIComponent(file.name + ' watch online')}" 
                            target="_blank"
                            style="background: #4285f4; color: white; padding: 15px 20px; border-radius: 10px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: 600;">
-                            <i class="fas fa-search"></i> Find Streaming Options
+                            <i class="fas fa-search"></i> Find Other Streaming Options
                         </a>
                     </div>
                     
@@ -1351,9 +1270,7 @@
                         Close
                     </button>
                 </div>
-            `;
-
-            modal.addEventListener('click', (e) => {
+            `;            modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
                     modal.remove();
                 }
@@ -1435,3 +1352,4 @@
     </script>
 </body>
 </html>
+
