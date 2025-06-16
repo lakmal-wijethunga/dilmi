@@ -3,211 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CineHub - Movie Download Center</title>
+    <title>FileVault - Premium Movie Downloads</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="logo">
-                    <i class="fas fa-film"></i>
-                    <span>CineHub</span>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#movies" class="nav-link">Movies</a></li>
-                    <li><a href="#most-wanted" class="nav-link">Most Wanted</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">            <div class="nav-logo">
+                <i class="fas fa-film"></i>
+                <span>FileVault</span>
             </div>
-        </nav>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1>Welcome to CineHub</h1>
-                <p>Your ultimate destination for high-quality movie downloads</p>
-                <a href="#movies" class="cta-button">
-                    <i class="fas fa-download"></i>
-                    Browse Movies
-                </a>
+            <div class="nav-search">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search movies...">
             </div>
-            <div class="hero-background"></div>
-        </section>
-
-        <!-- Most Wanted Section -->
-        <section id="most-wanted" class="most-wanted">
-            <div class="container">
-                <h2 class="section-title">
-                    <i class="fas fa-fire"></i>
-                    Most Wanted Movies
-                </h2>
-                <div class="wanted-grid">
-                    <div class="wanted-card">
-                        <div class="wanted-badge">🔥 #1</div>
-                        <h3>Warfare (2025)</h3>
-                        <p>Latest Action Thriller</p>
-                    </div>
-                    <div class="wanted-card">
-                        <div class="wanted-badge">⭐ #2</div>
-                        <h3>Coming Soon</h3>
-                        <p>More movies will be added</p>
-                    </div>
-                    <div class="wanted-card">
-                        <div class="wanted-badge">🎬 #3</div>
-                        <h3>Request Movies</h3>
-                        <p>Contact us for requests</p>
-                    </div>
-                </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#movies" class="nav-link">Movies</a>
+                <a href="#genres" class="nav-link">Genres</a>
+                <a href="#about" class="nav-link">About</a>
             </div>
-        </section>
+        </div>    </nav>
 
-        <!-- Movies Section -->
-        <section id="movies" class="movies">
-            <div class="container">
-                <h2 class="section-title">
-                    <i class="fas fa-video"></i>
-                    Available Movies
-                </h2>
-                <div class="movie-grid">
-                    <!-- Warfare 2025 Movie Card -->
-                    <div class="movie-card" data-movie="warfare-2025">
-                        <div class="movie-poster">
-                            <img src="https://images.unsplash.com/photo-1489599512485-1c11566e2cc7?w=400&h=600&fit=crop&crop=center" alt="Warfare 2025" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDQwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjMkEyQTJBIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMzAwIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5XYXJmYXJlIDIwMjU8L3RleHQ+Cjwvc3ZnPg=='">
-                            <div class="movie-overlay">
-                                <button class="play-btn" onclick="openMovieModal('warfare-2025')">
-                                    <i class="fas fa-play"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="movie-info">
-                            <h3>Warfare (2025)</h3>
-                            <div class="movie-meta">
-                                <span class="rating">
-                                    <i class="fas fa-star"></i>
-                                    7.8/10
-                                </span>
-                                <span class="genre">Action, Thriller</span>
-                            </div>
-                            <p class="movie-description">
-                                An intense military action thriller that follows a squad of soldiers navigating through modern warfare challenges.
-                            </p>
-                            <div class="quality-badges">
-                                <span class="quality-badge">480p</span>
-                                <span class="quality-badge">720p</span>
-                                <span class="quality-badge">1080p</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Placeholder for more movies -->
-                    <div class="movie-card coming-soon">
-                        <div class="movie-poster">
-                            <div class="coming-soon-content">
-                                <i class="fas fa-plus-circle"></i>
-                                <h3>More Movies</h3>
-                                <p>Coming Soon</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Filter Section -->
+    <section class="filters" id="movies">
+        <div class="container">            <div class="filter-tabs">
+                <button class="filter-btn active" data-genre="all">All Movies</button>
+                <button class="filter-btn" data-genre="action">Action</button>
+                <button class="filter-btn" data-genre="horror">Horror</button>
+                <button class="filter-btn" data-genre="thriller">Thriller</button>
+                <button class="filter-btn" data-genre="drama">Drama</button>
+                <button class="filter-btn" data-genre="adventure">Adventure</button>
+                <button class="filter-btn" data-genre="sci-fi">Sci-Fi</button>
+                <button class="filter-btn" data-genre="fantasy">Fantasy</button>
             </div>
-        </section>
-    </main>
-
-    <!-- Movie Modal -->
-    <div id="movie-modal" class="modal">
+            <div class="sort-options">
+                <select id="sortSelect">
+                    <option value="title">Sort by Title</option>
+                    <option value="year">Sort by Year</option>
+                    <option value="rating">Sort by Rating</option>
+                    <option value="duration">Sort by Duration</option>
+                </select>
+            </div>
+        </div>
+    </section>    <!-- Movies Grid -->
+    <section class="movies-section">
+        <div class="container">
+            <div class="movies-grid" id="moviesGrid">
+                <!-- Movies will be dynamically loaded here -->
+            </div>
+        </div>
+    </section><!-- Movie Modal -->
+    <div class="modal" id="movieModal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-header">
-                <img id="modal-poster" src="" alt="">
-                <div class="modal-info">
-                    <h2 id="modal-title"></h2>
-                    <div class="modal-meta">
-                        <span id="modal-rating"></span>
-                        <span id="modal-year"></span>
-                        <span id="modal-duration"></span>
+            <span class="close-btn" id="modalCloseBtn">&times;</span>
+            <div class="modal-body">
+                <div class="movie-poster-section">
+                    <img id="modalPoster" src="" alt="Movie Poster">                    <div class="movie-actions">
+                        <button class="btn-primary" id="watchNowBtn">
+                            <i class="fas fa-play"></i>
+                            Watch Now
+                        </button>
+                        <button class="btn-trailer" id="trailerBtn">
+                            <i class="fab fa-youtube"></i>
+                            Watch Trailer
+                        </button>
+                        <button class="btn-secondary" id="downloadBtn">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </button>
                     </div>
-                    <p id="modal-description"></p>
-                    <div class="modal-details">
-                        <div class="detail">
-                            <strong>Director:</strong>
-                            <span id="modal-director"></span>
+                </div>
+                <div class="movie-details-section">
+                    <h2 id="modalTitle"></h2>
+                    <div class="movie-meta">
+                        <span class="year" id="modalYear"></span>
+                        <span class="duration" id="modalDuration"></span>
+                        <span class="rating" id="modalRating">
+                            <i class="fas fa-star"></i>
+                            <span id="modalRatingValue"></span>
+                        </span>
+                    </div>
+                    <div class="genres" id="modalGenres"></div>
+                    <p class="synopsis" id="modalSynopsis"></p>
+                      <div class="cast-crew">
+                        <div class="director">
+                            <h4>Director</h4>
+                            <div class="cast-list" id="modalDirector"></div>
                         </div>
-                        <div class="detail">
-                            <strong>Cast:</strong>
-                            <span id="modal-cast"></span>
+                        <div class="cast">
+                            <h4>Cast</h4>
+                            <div class="cast-list" id="modalCast"></div>
                         </div>
-                        <div class="detail">
-                            <strong>Genre:</strong>
-                            <span id="modal-genre"></span>
+                    </div>
+
+                    <div class="quality-selection">
+                        <h4>Download Quality</h4>
+                        <div class="quality-options" id="qualityOptions">
+                            <!-- Quality options will be loaded here -->
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="download-section">
-                <h3>Select Quality & Download</h3>
-                <div class="download-options">
-                    <div class="download-option">
-                        <div class="quality-info">
-                            <span class="quality">480p</span>
-                            <span class="size">~300MB</span>
-                        </div>
-                        <a href="#" class="download-btn" data-quality="480p">
-                            <i class="fas fa-download"></i>
-                            Download
-                        </a>
-                    </div>
-                    <div class="download-option">
-                        <div class="quality-info">
-                            <span class="quality">720p</span>
-                            <span class="size">~750MB</span>
-                        </div>
-                        <a href="#" class="download-btn" data-quality="720p">
-                            <i class="fas fa-download"></i>
-                            Download
-                        </a>
-                    </div>
-                    <div class="download-option">
-                        <div class="quality-info">
-                            <span class="quality">1080p</span>
-                            <span class="size">~1.5GB</span>
-                        </div>
-                        <a href="#" class="download-btn" data-quality="1080p">
-                            <i class="fas fa-download"></i>
-                            Download
-                        </a>
-                    </div>
-                    <div class="download-option">
-                        <div class="quality-info">
-                            <span class="quality">Subtitles</span>
-                            <span class="size">~128KB</span>
-                        </div>
-                        <a href="#" class="download-btn subtitles" data-quality="subtitles">
-                            <i class="fas fa-closed-captioning"></i>
-                            Download SRT
-                        </a>
-                    </div>
-                </div>
+            </div>        </div>
+    </div>
+
+    <!-- YouTube Trailer Modal -->
+    <div class="modal" id="trailerModal">
+        <div class="modal-content trailer-modal-content">
+            <span class="close-btn" id="trailerCloseBtn">&times;</span>
+            <div class="trailer-container">
+                <iframe id="trailerFrame" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </div>
 
+    <!-- Loading Spinner -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 CineHub. All rights reserved. | High-quality movie downloads</p>
-        </div>
-    </footer>    <script src="config.js"></script>
+        <div class="container">            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-film"></i> FileVault</h3>
+                    <p>Your premium destination for high-quality movie downloads and streaming.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#movies">Movies</a></li>
+                        <li><a href="#genres">Genres</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Qualities Available</h4>
+                    <ul>
+                        <li>4K Ultra HD</li>
+                        <li>1080p Full HD</li>
+                        <li>720p HD</li>
+                        <li>480p SD</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>            <div class="footer-bottom">
+                <p>&copy; 2025 FileVault. All rights reserved. | Designed for entertainment purposes.</p>
+            </div>
+        </div>    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

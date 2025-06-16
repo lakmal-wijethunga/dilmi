@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileVault Setup Helper</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #555;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .quality-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .quality-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr 2fr;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: end;
+        }
+        button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+        button:hover {
+            transform: translateY(-2px);
+        }
+        .output {
+            background: #1a1a1a;
+            color: #00ff00;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin-top: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .helper-text {
+            font-size: 12px;
+            color: #777;
+            margin-top: 5px;
+        }
+        .copy-btn {
+            background: #28a745;
+            font-size: 14px;
+            padding: 8px 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 FileVault Setup Helper</h1>
+        <p style="text-align: center; color: #666;">This tool helps you generate the movie data structure for your Google Drive files.</p>
+        
+        <form id="movieForm">
+            <div class="form-group">
+                <label for="title">Movie Title *</label>
+                <input type="text" id="title" required placeholder="e.g., The Matrix">
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
+                <div class="form-group">
+                    <label for="year">Year *</label>
+                    <input type="number" id="year" required placeholder="2023" min="1900" max="2030">
+                </div>
+                <div class="form-group">
+                    <label for="duration">Duration *</label>
+                    <input type="text" id="duration" required placeholder="120 min">
+                </div>
+                <div class="form-group">
+                    <label for="rating">Rating *</label>
+                    <input type="number" id="rating" required placeholder="8.5" min="0" max="10" step="0.1">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="genres">Genres (comma separated) *</label>
+                <input type="text" id="genres" required placeholder="Action, Sci-Fi, Thriller">
+            </div>
+            
+            <div class="form-group">
+                <label for="director">Director *</label>
+                <input type="text" id="director" required placeholder="Director Name">
+            </div>
+            
+            <div class="form-group">
+                <label for="cast">Cast (comma separated) *</label>
+                <input type="text" id="cast" required placeholder="Actor 1, Actor 2, Actor 3">
+            </div>
+            
+            <div class="form-group">
+                <label for="synopsis">Synopsis *</label>
+                <textarea id="synopsis" required rows="4" placeholder="Brief description of the movie..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="poster">Poster URL</label>
+                <input type="url" id="poster" placeholder="https://image-url.jpg">
+                <div class="helper-text">You can get movie posters from TMDB, IMDB, or use your own hosted images</div>
+            </div>
+            
+            <div class="quality-section">
+                <h3>📁 Google Drive File Links</h3>
+                <p style="color: #666; margin-bottom: 20px;">
+                    Add the Google Drive file IDs for different qualities. 
+                    <strong>How to get File ID:</strong> From your Google Drive link 
+                    <code>https://drive.google.com/file/d/<strong>FILE_ID</strong>/view</code>
+                </p>
+                
+                <div class="quality-row">
+                    <div><label>Quality</label></div>
+                    <div><label>File ID</label></div>
+                    <div><label>File Size</label></div>
+                </div>
+                
+                <div class="quality-row">
+                    <select>
+                        <option value="4K">4K Ultra HD</option>
+                    </select>
+                    <input type="text" id="fileId4K" placeholder="1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74mHmrEqpUBb">
+                    <input type="text" id="size4K" placeholder="8.5 GB">
+                </div>
+                
+                <div class="quality-row">
+                    <select>
+                        <option value="1080p">1080p Full HD</option>
+                    </select>
+                    <input type="text" id="fileId1080p" placeholder="File ID for 1080p version">
+                    <input type="text" id="size1080p" placeholder="4.2 GB">
+                </div>
+                
+                <div class="quality-row">
+                    <select>
+                        <option value="720p">720p HD</option>
+                    </select>
+                    <input type="text" id="fileId720p" placeholder="File ID for 720p version">
+                    <input type="text" id="size720p" placeholder="2.1 GB">
+                </div>
+                
+                <div class="quality-row">
+                    <select>
+                        <option value="480p">480p SD</option>
+                    </select>
+                    <input type="text" id="fileId480p" placeholder="File ID for 480p version">
+                    <input type="text" id="size480p" placeholder="1.2 GB">
+                </div>
+            </div>
+            
+            <button type="submit">🚀 Generate Movie Data</button>
+        </form>
+        
+        <div id="output" class="output" style="display: none;">
+            <h3 style="color: #00ff00; margin-top: 0;">Generated Code:</h3>
+            <p style="color: #ffff00;">Copy this object and add it to the moviesDatabase array in script.js</p>
+            <pre id="generatedCode"></pre>
+            <button class="copy-btn" onclick="copyToClipboard()">📋 Copy to Clipboard</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('movieForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            generateMovieData();
+        });
+
+        function generateMovieData() {
+            const form = document.getElementById('movieForm');
+            const formData = new FormData(form);
+            
+            // Get form values
+            const title = document.getElementById('title').value;
+            const year = parseInt(document.getElementById('year').value);
+            const duration = document.getElementById('duration').value;
+            const rating = parseFloat(document.getElementById('rating').value);
+            const genres = document.getElementById('genres').value.split(',').map(g => g.trim());
+            const director = document.getElementById('director').value;
+            const cast = document.getElementById('cast').value.split(',').map(c => c.trim());
+            const synopsis = document.getElementById('synopsis').value;
+            const poster = document.getElementById('poster').value || `https://via.placeholder.com/400x600/667eea/ffffff?text=${encodeURIComponent(title)}`;
+            
+            // Get quality data
+            const qualities = {};
+            const qualityTypes = ['4K', '1080p', '720p', '480p'];
+            
+            qualityTypes.forEach(quality => {
+                const fileId = document.getElementById(`fileId${quality.replace('p', 'p')}`).value;
+                const size = document.getElementById(`size${quality.replace('p', 'p')}`).value;
+                
+                if (fileId && size) {
+                    qualities[quality] = {
+                        size: size,
+                        link: `https://drive.google.com/file/d/${fileId}/view`,
+                        downloadLink: `https://drive.google.com/uc?export=download&id=${fileId}`
+                    };
+                }
+            });
+            
+            // Generate movie object
+            const movieId = Date.now(); // Simple ID generation
+            const movieObject = {
+                id: movieId,
+                title: title,
+                year: year,
+                duration: duration,
+                rating: rating,
+                genres: genres,
+                director: director,
+                cast: cast,
+                synopsis: synopsis,
+                poster: poster,
+                qualities: qualities
+            };
+            
+            // Display generated code
+            const generatedCode = JSON.stringify(movieObject, null, 4);
+            document.getElementById('generatedCode').textContent = generatedCode;
+            document.getElementById('output').style.display = 'block';
+            
+            // Scroll to output
+            document.getElementById('output').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function copyToClipboard() {
+            const code = document.getElementById('generatedCode').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Code copied to clipboard! Now paste it into your script.js file.');
+            });
+        }
+        
+        // Auto-generate placeholder poster URL when title changes
+        document.getElementById('title').addEventListener('input', function(e) {
+            const title = e.target.value;
+            if (title && !document.getElementById('poster').value) {
+                document.getElementById('poster').placeholder = `Auto-generated poster for "${title}"`;
+            }
+        });
+    </script>
+</body>
+</html>
