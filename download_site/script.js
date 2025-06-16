@@ -1,549 +1,237 @@
-// Sample file data - Replace with your actual Google Drive file data
-const filesData = [
-    {
-        id: 1,
-        name: "Movie Collection - 4K Ultra HD",
-        description: "Premium 4K Ultra HD movie with stunning visual quality. Perfect for large screens and home theater setups. Crystal clear picture and immersive audio experience.",
-        category: "videos",
-        size: "8.5 GB",
-        type: "MP4",
-        downloads: 2847,
-        likes: 456,
-        rating: 4.9,
-        uploadDate: "2025-06-15",
-        downloadUrl: "https://drive.google.com/drive/folders/16dCsLJVRCvGkET1FnwqH9A7tfn9F8Dly?usp=sharing",
-        previewImage: "https://via.placeholder.com/400x200/8b5cf6/ffffff?text=4K+Movie",
-        tags: ["4k", "ultra-hd", "movie", "premium"]
-    },
-    {
-        id: 2,
-        name: "Movie Collection - 1080p Full HD",
-        description: "High-quality 1080p Full HD version with excellent picture quality and smaller file size. Great balance between quality and storage space.",
-        category: "videos",
-        size: "3.2 GB",
-        type: "MP4",
-        downloads: 4256,
-        likes: 623,
-        rating: 4.8,
-        uploadDate: "2025-06-15",
-        downloadUrl: "https://drive.google.com/drive/folders/16dCsLJVRCvGkET1FnwqH9A7tfn9F8Dly?usp=sharing",
-        previewImage: "https://via.placeholder.com/400x200/06b6d4/ffffff?text=1080p+Movie",
-        tags: ["1080p", "full-hd", "movie", "quality"]
-    },
-    {
-        id: 3,
-        name: "Movie Collection - 720p HD",
-        description: "Standard HD 720p version optimized for faster downloads and mobile viewing. Good quality with reasonable file size for all devices.",
-        category: "videos",
-        size: "1.8 GB",
-        type: "MP4",
-        downloads: 6124,
-        likes: 789,
-        rating: 4.7,
-        uploadDate: "2025-06-15",
-        downloadUrl: "https://drive.google.com/drive/folders/16dCsLJVRCvGkET1FnwqH9A7tfn9F8Dly?usp=sharing",
-        previewImage: "https://via.placeholder.com/400x200/10b981/ffffff?text=720p+Movie",
-        tags: ["720p", "hd", "movie", "mobile"]
-    },
-    {
-        id: 4,
-        name: "Movie Collection - 480p Standard",
-        description: "Standard definition version perfect for older devices and limited internet connections. Compact file size with decent quality.",
-        category: "videos",
-        size: "850 MB",
-        type: "MP4",
-        downloads: 3421,
-        likes: 234,
-        rating: 4.5,
-        uploadDate: "2025-06-15",
-        downloadUrl: "https://drive.google.com/drive/folders/16dCsLJVRCvGkET1FnwqH9A7tfn9F8Dly?usp=sharing",
-        previewImage: "https://via.placeholder.com/400x200/f59e0b/ffffff?text=480p+Movie",
-        tags: ["480p", "standard", "movie", "compact"]
-    },
-    {
-        id: 5,
-        name: "Web Development Course - Complete Guide",
-        description: "Comprehensive web development tutorial covering HTML, CSS, JavaScript, and modern frameworks. Perfect for beginners and intermediate developers.",
-        category: "documents",
-        size: "245 MB",
-        type: "PDF",
-        downloads: 1247,
-        likes: 89,
-        rating: 4.8,
-        uploadDate: "2025-01-15",
-        downloadUrl: "https://drive.google.com/file/d/your-file-id/view?usp=sharing",
-        previewImage: null,
-        tags: ["web-dev", "tutorial", "programming"]
-    },    {
-        id: 6,
-        name: "Professional Logo Pack",
-        description: "High-quality vector logos and brand assets. Includes AI, EPS, PNG, and SVG formats. Commercial license included.",
-        category: "images",
-        size: "89 MB",
-        type: "ZIP",
-        downloads: 856,
-        likes: 142,
-        rating: 4.9,
-        uploadDate: "2025-01-12",
-        downloadUrl: "https://drive.google.com/file/d/your-file-id/view?usp=sharing",
-        previewImage: "https://via.placeholder.com/400x200/6366f1/ffffff?text=Logo+Pack",
-        tags: ["design", "logos", "graphics"]
-    },
-    {
-        id: 7,
-        name: "JavaScript ES6+ Cheat Sheet",
-        description: "Quick reference guide for modern JavaScript features. Includes examples and best practices for ES6, ES7, ES8, and beyond.",
-        category: "documents",
-        size: "12 MB",
-        type: "PDF",
-        downloads: 2341,
-        likes: 287,
-        rating: 4.7,
-        uploadDate: "2025-01-10",
-        downloadUrl: "https://drive.google.com/file/d/your-file-id/view?usp=sharing",
-        previewImage: null,
-        tags: ["javascript", "cheatsheet", "reference"]
-    },
-    {
-        id: 8,
-        name: "UI/UX Design System Templates",
-        description: "Modern design system with components, color palettes, typography, and guidelines. Available for Figma and Sketch.",
-        category: "images",
-        size: "156 MB",
-        type: "ZIP",
-        downloads: 642,
-        likes: 98,
-        rating: 4.6,
-        uploadDate: "2025-01-08",
-        downloadUrl: "https://drive.google.com/file/d/your-file-id/view?usp=sharing",
-        previewImage: "https://via.placeholder.com/400x200/8b5cf6/ffffff?text=Design+System",
-        tags: ["ui", "ux", "design", "templates"]
-    },
-    {
-        id: 9,
-        name: "Photography Lightroom Presets",
-        description: "Professional photo editing presets for Adobe Lightroom. Includes portrait, landscape, and street photography styles.",
-        category: "images",
-        size: "78 MB",
-        type: "ZIP",
-        downloads: 1523,
-        likes: 203,
-        rating: 4.8,
-        uploadDate: "2025-01-05",
-        downloadUrl: "https://drive.google.com/file/d/your-file-id/view?usp=sharing",
-        previewImage: "https://via.placeholder.com/400x200/06b6d4/ffffff?text=Lightroom+Presets",
-        tags: ["photography", "lightroom", "presets"]
-    },
-    {
-        id: 10,
-        name: "Python Data Analysis Toolkit",
-        description: "Complete toolkit for data analysis with Python. Includes Jupyter notebooks, datasets, and step-by-step tutorials.",
-        category: "software",
-        size: "312 MB",
-        type: "ZIP",
-        downloads: 934,
-        likes: 156,
-        rating: 4.9,
-        uploadDate: "2025-01-03",
-        downloadUrl: "https://drive.google.com/file/d/your-file-id/view?usp=sharing",
-        previewImage: null,        tags: ["python", "data-analysis", "jupyter"]
-    },
-    {
-        id: 11,
-        name: "Chill Lo-Fi Music Collection",
-        description: "Relaxing lo-fi beats perfect for studying, working, or unwinding. High-quality MP3 files with album artwork.",
-        category: "music",
-        size: "198 MB",
-        type: "ZIP",
-        downloads: 2156,
-        likes: 445,
-        rating: 4.7,
-        uploadDate: "2025-01-01",
-        downloadUrl: "https://drive.google.com/file/d/your-file-id/view?usp=sharing",
-        previewImage: "https://via.placeholder.com/400x200/10b981/ffffff?text=Lo-Fi+Music",
-        tags: ["music", "lo-fi", "study"]
-    },
-    {
-        id: 12,
-        name: "React.js Project Templates",
-        description: "Ready-to-use React.js templates for common applications. Includes e-commerce, dashboard, and portfolio templates.",
-        category: "software",
-        size: "145 MB",
-        type: "ZIP",
-        downloads: 1789,
-        likes: 234,
-        rating: 4.8,
-        uploadDate: "2024-12-28",
-        downloadUrl: "https://drive.google.com/file/d/your-file-id/view?usp=sharing",
-        previewImage: null,
-        tags: ["react", "templates", "javascript"]
-    }
-];
+// Note: movieData is now loaded from config.js
 
 // DOM Elements
-const filesGrid = document.getElementById('filesGrid');
-const searchInput = document.getElementById('searchInput');
-const filterTabs = document.querySelectorAll('.filter-tab');
-const themeToggle = document.getElementById('themeToggle');
-const downloadModal = document.getElementById('downloadModal');
-const modalClose = document.getElementById('modalClose');
-const loadMoreBtn = document.getElementById('loadMoreBtn');
+const modal = document.getElementById('movie-modal');
+const closeModal = document.querySelector('.close-modal');
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
 
-// State
-let currentFilter = 'all';
-let searchQuery = '';
-let displayedFiles = 8;
-let isDownloading = false;
-
-// Initialize the app
+// Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
-    initializeTheme();
-    renderFiles();
-    updateStats();
-    setupEventListeners();
+    initializeApp();
 });
 
-// Theme Management
-function initializeTheme() {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
+function initializeApp() {
+    // Setup event listeners
+    setupEventListeners();
+    
+    // Setup smooth scrolling
+    setupSmoothScrolling();
+    
+    // Setup header scroll effect
+    setupHeaderScrollEffect();
+    
+    // Add loading animation
+    document.body.classList.add('loaded');
 }
 
-function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeIcon(newTheme);
-}
-
-function updateThemeIcon(theme) {
-    const icon = themeToggle.querySelector('i');
-    icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-}
-
-// File Rendering
-function renderFiles() {
-    const filteredFiles = getFilteredFiles();
-    const filesToShow = filteredFiles.slice(0, displayedFiles);
-    
-    filesGrid.innerHTML = '';
-    
-    filesToShow.forEach((file, index) => {
-        const fileCard = createFileCard(file, index);
-        filesGrid.appendChild(fileCard);
-    });
-    
-    // Show/hide load more button
-    loadMoreBtn.style.display = filteredFiles.length > displayedFiles ? 'flex' : 'none';
-}
-
-function createFileCard(file, index) {
-    const card = document.createElement('div');
-    card.className = 'file-card';
-    card.style.animationDelay = `${index * 0.1}s`;
-    
-    const previewContent = file.previewImage 
-        ? `<img src="${file.previewImage}" alt="${file.name}" loading="lazy">`
-        : `<div class="file-type-icon">${getFileIcon(file.type)}</div>`;
-    
-    card.innerHTML = `
-        <div class="file-preview">
-            ${previewContent}
-            <div class="file-badge">${file.type}</div>
-        </div>
-        <div class="file-info">
-            <h3 class="file-title">${file.name}</h3>
-            <p class="file-description">${file.description}</p>
-            <div class="file-meta">
-                <div class="file-stats">
-                    <span><i class="fas fa-download"></i> ${formatNumber(file.downloads)}</span>
-                    <span><i class="fas fa-heart"></i> ${file.likes}</span>
-                    <span><i class="fas fa-star"></i> ${file.rating}</span>
-                </div>
-                <span class="file-size">${file.size}</span>
-            </div>
-            <div class="file-actions">
-                <button class="btn btn-primary" onclick="downloadFile(${file.id})">
-                    <i class="fas fa-download"></i>
-                    Download
-                </button>
-                <button class="btn btn-secondary btn-icon" onclick="likeFile(${file.id})" title="Like">
-                    <i class="fas fa-heart"></i>
-                </button>
-                <button class="btn btn-secondary btn-icon" onclick="shareFile(${file.id})" title="Share">
-                    <i class="fas fa-share-alt"></i>
-                </button>
-            </div>
-        </div>
-    `;
-    
-    return card;
-}
-
-function getFileIcon(type) {
-    const icons = {
-        'PDF': '<i class="fas fa-file-pdf"></i>',
-        'ZIP': '<i class="fas fa-file-archive"></i>',
-        'MP3': '<i class="fas fa-file-audio"></i>',
-        'MP4': '<i class="fas fa-file-video"></i>',
-        'JPG': '<i class="fas fa-file-image"></i>',
-        'PNG': '<i class="fas fa-file-image"></i>',
-        'DOC': '<i class="fas fa-file-word"></i>',
-        'XLS': '<i class="fas fa-file-excel"></i>',
-        'PPT': '<i class="fas fa-file-powerpoint"></i>'
-    };
-    
-    return icons[type] || '<i class="fas fa-file"></i>';
-}
-
-// Filtering and Search
-function getFilteredFiles() {
-    let filtered = filesData;
-    
-    // Apply category filter
-    if (currentFilter !== 'all') {
-        filtered = filtered.filter(file => file.category === currentFilter);
-    }
-    
-    // Apply search filter
-    if (searchQuery) {
-        filtered = filtered.filter(file => 
-            file.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            file.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            file.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
-        );
-    }
-    
-    return filtered;
-}
-
-function handleFilterChange(category) {
-    currentFilter = category;
-    displayedFiles = 8;
-    
-    // Update active tab
-    filterTabs.forEach(tab => {
-        tab.classList.toggle('active', tab.dataset.category === category);
-    });
-    
-    renderFiles();
-}
-
-function handleSearch() {
-    searchQuery = searchInput.value;
-    displayedFiles = 8;
-    renderFiles();
-}
-
-// Event Listeners
 function setupEventListeners() {
-    // Theme toggle
-    themeToggle.addEventListener('click', toggleTheme);
+    // Modal events
+    if (closeModal) {
+        closeModal.addEventListener('click', closeMovieModal);
+    }
     
-    // Search
-    searchInput.addEventListener('input', debounce(handleSearch, 300));
-    
-    // Filter tabs
-    filterTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            handleFilterChange(tab.dataset.category);
-        });
-    });
-    
-    // Load more
-    loadMoreBtn.addEventListener('click', () => {
-        displayedFiles += 8;
-        renderFiles();
-    });
-    
-    // Modal close
-    modalClose.addEventListener('click', closeModal);
-    downloadModal.addEventListener('click', (e) => {
-        if (e.target === downloadModal) {
-            closeModal();
+    // Close modal when clicking outside
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            closeMovieModal();
         }
     });
     
-    // Keyboard shortcuts
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeModal();
+    // Mobile menu toggle
+    if (hamburger) {
+        hamburger.addEventListener('click', toggleMobileMenu);
+    }
+    
+    // Download button events
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('download-btn') || 
+            event.target.closest('.download-btn')) {
+            handleDownload(event);
         }
-        if (e.ctrlKey && e.key === 'k') {
+    });
+    
+    // Escape key to close modal
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeMovieModal();
+        }
+    });
+}
+
+function setupSmoothScrolling() {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            searchInput.focus();
+            
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = target.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (navMenu.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            }
+        });
+    });
+}
+
+function setupHeaderScrollEffect() {
+    let lastScrollY = window.scrollY;
+    
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('.header');
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > 100) {
+            header.style.background = 'rgba(20, 20, 20, 0.98)';
+            header.style.backdropFilter = 'blur(20px)';
+        } else {
+            header.style.background = 'rgba(20, 20, 20, 0.95)';
+            header.style.backdropFilter = 'blur(10px)';
+        }
+        
+        // Hide/show header on scroll
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            header.style.transform = 'translateY(0)';
+        }
+        
+        lastScrollY = currentScrollY;
+    });
+}
+
+function toggleMobileMenu() {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    
+    // Animate hamburger
+    const bars = hamburger.querySelectorAll('.bar');
+    if (hamburger.classList.contains('active')) {
+        bars[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
+        bars[1].style.opacity = '0';
+        bars[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
+    } else {
+        bars[0].style.transform = 'none';
+        bars[1].style.opacity = '1';
+        bars[2].style.transform = 'none';
+    }
+}
+
+function openMovieModal(movieId) {
+    const movie = movieData[movieId];
+    if (!movie) return;
+    
+    // Populate modal content
+    document.getElementById('modal-title').textContent = movie.title;
+    document.getElementById('modal-rating').textContent = movie.rating;
+    document.getElementById('modal-year').textContent = movie.year;
+    document.getElementById('modal-duration').textContent = movie.duration;
+    document.getElementById('modal-description').textContent = movie.description;
+    document.getElementById('modal-director').textContent = movie.director;
+    document.getElementById('modal-cast').textContent = movie.cast;
+    document.getElementById('modal-genre').textContent = movie.genre;
+    document.getElementById('modal-poster').src = movie.poster;
+    document.getElementById('modal-poster').alt = movie.title;
+    
+    // Update download links
+    updateDownloadLinks(movie.downloads);
+    
+    // Show modal
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    
+    // Add entrance animation
+    const modalContent = modal.querySelector('.modal-content');
+    modalContent.style.animation = 'slideInDown 0.3s ease';
+}
+
+function closeMovieModal() {
+    const modalContent = modal.querySelector('.modal-content');
+    modalContent.style.animation = 'slideOutUp 0.3s ease';
+    
+    setTimeout(() => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }, 300);
+}
+
+function updateDownloadLinks(downloads) {
+    const downloadOptions = document.querySelectorAll('.download-option');
+    
+    downloadOptions.forEach(option => {
+        const btn = option.querySelector('.download-btn');
+        const quality = btn.getAttribute('data-quality');
+        
+        if (downloads[quality]) {
+            btn.href = downloads[quality];
+            btn.style.opacity = '1';
+            btn.style.pointerEvents = 'auto';
+        } else {
+            btn.href = '#';
+            btn.style.opacity = '0.5';
+            btn.style.pointerEvents = 'none';
         }
     });
 }
 
-// File Actions
-function downloadFile(fileId) {
-    const file = filesData.find(f => f.id === fileId);
-    if (!file) return;
+function handleDownload(event) {
+    const btn = event.target.closest('.download-btn');
+    const quality = btn.getAttribute('data-quality');
     
-    showDownloadModal(file);
-}
-
-function showDownloadModal(file) {
-    document.getElementById('modalFileName').textContent = file.name;
-    document.getElementById('modalFileSize').textContent = file.size;
-    document.getElementById('modalFileType').textContent = file.type;
-    
-    downloadModal.classList.add('active');
-    
-    // Setup download button
-    const startDownloadBtn = document.getElementById('startDownload');
-    const cancelDownloadBtn = document.getElementById('cancelDownload');
-    
-    startDownloadBtn.onclick = () => startDownload(file);
-    cancelDownloadBtn.onclick = closeModal;
-}
-
-function startDownload(file) {
-    if (isDownloading) return;
-    
-    isDownloading = true;
-    const progressFill = document.getElementById('progressFill');
-    const progressPercent = document.getElementById('progressPercent');
-    const downloadSpeed = document.getElementById('downloadSpeed');
-    const startBtn = document.getElementById('startDownload');
-    
-    startBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Downloading...';
-    startBtn.disabled = true;
-    
-    // Simulate download progress
-    let progress = 0;
-    const interval = setInterval(() => {
-        progress += Math.random() * 10;
-        if (progress > 100) progress = 100;
-        
-        progressFill.style.width = `${progress}%`;
-        progressPercent.textContent = `${Math.round(progress)}%`;
-        downloadSpeed.textContent = `${(Math.random() * 2 + 1).toFixed(1)} MB/s`;
-        
-        if (progress >= 100) {
-            clearInterval(interval);
-            
-            // Open Google Drive file
-            window.open(file.downloadUrl, '_blank');
-            
-            // Update download count
-            file.downloads++;
-            updateStats();
-            renderFiles();
-            
-            setTimeout(() => {
-                closeModal();
-                showNotification('Download completed!', 'success');
-            }, 1000);
-        }
-    }, 100);
-}
-
-function likeFile(fileId) {
-    const file = filesData.find(f => f.id === fileId);
-    if (!file) return;
-    
-    file.likes++;
-    updateStats();
-    renderFiles();
-    showNotification('Added to favorites!', 'success');
-}
-
-function shareFile(fileId) {
-    const file = filesData.find(f => f.id === fileId);
-    if (!file) return;
-    
-    if (navigator.share) {
-        navigator.share({
-            title: file.name,
-            text: file.description,
-            url: window.location.href
-        });
-    } else {
-        // Fallback to clipboard
-        navigator.clipboard.writeText(window.location.href).then(() => {
-            showNotification('Link copied to clipboard!', 'success');
-        });
+    // Prevent default if no valid link
+    if (!btn.href || btn.href === '#' || btn.href.includes('#')) {
+        event.preventDefault();
+        showNotification('Download link not available', 'error');
+        return;
     }
-}
-
-// Modal Management
-function closeModal() {
-    downloadModal.classList.remove('active');
-    isDownloading = false;
     
-    // Reset progress
-    document.getElementById('progressFill').style.width = '0%';
-    document.getElementById('progressPercent').textContent = '0%';
-    document.getElementById('downloadSpeed').textContent = '0 KB/s';
+    // Show download started notification
+    showNotification(`Starting download for ${quality} quality...`, 'success');
     
-    const startBtn = document.getElementById('startDownload');
-    startBtn.innerHTML = '<i class="fas fa-download"></i> Start Download';
-    startBtn.disabled = false;
-}
-
-// Statistics
-function updateStats() {
-    const totalFiles = filesData.length;
-    const totalDownloads = filesData.reduce((sum, file) => sum + file.downloads, 0);
-    const totalCategories = [...new Set(filesData.map(file => file.category))].length;
-    const totalLikes = filesData.reduce((sum, file) => sum + file.likes, 0);
+    // Add download animation
+    btn.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        btn.style.transform = 'scale(1)';
+    }, 150);
     
-    document.getElementById('totalFiles').textContent = totalFiles;
-    document.getElementById('totalDownloads').textContent = formatNumber(totalDownloads);
-    document.getElementById('totalCategories').textContent = totalCategories;
-    document.getElementById('popularFiles').textContent = totalLikes;
-}
-
-// Utility Functions
-function formatNumber(num) {
-    if (num >= 1000000) {
-        return (num / 1000000).toFixed(1) + 'M';
-    } else if (num >= 1000) {
-        return (num / 1000).toFixed(1) + 'k';
-    }
-    return num.toString();
-}
-
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
+    // Track download (you can integrate analytics here)
+    trackDownload(quality);
 }
 
 function showNotification(message, type = 'info') {
     // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
-    notification.style.cssText = `
-        position: fixed;
-        top: 2rem;
-        right: 2rem;
-        background: var(--bg-card);
-        border: 1px solid var(--border-color);
-        border-radius: var(--radius-md);
-        padding: 1rem 1.5rem;
-        box-shadow: var(--shadow-lg);
-        z-index: 1001;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
+            <span>${message}</span>
+        </div>
     `;
     
-    notification.innerHTML = `
-        <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'}" style="color: var(--${type === 'success' ? 'success' : 'primary'}-color);"></i>
-            <span style="color: var(--text-primary);">${message}</span>
-        </div>
+    // Add styles
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: ${type === 'success' ? '#27ae60' : type === 'error' ? '#e74c3c' : '#3498db'};
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 10px;
+        z-index: 3000;
+        transform: translateX(400px);
+        transition: transform 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     `;
     
     document.body.appendChild(notification);
@@ -555,9 +243,95 @@ function showNotification(message, type = 'info') {
     
     // Remove after 3 seconds
     setTimeout(() => {
-        notification.style.transform = 'translateX(100%)';
+        notification.style.transform = 'translateX(400px)';
         setTimeout(() => {
-            document.body.removeChild(notification);
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
         }, 300);
     }, 3000);
 }
+
+function trackDownload(quality) {
+    // You can integrate Google Analytics or other tracking here
+    console.log(`Download tracked: ${quality} quality`);
+    
+    // Example: Google Analytics event tracking
+    // gtag('event', 'download', {
+    //     'event_category': 'Movie',
+    //     'event_label': quality,
+    //     'value': 1
+    // });
+}
+
+// Intersection Observer for animations
+function setupScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+            }
+        });
+    }, observerOptions);
+    
+    // Observe elements for animation
+    document.querySelectorAll('.movie-card, .wanted-card, .section-title').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// Initialize scroll animations after DOM load
+document.addEventListener('DOMContentLoaded', setupScrollAnimations);
+
+// Add slide out animation for modal close
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideOutUp {
+        from {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(-100px);
+            opacity: 0;
+        }
+    }
+    
+    .animate-in {
+        animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    .notification-content {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+`;
+document.head.appendChild(style);
+
+// Search functionality (for future expansion)
+function initializeSearch() {
+    const searchInput = document.createElement('input');
+    searchInput.type = 'text';
+    searchInput.placeholder = 'Search movies...';
+    searchInput.className = 'search-input';
+    
+    // Add search functionality here if needed
+}
+
+// Movie request functionality (for future expansion)
+function initializeMovieRequests() {
+    // Add movie request form functionality here
+    console.log('Movie request system ready');
+}
+
+// Initialize additional features
+document.addEventListener('DOMContentLoaded', function() {
+    initializeSearch();
+    initializeMovieRequests();
+});

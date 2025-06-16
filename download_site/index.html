@@ -3,172 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Hub - Your Digital Library</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>CineHub - Movie Download Center</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
-        <div class="container">
-            <div class="header-content">
+        <nav class="navbar">
+            <div class="nav-container">
                 <div class="logo">
-                    <i class="fas fa-cloud-download-alt"></i>
-                    <h1>Download Hub</h1>
+                    <i class="fas fa-film"></i>
+                    <span>CineHub</span>
                 </div>
-                <div class="header-controls">
-                    <div class="search-container">
-                        <i class="fas fa-search"></i>
-                        <input type="text" id="searchInput" placeholder="Search files...">
-                    </div>
-                    <button id="themeToggle" class="theme-toggle">
-                        <i class="fas fa-moon"></i>
-                    </button>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#movies" class="nav-link">Movies</a></li>
+                    <li><a href="#most-wanted" class="nav-link">Most Wanted</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </div>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="main">
-        <div class="container">
-            <!-- Stats Section -->
-            <section class="stats-section">
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-file"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3 id="totalFiles">24</h3>
-                            <p>Total Files</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-download"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3 id="totalDownloads">1.2k</h3>
-                            <p>Downloads</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-folder"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3 id="totalCategories">8</h3>
-                            <p>Categories</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3 id="popularFiles">156</h3>
-                            <p>Likes</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Category Filter -->
-            <section class="filter-section">
-                <div class="filter-tabs">
-                    <button class="filter-tab active" data-category="all">
-                        <i class="fas fa-th-large"></i>
-                        All Files
-                    </button>
-                    <button class="filter-tab" data-category="documents">
-                        <i class="fas fa-file-alt"></i>
-                        Documents
-                    </button>
-                    <button class="filter-tab" data-category="images">
-                        <i class="fas fa-image"></i>
-                        Images
-                    </button>
-                    <button class="filter-tab" data-category="videos">
-                        <i class="fas fa-video"></i>
-                        Videos
-                    </button>
-                    <button class="filter-tab" data-category="software">
-                        <i class="fas fa-cog"></i>
-                        Software
-                    </button>
-                    <button class="filter-tab" data-category="music">
-                        <i class="fas fa-music"></i>
-                        Music
-                    </button>
-                </div>
-            </section>
-
-            <!-- Files Grid -->
-            <section class="files-section">
-                <div class="files-grid" id="filesGrid">
-                    <!-- File cards will be generated by JavaScript -->
-                </div>
-            </section>
-
-            <!-- Load More Button -->
-            <div class="load-more-container">
-                <button class="load-more-btn" id="loadMoreBtn">
-                    <i class="fas fa-plus"></i>
-                    Load More Files
-                </button>
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to CineHub</h1>
+                <p>Your ultimate destination for high-quality movie downloads</p>
+                <a href="#movies" class="cta-button">
+                    <i class="fas fa-download"></i>
+                    Browse Movies
+                </a>
             </div>
-        </div>
+            <div class="hero-background"></div>
+        </section>
+
+        <!-- Most Wanted Section -->
+        <section id="most-wanted" class="most-wanted">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-fire"></i>
+                    Most Wanted Movies
+                </h2>
+                <div class="wanted-grid">
+                    <div class="wanted-card">
+                        <div class="wanted-badge">🔥 #1</div>
+                        <h3>Warfare (2025)</h3>
+                        <p>Latest Action Thriller</p>
+                    </div>
+                    <div class="wanted-card">
+                        <div class="wanted-badge">⭐ #2</div>
+                        <h3>Coming Soon</h3>
+                        <p>More movies will be added</p>
+                    </div>
+                    <div class="wanted-card">
+                        <div class="wanted-badge">🎬 #3</div>
+                        <h3>Request Movies</h3>
+                        <p>Contact us for requests</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Movies Section -->
+        <section id="movies" class="movies">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-video"></i>
+                    Available Movies
+                </h2>
+                <div class="movie-grid">
+                    <!-- Warfare 2025 Movie Card -->
+                    <div class="movie-card" data-movie="warfare-2025">
+                        <div class="movie-poster">
+                            <img src="https://images.unsplash.com/photo-1489599512485-1c11566e2cc7?w=400&h=600&fit=crop&crop=center" alt="Warfare 2025" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDQwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjMkEyQTJBIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMzAwIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5XYXJmYXJlIDIwMjU8L3RleHQ+Cjwvc3ZnPg=='">
+                            <div class="movie-overlay">
+                                <button class="play-btn" onclick="openMovieModal('warfare-2025')">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3>Warfare (2025)</h3>
+                            <div class="movie-meta">
+                                <span class="rating">
+                                    <i class="fas fa-star"></i>
+                                    7.8/10
+                                </span>
+                                <span class="genre">Action, Thriller</span>
+                            </div>
+                            <p class="movie-description">
+                                An intense military action thriller that follows a squad of soldiers navigating through modern warfare challenges.
+                            </p>
+                            <div class="quality-badges">
+                                <span class="quality-badge">480p</span>
+                                <span class="quality-badge">720p</span>
+                                <span class="quality-badge">1080p</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder for more movies -->
+                    <div class="movie-card coming-soon">
+                        <div class="movie-poster">
+                            <div class="coming-soon-content">
+                                <i class="fas fa-plus-circle"></i>
+                                <h3>More Movies</h3>
+                                <p>Coming Soon</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Download Modal -->
-    <div class="modal-overlay" id="downloadModal">
-        <div class="modal">
+    <!-- Movie Modal -->
+    <div id="movie-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
             <div class="modal-header">
-                <h3>Download File</h3>
-                <button class="modal-close" id="modalClose">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="download-info">
-                    <div class="file-icon">
-                        <i class="fas fa-file"></i>
+                <img id="modal-poster" src="" alt="">
+                <div class="modal-info">
+                    <h2 id="modal-title"></h2>
+                    <div class="modal-meta">
+                        <span id="modal-rating"></span>
+                        <span id="modal-year"></span>
+                        <span id="modal-duration"></span>
                     </div>
-                    <div class="file-details">
-                        <h4 id="modalFileName">File Name</h4>
-                        <p id="modalFileSize">File Size</p>
-                        <p id="modalFileType">File Type</p>
+                    <p id="modal-description"></p>
+                    <div class="modal-details">
+                        <div class="detail">
+                            <strong>Director:</strong>
+                            <span id="modal-director"></span>
+                        </div>
+                        <div class="detail">
+                            <strong>Cast:</strong>
+                            <span id="modal-cast"></span>
+                        </div>
+                        <div class="detail">
+                            <strong>Genre:</strong>
+                            <span id="modal-genre"></span>
+                        </div>
                     </div>
                 </div>
-                <div class="download-progress">
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="download-section">
+                <h3>Select Quality & Download</h3>
+                <div class="download-options">
+                    <div class="download-option">
+                        <div class="quality-info">
+                            <span class="quality">480p</span>
+                            <span class="size">~300MB</span>
+                        </div>
+                        <a href="#" class="download-btn" data-quality="480p">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </a>
                     </div>
-                    <div class="progress-text">
-                        <span id="progressPercent">0%</span>
-                        <span id="downloadSpeed">0 KB/s</span>
+                    <div class="download-option">
+                        <div class="quality-info">
+                            <span class="quality">720p</span>
+                            <span class="size">~750MB</span>
+                        </div>
+                        <a href="#" class="download-btn" data-quality="720p">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </a>
+                    </div>
+                    <div class="download-option">
+                        <div class="quality-info">
+                            <span class="quality">1080p</span>
+                            <span class="size">~1.5GB</span>
+                        </div>
+                        <a href="#" class="download-btn" data-quality="1080p">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </a>
+                    </div>
+                    <div class="download-option">
+                        <div class="quality-info">
+                            <span class="quality">Subtitles</span>
+                            <span class="size">~128KB</span>
+                        </div>
+                        <a href="#" class="download-btn subtitles" data-quality="subtitles">
+                            <i class="fas fa-closed-captioning"></i>
+                            Download SRT
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" id="cancelDownload">Cancel</button>
-                <button class="btn btn-primary" id="startDownload">
-                    <i class="fas fa-download"></i>
-                    Start Download
-                </button>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Download Hub. Powered by Google Drive.</p>
+            <p>&copy; 2025 CineHub. All rights reserved. | High-quality movie downloads</p>
         </div>
-    </footer>
-
+    </footer>    <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

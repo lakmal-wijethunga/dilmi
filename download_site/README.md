@@ -1,188 +1,126 @@
-# Download Hub - Creative File Sharing Center
+# CineHub - Movie Download Center
 
-A modern, responsive web application for sharing Google Drive files in a beautiful and user-friendly interface.
+A beautiful, modern movie download center that integrates with Google Drive to provide high-quality movie downloads with multiple quality options.
 
-## 🌟 Features
+## Features
 
-### ✨ Modern Design
-- **Beautiful Card-Based Layout** - Eye-catching file cards with previews
-- **Dark/Light Mode Toggle** - Automatic theme switching with localStorage persistence
-- **Responsive Design** - Works perfectly on desktop, tablet, and mobile devices
-- **Smooth Animations** - Elegant transitions and hover effects
+- 🎬 **Beautiful Movie Cards** - Stunning movie posters and information
+- 📱 **Responsive Design** - Works perfectly on all devices
+- 🔥 **Most Wanted Section** - Highlight popular movies
+- ⭐ **Movie Details** - Ratings, cast, director, genre information
+- 📥 **Multiple Quality Options** - 480p, 720p, 1080p downloads
+- 📄 **Subtitle Support** - SRT file downloads
+- 🎨 **Modern UI** - Netflix-inspired design with smooth animations
+- 🚀 **Fast Loading** - Optimized performance
 
-### 🔍 Advanced Search & Filtering
-- **Real-time Search** - Find files instantly by name, description, or tags
-- **Category Filtering** - Documents, Images, Videos, Software, Music
-- **Smart Pagination** - Load more files on demand
+## Setup Instructions
 
-### 📊 Statistics Dashboard
-- **Download Tracking** - Real-time download counters
-- **Popularity Metrics** - Likes and ratings for each file
-- **Category Overview** - Visual breakdown of file types
+### 1. Google Drive Setup
 
-### 💫 Interactive Features
-- **Download Progress Modal** - Beautiful download simulation with progress tracking
-- **File Actions** - Like, share, and download with smooth animations
-- **Keyboard Shortcuts** - Ctrl+K for search, Esc to close modals
-- **Notifications** - Toast notifications for user feedback
+To make your Google Drive files downloadable:
 
-### 🚀 Performance Optimized
-- **Lazy Loading** - Images load only when needed
-- **Debounced Search** - Efficient search without excessive API calls
-- **CSS Grid Layout** - Modern, flexible responsive layout
-- **Font Awesome Icons** - Crisp, scalable icons
+1. Make sure your Google Drive folder is set to "Anyone with the link can view"
+2. For each file, get the file ID from the Google Drive URL
+3. Update the `config.js` file with your actual file IDs
 
-## 🛠️ Setup Instructions
+### 2. Getting Google Drive File IDs
 
-### 1. Google Drive File Integration
+From a Google Drive file URL like:
+```
+https://drive.google.com/file/d/1ABC123xyz/view?usp=sharing
+```
+The file ID is: `1ABC123xyz`
 
-To add your own Google Drive files, edit the `filesData` array in `script.js`:
+### 3. Update Configuration
+
+Edit the `config.js` file and replace the placeholder IDs with your actual Google Drive file IDs:
 
 ```javascript
-const filesData = [
-    {
-        id: 1,
-        name: "Your File Name",
-        description: "File description here",
-        category: "documents", // documents, images, videos, software, music
-        size: "25 MB",
-        type: "PDF",
-        downloads: 0,
-        likes: 0,
-        rating: 5.0,
-        uploadDate: "2025-01-15",
-        downloadUrl: "https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing",
-        previewImage: "https://your-preview-image-url.jpg", // Optional
-        tags: ["tag1", "tag2", "tag3"]
-    }
-    // Add more files...
-];
+// Example:
+'480p': '1ABC123xyz789',  // Replace with actual file ID
+'720p': '1DEF456abc012',  // Replace with actual file ID
+'1080p': '1GHI789def345', // Replace with actual file ID
+'subtitles': '1JKL012ghi678' // Replace with actual file ID
 ```
 
-### 2. Google Drive File URLs
+### 4. Adding More Movies
 
-For each file in Google Drive:
-1. Right-click the file → "Get link"
-2. Set permissions to "Anyone with the link can view"
-3. Copy the sharing URL
-4. Use this URL in the `downloadUrl` field
+To add more movies, simply:
 
-### 3. File Categories
+1. Add movie data to the `movieData` object in `config.js`
+2. Add a new movie card to the HTML
+3. Include movie poster, ratings, cast, and download links
 
-Available categories:
-- `documents` - PDFs, Word docs, presentations, etc.
-- `images` - Photos, graphics, design files, etc.
-- `videos` - MP4, tutorials, recordings, etc.
-- `software` - Apps, code, tools, etc.
-- `music` - Audio files, soundtracks, etc.
-
-### 4. Preview Images
-
-For better visual appeal, add preview images:
-- Upload preview images to an image hosting service
-- Use the image URL in the `previewImage` field
-- Leave as `null` for files without previews
-
-## 📁 File Structure
+## File Structure
 
 ```
 download_site/
-├── index.html          # Main HTML structure
-├── styles.css          # Complete CSS styling
+├── index.html          # Main HTML file
+├── styles.css          # CSS styles
 ├── script.js           # JavaScript functionality
-└── README.md          # This documentation
+├── config.js           # Configuration file (create this)
+└── README.md           # This file
 ```
 
-## 🎨 Customization
+## Configuration Template
 
-### Colors & Themes
-Edit CSS custom properties in `styles.css`:
-```css
-:root {
-    --primary-color: #6366f1;    /* Main brand color */
-    --secondary-color: #8b5cf6;  /* Secondary accent */
-    --accent-color: #06b6d4;     /* Highlight color */
-    /* ... more variables */
-}
-```
+Create a `config.js` file with your movie data:
 
-### Layout & Spacing
-- Modify grid columns in `.files-grid`
-- Adjust card sizes and spacing
-- Customize breakpoints for responsive design
-
-### File Types & Icons
-Add new file type icons in the `getFileIcon()` function:
 ```javascript
-const icons = {
-    'YOUR_TYPE': '<i class="fas fa-your-icon"></i>',
-    // ... existing icons
+const movieData = {
+    'warfare-2025': {
+        title: 'Warfare (2025)',
+        year: '2025',
+        duration: '108 min',
+        rating: '⭐ 7.8/10',
+        director: 'Your Director Name',
+        cast: 'Actor 1, Actor 2, Actor 3',
+        genre: 'Action, Drama, Thriller',
+        description: 'Movie description here...',
+        poster: 'https://example.com/poster.jpg',
+        downloads: {
+            '480p': 'YOUR_480P_FILE_ID',
+            '720p': 'YOUR_720P_FILE_ID', 
+            '1080p': 'YOUR_1080P_FILE_ID',
+            'subtitles': 'YOUR_SUBTITLE_FILE_ID'
+        }
+    }
+    // Add more movies here...
 };
 ```
 
-## 🚀 Deployment
+## Customization
 
-### GitHub Pages
-1. Push to GitHub repository
-2. Enable GitHub Pages in repository settings
-3. Select source branch (usually `main`)
-4. Access your site at `https://username.github.io/repository-name`
-
-### Netlify
-1. Connect your GitHub repository
-2. Set build command: (none needed)
-3. Set publish directory: `/`
-4. Deploy automatically on git push
-
-### Vercel
-1. Import GitHub repository
-2. No build configuration needed
-3. Deploy with zero configuration
-
-## 🔧 Advanced Features
-
-### Analytics Integration
-Add Google Analytics or other tracking:
-```html
-<!-- Add to <head> section -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+### Colors
+Update the CSS variables in `styles.css`:
+```css
+:root {
+    --primary-color: #e50914;    /* Main brand color */
+    --secondary-color: #221f1f;  /* Secondary color */
+    --accent-color: #f5c518;     /* Accent color */
+}
 ```
 
-### Custom Domain
-Point your custom domain to the hosting service for a professional URL.
+### Adding New Movies
+1. Add movie data to `movieData` in `config.js`
+2. Add HTML movie card to `index.html`
+3. Movie will automatically work with the existing functionality
 
-### SEO Optimization
-- Update meta tags in `<head>`
-- Add structured data for search engines
-- Include Open Graph tags for social sharing
+## Browser Support
 
-## 📱 Browser Support
+- Chrome 60+
+- Firefox 55+
+- Safari 12+
+- Edge 79+
 
-- ✅ Chrome 60+
-- ✅ Firefox 60+
-- ✅ Safari 12+
-- ✅ Edge 79+
-- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
+## License
 
-## 🤝 Contributing
+This project is open source and available under the MIT License.
 
-Feel free to customize and enhance this download center:
-1. Fork the repository
-2. Make your improvements
-3. Test across different devices
-4. Submit pull requests
+## Support
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🙏 Credits
-
-- **Font Awesome** - Icons
-- **Google Fonts** - Inter typography
-- **CSS Grid & Flexbox** - Modern layout
-- **Vanilla JavaScript** - No framework dependencies
+For support or questions, please create an issue or contact the developer.
 
 ---
 
-Made with ❤️ for creative file sharing
+**Note**: Make sure to respect copyright laws when sharing movie files. Only share content you have the rights to distribute.
