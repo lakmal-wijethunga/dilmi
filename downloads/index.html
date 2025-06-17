@@ -19,12 +19,14 @@
                 <i class="fas fa-search"></i>
                 <input type="text" id="searchInput" placeholder="Search movies...">
             </div>
+            <!-- Navigation Menu 
             <div class="nav-menu">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#movies" class="nav-link">Movies</a>
                 <a href="#genres" class="nav-link">Genres</a>
                 <a href="#about" class="nav-link">About</a>
             </div>
+            -->
         </div>    </nav>
 
     <!-- Filter Section -->
@@ -39,8 +41,8 @@
                 <button class="filter-btn" data-genre="sci-fi">Sci-Fi</button>
                 <button class="filter-btn" data-genre="fantasy">Fantasy</button>
             </div>
-            <div class="sort-options">
-                <select id="sortSelect">
+            <div class="sort-options">                <select id="sortSelect">
+                    <option value="recently-added">Recently Added</option>
                     <option value="title">Sort by Title</option>
                     <option value="year">Sort by Year</option>
                     <option value="rating">Sort by Rating</option>
@@ -119,6 +121,40 @@
         </div>
     </div>
 
+    <!-- Movie Viewer Modal -->
+    <div class="modal" id="movieViewerModal">
+        <div class="modal-content movie-viewer-modal-content">
+            <span class="close-btn" id="movieViewerCloseBtn">&times;</span>
+            
+            <!-- Movie Viewer Header -->
+            <div class="movie-viewer-header">
+                <div class="viewer-movie-info">
+                    <h3 id="viewerMovieTitle">Movie Title</h3>                    <div class="viewer-movie-meta">
+                        <span id="viewerMovieYear">2025</span>
+                        <span>•</span>
+                        <span id="viewerMovieRating">★ 8.5</span>
+                        <span>•</span>
+                        <span id="viewerMovieDuration">120 min</span>
+                    </div></div>
+            </div>
+
+            <!-- Main Video Container -->
+            <div class="movie-viewer-container">
+                <div class="video-iframe-wrapper">
+                    <iframe id="movieViewerFrame" width="100%" height="100%" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+                </div>
+            </div>
+
+            <!-- Quality Selection (Hidden by default) -->
+            <div class="viewer-quality-selector" id="viewerQualitySelector" style="display: none;">
+                <h4>Select Quality</h4>
+                <div class="quality-options-grid" id="viewerQualityOptions">
+                    <!-- Quality buttons will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Loading Spinner -->
     <div class="loading" id="loading">
         <div class="spinner"></div>
@@ -131,6 +167,7 @@
                     <h3><i class="fas fa-film"></i> FileVault</h3>
                     <p>Your premium destination for high-quality movie downloads and streaming.</p>
                 </div>
+                <!--
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
@@ -140,6 +177,7 @@
                         <li><a href="#about">About</a></li>
                     </ul>
                 </div>
+              
                 <div class="footer-section">
                     <h4>Connect</h4>
                     <div class="social-links">
@@ -149,6 +187,7 @@
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
+                -->
             </div>            <div class="footer-bottom">
                 <p>&copy; 2025 FileVault. All rights reserved. | Designed for entertainment purposes.</p>
             </div>

@@ -37,7 +37,8 @@ const moviesDatabase = [
         rating: 7.3,
         genres: ["Horror", "Thriller", "Supernatural"],
         director: "Zach Lipovsky, Adam Stein",
-        cast: ["Kaitlyn Santa Juana", "Teo Briones", "Richard Harmon", "Owen Patrick Joyner", "Anna Lore", "Brec Bassinger", "Tony Todd"],        synopsis: "A college student inherits visions of a deadly 1968 tower collapse from her dying grandmother and discovers that Death is coming for her family. As descendants of survivors from a prevented disaster, they must find a way to break Death's design before it claims them all.",
+        cast: ["Kaitlyn Santa Juana", "Teo Briones", "Richard Harmon", "Owen Patrick Joyner", "Anna Lore", "Brec Bassinger", "Tony Todd"],        
+        synopsis: "A college student inherits visions of a deadly 1968 tower collapse from her dying grandmother and discovers that Death is coming for her family. As descendants of survivors from a prevented disaster, they must find a way to break Death's design before it claims them all.",
         poster: "assets/posters/final-destination-bloodlines.jpg",
         trailer: "dQw4w9WgXcQ",
         qualities: {
@@ -243,7 +244,7 @@ console.log('Movies database:', moviesDatabase);
 // Global variables
 let currentMovies = [...moviesDatabase];
 let currentGenre = 'all';
-let currentSort = 'title';
+let currentSort = 'recently-added';
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
@@ -335,13 +336,15 @@ function setupEventListeners(searchInput, filterBtns, sortSelect, closeBtn, moda
     } else {
         console.error('Close button not found');
     }
-    
-    window.addEventListener('click', function(e) {
+      window.addEventListener('click', function(e) {
         if (e.target === modal) {
             closeModal();
         }
         if (e.target === document.getElementById('trailerModal')) {
             closeTrailerModal();
+        }
+        if (e.target === document.getElementById('movieViewerModal')) {
+            closeMovieViewer();
         }
     });
     
@@ -350,12 +353,12 @@ function setupEventListeners(searchInput, filterBtns, sortSelect, closeBtn, moda
     if (trailerCloseBtn) {
         trailerCloseBtn.addEventListener('click', closeTrailerModal);
     }
-    
-    // Escape key to close modals
+      // Escape key to close modals
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             closeModal();
             closeTrailerModal();
+            closeMovieViewer();
         }
     });
     
@@ -380,6 +383,11 @@ function setupEventListeners(searchInput, filterBtns, sortSelect, closeBtn, moda
             }
         };
     }
+    
+    // Movie Viewer modal controls
+    const movieViewerCloseBtn = document.getElementById('movieViewerCloseBtn');
+    if (movieViewerCloseBtn) {
+        movieViewerCloseBtn.addEventListener('click', closeMovieViewer);    }
     
     console.log('All event listeners set up');
 }
@@ -421,10 +429,11 @@ function filterAndDisplayMovies(searchInput, moviesGrid, movieCountElement) {
         
         return genreMatch && searchMatch;
     });
-    
-    // Sort movies
+      // Sort movies
     filteredMovies.sort((a, b) => {
         switch(currentSort) {
+            case 'recently-added':
+                return b.id - a.id; // Higher ID means more recently added
             case 'year':
                 return b.year - a.year;
             case 'rating':
@@ -432,8 +441,9 @@ function filterAndDisplayMovies(searchInput, moviesGrid, movieCountElement) {
             case 'duration':
                 return parseInt(a.duration) - parseInt(b.duration);
             case 'title':
-            default:
                 return a.title.localeCompare(b.title);
+            default:
+                return b.id - a.id; // Default to recently added
         }
     });
     
@@ -584,10 +594,9 @@ function openMovieModal(movieId) {
         if (bestQuality && bestQuality.downloadLink) {
             // Extract Google Drive file ID
             const match = bestQuality.downloadLink.match(/id=([^&]+)/);
-            const fileId = match ? match[1] : null;
-            if (fileId) {
+            const fileId = match ? match[1] : null;            if (fileId) {
                 watchNowBtn.onclick = () => {
-                    window.open(`https://drive.google.com/file/d/${fileId}/view`, '_blank');
+                    openMovieViewer(movie, bestQuality, fileId);
                 };
                 watchNowBtn.style.display = 'inline-flex';
             } else {
@@ -621,43 +630,33 @@ function closeModal() {
 function downloadMovie(downloadLink, movieTitle, quality) {
     console.log(`Downloading ${movieTitle} in ${quality}...`);
     
+    // Convert Google Drive link to direct download format to bypass virus scan
+    let directDownloadLink = downloadLink;
+    
+    // Check if it's a Google Drive link with file ID
+    const fileIdMatch = downloadLink.match(/id=([^&]+)/);
+    if (fileIdMatch) {
+        const fileId = fileIdMatch[1];
+        // Use the direct download format that bypasses the virus scan warning
+        directDownloadLink = `https://drive.usercontent.google.com/download?id=${fileId}&export=download&confirm=t&uuid=${Date.now()}`;
+    }
+    
+    // For existing usercontent links, ensure they have the confirm parameter
+    if (downloadLink.includes('drive.usercontent.google.com') && !downloadLink.includes('confirm=')) {
+        directDownloadLink = downloadLink + '&confirm=t&uuid=' + Date.now();
+    }
+    
     // Create temporary link and trigger download
     const link = document.createElement('a');
-    link.href = downloadLink;
+    link.href = directDownloadLink;
     link.download = `${movieTitle}_${quality}.mp4`;
+    link.target = '_blank';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    
-    // Show download started message
-    showNotification(`Download started: ${movieTitle} (${quality})`);
 }
 
-// Show notification
-function showNotification(message) {
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: #ff6b6b;
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
-        z-index: 10000;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        font-weight: 500;
-    `;
-    notification.textContent = message;
-    
-    document.body.appendChild(notification);
-    
-    // Remove notification after 3 seconds
-    setTimeout(() => {
-        document.body.removeChild(notification);
-    }, 3000);
-}
+
 
 // Open trailer modal
 function openTrailerModal(trailerVideoId) {
@@ -854,3 +853,125 @@ TO ACTIVATE ADDITIONAL MOVIES:
 4. Move the movie objects from additionalMoviesToAdd to the main moviesDatabase array
 5. Update the IDs to be sequential
 */
+
+// Movie Viewer Functions
+function openMovieViewer(movie, bestQuality, fileId) {
+    const movieViewerModal = document.getElementById('movieViewerModal');
+    const movieViewerFrame = document.getElementById('movieViewerFrame');
+    const viewerMovieTitle = document.getElementById('viewerMovieTitle');
+    const viewerMovieYear = document.getElementById('viewerMovieYear');
+    const viewerMovieRating = document.getElementById('viewerMovieRating');
+    const viewerMovieDuration = document.getElementById('viewerMovieDuration');
+    
+    if (movieViewerModal && movieViewerFrame) {
+        // Set movie information
+        if (viewerMovieTitle) viewerMovieTitle.textContent = movie.title;
+        if (viewerMovieYear) viewerMovieYear.textContent = movie.year;
+        if (viewerMovieRating) viewerMovieRating.textContent = `★ ${movie.rating}`;
+        if (viewerMovieDuration) viewerMovieDuration.textContent = movie.duration;
+        
+        // Setup quality options
+        setupQualityOptions(movie);
+        
+        // Load movie in Google Drive viewer
+        movieViewerFrame.src = `https://drive.google.com/file/d/${fileId}/preview`;
+        
+        // Show modal
+        movieViewerModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        // Close movie details modal
+        const movieModal = document.getElementById('movieModal');
+        if (movieModal) {
+            movieModal.style.display = 'none';
+        }
+        
+        // Store current movie data for quality switching
+        movieViewerModal.dataset.currentMovie = JSON.stringify(movie);
+    }
+}
+
+function closeMovieViewer() {
+    const movieViewerModal = document.getElementById('movieViewerModal');
+    const movieViewerFrame = document.getElementById('movieViewerFrame');
+    const viewerQualitySelector = document.getElementById('viewerQualitySelector');
+    
+    if (movieViewerModal) {
+        movieViewerModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    
+    if (movieViewerFrame) {
+        movieViewerFrame.src = '';
+    }
+    
+    if (viewerQualitySelector) {
+        viewerQualitySelector.style.display = 'none';
+    }
+}
+
+function setupQualityOptions(movie) {
+    const viewerQualityOptions = document.getElementById('viewerQualityOptions');
+    if (!viewerQualityOptions || !movie.qualities) return;
+    
+    viewerQualityOptions.innerHTML = '';
+    
+    // Quality order for display
+    const qualityOrder = ['4K', '2160p', '1080p', '720p', '480p'];
+    
+    qualityOrder.forEach(quality => {
+        if (movie.qualities[quality]) {
+            const qualityData = movie.qualities[quality];
+            const qualityBtn = document.createElement('div');
+            qualityBtn.className = 'quality-option-btn';
+            qualityBtn.innerHTML = `
+                <div class="quality-icon">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+                <div class="quality-name">${quality}</div>
+                <div class="quality-size">${qualityData.size}</div>
+            `;
+            
+            qualityBtn.onclick = () => switchQuality(quality, qualityData);
+            viewerQualityOptions.appendChild(qualityBtn);
+        }
+    });
+}
+
+function switchQuality(quality, qualityData) {
+    const movieViewerFrame = document.getElementById('movieViewerFrame');
+    const viewerQualitySelector = document.getElementById('viewerQualitySelector');
+    
+    // Extract file ID from download link
+    const match = qualityData.downloadLink.match(/id=([^&]+)/);
+    const fileId = match ? match[1] : null;
+    
+    if (fileId && movieViewerFrame) {
+        // Update iframe source
+        movieViewerFrame.src = `https://drive.google.com/file/d/${fileId}/preview`;
+        
+        // Update active quality button
+        document.querySelectorAll('.quality-option-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        event.currentTarget.classList.add('active');
+        
+        // Hide quality selector
+        if (viewerQualitySelector) {
+            viewerQualitySelector.style.display = 'none';
+        }
+        
+        // Show notification
+        showNotification(`Quality changed to ${quality}`);
+    }
+}
+
+function toggleQualitySelector() {
+    const viewerQualitySelector = document.getElementById('viewerQualitySelector');
+    if (viewerQualitySelector) {
+        const isVisible = viewerQualitySelector.style.display !== 'none';
+        viewerQualitySelector.style.display = isVisible ? 'none' : 'block';
+    }
+}
+
+

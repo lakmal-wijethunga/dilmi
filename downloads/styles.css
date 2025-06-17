@@ -889,6 +889,145 @@ body {
     transform: scale(1.1);
 }
 
+/* Movie Viewer Modal Styles */
+.movie-viewer-modal-content {
+    background: #000;
+    max-width: 1200px;
+    width: 95%;
+    height: 85vh;
+    max-height: 800px;
+    padding: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Movie Viewer Header */
+.movie-viewer-header {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.viewer-movie-info h3 {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+}
+
+.viewer-movie-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Main Movie Viewer Container */
+.movie-viewer-container {
+    flex: 1;
+    position: relative;
+    background: #000;
+    min-height: 500px;
+}
+
+.video-iframe-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.video-iframe-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #000;
+}
+
+/* Quality Selector */
+.viewer-quality-selector {
+    background: #1a1a1a;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.viewer-quality-selector h4 {
+    color: white;
+    margin: 0 0 15px 0;
+    font-size: 1.1rem;
+}
+
+.quality-options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.quality-option-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.quality-option-btn:hover,
+.quality-option-btn.active {
+    background: rgba(255, 107, 107, 0.2);
+    border-color: #ff6b6b;
+    transform: translateY(-2px);
+}
+
+.quality-option-btn .quality-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.quality-option-btn .quality-size {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.quality-option-btn .quality-icon {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+/* Close Button for Movie Viewer */
+#movieViewerCloseBtn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1001;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+#movieViewerCloseBtn:hover {
+    background: rgba(255, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-container {
@@ -954,5 +1093,43 @@ body {
 
     .quality-options {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1024px) {
+    .movie-viewer-modal-content {
+        width: 98%;
+        height: 90vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .movie-viewer-modal-content {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+    
+    .movie-viewer-header {
+        padding: 10px 15px;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+      .viewer-movie-meta {
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+    
+    .quality-options-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    
+    #movieViewerCloseBtn {
+        top: 10px;
+        right: 15px;
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
     }
 }
