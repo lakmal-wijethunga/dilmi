@@ -63,11 +63,11 @@ const moviesDatabase = [
         qualities: {
             "1080p": { 
                 size: "2.8 GB",
-                downloadLink: "https://drive.usercontent.google.com/download?id=REPLACE_WITH_ACTUAL_SINNERS_FILE_ID&export=download"
+                downloadLink: "https://drive.usercontent.google.com/download?id=1LlijUDVizOp-z-_iz8-mpA4dJ_jkvTbj&export=download"
             },
             "720p": { 
-                size: "1.4 GB", 
-                downloadLink: "https://drive.usercontent.google.com/download?id=REPLACE_WITH_ACTUAL_SINNERS_720P_FILE_ID&export=download"
+                size: "1.2 GB", 
+                downloadLink: "https://drive.usercontent.google.com/download?id=1x-QY03qWklel-O5ULsXNyfLASOwNNC3-&export=download"
             }
         }
     },
@@ -84,9 +84,9 @@ const moviesDatabase = [
         poster: "assets/posters/the-amateur.jpg",
         trailer: "VKKTp0Ve8X4",
         qualities: {
-            "1080p": { 
-                size: "2.2 GB",
-                downloadLink: "https://drive.usercontent.google.com/download?id=REPLACE_WITH_ACTUAL_AMATEUR_FILE_ID&export=download"
+            "4K": { 
+                size: "5.5 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1yp1smDTTZUJVTMVn8Rl893q0mmq_OqGp&export=download"
             }
         }
     },
@@ -104,9 +104,9 @@ const moviesDatabase = [
         poster: "assets/posters/hunger-games-ballad.jpg",
         trailer: "NxW_X4kzeus",
         qualities: {
-            "1080p": { 
-                size: "3.1 GB",
-                downloadLink: "https://drive.usercontent.google.com/download?id=REPLACE_WITH_ACTUAL_HUNGER_GAMES_FILE_ID&export=download"
+            "4K": { 
+                size: "7.0 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1fNbnPdK3dgwbLQcDzCVjI5dCBO_HCQq1&export=download"
             }
         }
     },
@@ -123,9 +123,9 @@ const moviesDatabase = [
         poster: "assets/posters/predator-killer.jpg",
         trailer: "dQw4w9WgXcQ",
         qualities: {
-            "1080p": { 
-                size: "2.3 GB",
-                downloadLink: "https://drive.usercontent.google.com/download?id=REPLACE_WITH_ACTUAL_PREDATOR_FILE_ID&export=download"
+            "4K": { 
+                size: "3.8 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1mVJ32JCbuImb24c8uel3zhC3su9XQpWC&export=download"
             }
         }
     },
@@ -143,8 +143,103 @@ const moviesDatabase = [
         trailer: "dQw4w9WgXcQ",
         qualities: {
             "1080p": { 
-                size: "2.0 GB",
-                downloadLink: "https://drive.usercontent.google.com/download?id=REPLACE_WITH_ACTUAL_OCHI_FILE_ID&export=download"
+                size: "1.6 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1Ws0_s42ze6tRD6YiqfnZ_UzEMGvJFfbd&export=download"
+            }
+        }
+    },
+    {
+        id: 9,
+        title: "Final Destination",
+        year: 2000,
+        duration: "98 min",
+        rating: 6.7,
+        genres: ["Horror", "Thriller"],
+        director: "James Wong",
+        cast: ["Devon Sawa", "Ali Larter", "Kerr Smith", "Tony Todd"],
+        synopsis: "After a teenager has a terrifying vision of him and his friends dying in a plane crash, he prevents the accident only to have Death hunt them, one by one.",
+        poster: "assets/posters/final-destination-1.jpg",
+        trailer: "8taUWNJPFyA",
+        qualities: {
+            "1080p": {
+                size: "1.8 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=18yoFv64S6WmP-e14EMpO6j3yZr76sBKw&export=download"
+            }
+        }
+    },
+    {
+        id: 10,
+        title: "Final Destination 2",
+        year: 2003,
+        duration: "90 min",
+        rating: 6.2,
+        genres: ["Horror", "Thriller"],
+        director: "David R. Ellis",
+        cast: ["A.J. Cook", "Ali Larter", "Michael Landes", "Tony Todd"],
+        synopsis: "Kimberly has a premonition of a horrible highway accident, blocking the freeway and saving a group of people from death. But Death is not to be cheated.",
+        poster: "assets/posters/final-destination-2.jpg",
+        trailer: "lA5pjOxR0Lw",
+        qualities: {
+            "720p": {
+                size: "601 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1Y2cxV4X8J3tLw04Ae8DJEqha-1SIcQKC&export=download"
+            }
+        }
+    },
+    {
+        id: 11,
+        title: "Final Destination 3",
+        year: 2006,
+        duration: "93 min",
+        rating: 5.8,
+        genres: ["Horror", "Thriller"],
+        director: "James Wong",
+        cast: ["Mary Elizabeth Winstead", "Ryan Merriman", "Kris Lemche"],
+        synopsis: "A student's premonition of a deadly rollercoaster ride saves her life and a lucky few, but not from death itself.",
+        poster: "assets/posters/final-destination-3.jpg",
+        trailer: "_5G3pGvH8b8",
+        qualities: {
+            "720p": {
+                size: "602 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1bmgouIdXPntp3ERzivF4K_x8rYEkJt5r&export=download"
+            }
+        }
+    },
+    {
+        id: 12,
+        title: "The Final Destination 4",
+        year: 2009,
+        duration: "82 min",
+        rating: 5.2,
+        genres: ["Horror", "Thriller"],
+        director: "David R. Ellis",
+        cast: ["Shantel VanSanten", "Bobby Campo", "Mykelti Williamson"],
+        synopsis: "A premonition helps a young man save a group of people from death when a disaster strikes, but Death soon returns to claim the lives of those who were meant to die.",
+        poster: "assets/posters/final-destination-4.jpg",
+        trailer: "DSyFSgZ6ngw",
+        qualities: {
+            "1080p": {
+                size: "1.5 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=10GziM5tXvpijYs137p6MNLwr2RnWdB2R&export=download"
+            }
+        }
+    },
+    {
+        id: 13,
+        title: "Final Destination 5",
+        year: 2011,
+        duration: "92 min",
+        rating: 5.8,
+        genres: ["Horror", "Thriller"],
+        director: "Steven Quale",
+        cast: ["Nicholas D'Agosto", "Emma Bell", "Arlen Escarpeta", "Tony Todd"],
+        synopsis: "Survivors of a suspension-bridge collapse learn there's no way you can cheat Death.",
+        poster: "assets/posters/final-destination-5.jpg",
+        trailer: "8i2Zrb8AO6Y",
+        qualities: {
+            "1080p": {
+                size: "1.7 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1TyJRZ4wG5L_VEyqKVfcUpsX4TdU1onGV&export=download"
             }
         }
     }
@@ -273,16 +368,24 @@ function setupEventListeners(searchInput, filterBtns, sortSelect, closeBtn, moda
         }
     });
     
-    // Setup download button to scroll to quality section
+    // Setup download button to scroll to quality section with animation
     const downloadBtn = document.getElementById('downloadBtn');
     if (downloadBtn) {
         downloadBtn.onclick = () => {
-            const qualitySection = document.querySelector('.quality-selection');
-            if (qualitySection) {
-                qualitySection.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'start' 
+            const qualityOptions = document.querySelectorAll('.quality-options .quality-option');
+            if (qualityOptions.length > 0) {
+                qualityOptions.forEach(option => {
+                    option.classList.add('quality-section-highlight');
                 });
+                qualityOptions[0].scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+                setTimeout(() => {
+                    qualityOptions.forEach(option => {
+                        option.classList.remove('quality-section-highlight');
+                    });
+                }, 1200);
             }
         };
     }

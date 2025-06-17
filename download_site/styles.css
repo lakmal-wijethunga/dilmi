@@ -664,6 +664,82 @@ body {
     border-color: #ff6b6b;
 }
 
+/* Download Button Animation */
+.download-btn-animated {
+    width: 100%;
+    padding: 1.1rem 0;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(90deg, #232526 0%, #ff6b6b 100%);
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 24px rgba(255,107,107,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+    z-index: 1;
+}
+
+.download-btn-animated .download-arrow {
+    font-size: 1.5rem;
+    animation: bounceDown 1.2s infinite;
+    margin-left: 0.5rem;
+}
+
+.download-btn-animated:hover {
+    background: linear-gradient(90deg, #ff6b6b 0%, #232526 100%);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(255,107,107,0.25);
+}
+
+@keyframes bounceDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(7px); }
+}
+
+/* Animate scroll highlight for quality section */
+.quality-options .quality-option.quality-section-highlight {
+    animation: qualityGlow 1.2s cubic-bezier(0.4,0,0.2,1);
+    box-shadow: 0 0 0 0 #ff6b6b44, 0 0 32px 8px #ff6b6b88;
+    border-radius: 14px;
+    outline: 2px solid #ff6b6b;
+    outline-offset: 2px;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes qualityGlow {
+    0% {
+        box-shadow: 0 0 0 0 #ff6b6b44, 0 0 32px 8px #ff6b6b88;
+        outline-color: #ff6b6b;
+        background: linear-gradient(90deg, #ff6b6b22 0%, #23252600 100%);
+    }
+    40% {
+        box-shadow: 0 0 0 16px #ff6b6b22, 0 0 48px 16px #ff6b6bcc;
+        outline-color: #ff6b6b;
+        background: linear-gradient(90deg, #ff6b6b33 0%, #23252611 100%);
+    }
+    80% {
+        box-shadow: 0 0 0 8px #ff6b6b11, 0 0 24px 4px #ff6b6b88;
+        outline-color: #ff6b6b;
+        background: linear-gradient(90deg, #ff6b6b11 0%, #23252600 100%);
+    }
+    100% {
+        box-shadow: 0 0 0 0 #ff6b6b00, 0 0 0 0 #ff6b6b00;
+        outline-color: transparent;
+        background: none;
+    }
+}
+
 /* Loading Spinner */
 .loading {
     position: fixed;
