@@ -291,6 +291,20 @@ function setupEventListeners(searchInput, filterBtns, sortSelect, closeBtn, moda
         }
     });
     
+    // Setup download button to scroll to quality section
+    const downloadBtn = document.getElementById('downloadBtn');
+    if (downloadBtn) {
+        downloadBtn.onclick = () => {
+            const qualitySection = document.querySelector('.quality-selection');
+            if (qualitySection) {
+                qualitySection.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }
+        };
+    }
+    
     console.log('All event listeners set up');
 }
 
@@ -444,7 +458,11 @@ function openMovieModal(movieId) {
     if (modalDuration) modalDuration.textContent = movie.duration;
     if (modalRating) modalRating.textContent = movie.rating;
     if (modalGenres) modalGenres.innerHTML = movie.genres.map(genre => `<span class="genre-tag">${genre}</span>`).join('');
-    if (modalDirector) modalDirector.textContent = movie.director;
+    
+    // Split directors and create bubbles like cast
+    const directors = movie.director.split(',').map(dir => dir.trim());
+    modalDirector.innerHTML = directors.map(director => `<span class="cast-member">${director}</span>`).join('');
+    
     if (modalCast) {
         modalCast.innerHTML = movie.cast.map(actor => `<span class="cast-member">${actor}</span>`).join('');
     }
