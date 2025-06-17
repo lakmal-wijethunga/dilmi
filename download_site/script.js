@@ -37,10 +37,9 @@ const moviesDatabase = [
         rating: 7.3,
         genres: ["Horror", "Thriller", "Supernatural"],
         director: "Zach Lipovsky, Adam Stein",
-        cast: ["Kaitlyn Santa Juana", "Teo Briones", "Richard Harmon", "Owen Patrick Joyner", "Anna Lore", "Brec Bassinger", "Tony Todd"],
-        synopsis: "A college student inherits visions of a deadly 1968 tower collapse from her dying grandmother and discovers that Death is coming for her family. As descendants of survivors from a prevented disaster, they must find a way to break Death's design before it claims them all.",
+        cast: ["Kaitlyn Santa Juana", "Teo Briones", "Richard Harmon", "Owen Patrick Joyner", "Anna Lore", "Brec Bassinger", "Tony Todd"],        synopsis: "A college student inherits visions of a deadly 1968 tower collapse from her dying grandmother and discovers that Death is coming for her family. As descendants of survivors from a prevented disaster, they must find a way to break Death's design before it claims them all.",
         poster: "assets/posters/final-destination-bloodlines.jpg",
-        trailer: "p8hGx8Rd8L8",
+        trailer: "dQw4w9WgXcQ",
         qualities: {
             "1080p": { 
                 size: "1.51 GB",
@@ -56,10 +55,9 @@ const moviesDatabase = [
         rating: 8.4,
         genres: ["Horror", "Supernatural", "Musical", "Southern Gothic"],
         director: "Ryan Coogler",
-        cast: ["Michael B. Jordan", "Hailee Steinfeld", "Miles Caton", "Jack O'Connell", "Wunmi Mosaku", "Jayme Lawson", "Omar Miller", "Delroy Lindo", "Li Jun Li", "Lola Kirke"],
-        synopsis: "Set in 1932 Mississippi Delta, identical twin brothers and World War I veterans return to their hometown to start a juke joint with stolen money. When their opening night summons both spirits and vampires, they must fight supernatural forces while confronting their past.",
+        cast: ["Michael B. Jordan", "Hailee Steinfeld", "Miles Caton", "Jack O'Connell", "Wunmi Mosaku", "Jayme Lawson", "Omar Miller", "Delroy Lindo", "Li Jun Li", "Lola Kirke"],        synopsis: "Set in 1932 Mississippi Delta, identical twin brothers and World War I veterans return to their hometown to start a juke joint with stolen money. When their opening night summons both spirits and vampires, they must fight supernatural forces while confronting their past.",
         poster: "assets/posters/sinners.jpg",
-        trailer: "HlmmJBDXaP8",
+        trailer: "dQw4w9WgXcQ",
         qualities: {
             "1080p": { 
                 size: "2.8 GB",
@@ -79,10 +77,9 @@ const moviesDatabase = [
         rating: 7.6,
         genres: ["Action", "Thriller", "Drama"],
         director: "James Hawes",
-        cast: ["Rami Malek", "Rachel Brosnahan", "Caitríona Balfe", "Laurence Fishburne", "Jon Bernthal", "Michael Stuhlbarg", "Holt McCallany"],
-        synopsis: "A CIA cryptographer's wife and daughter are killed in a London terrorist attack. When his agency refuses to act, he blackmails them into training him and launches his own mission for revenge against the terrorists.",
+        cast: ["Rami Malek", "Rachel Brosnahan", "Caitríona Balfe", "Laurence Fishburne", "Jon Bernthal", "Michael Stuhlbarg", "Holt McCallany"],        synopsis: "A CIA cryptographer's wife and daughter are killed in a London terrorist attack. When his agency refuses to act, he blackmails them into training him and launches his own mission for revenge against the terrorists.",
         poster: "assets/posters/the-amateur.jpg",
-        trailer: "VKKTp0Ve8X4",
+        trailer: "dQw4w9WgXcQ",
         qualities: {
             "4K": { 
                 size: "5.5 GB",
@@ -99,10 +96,9 @@ const moviesDatabase = [
         rating: 7.0,
         genres: ["Action", "Adventure", "Drama", "Sci-Fi"],
         director: "Francis Lawrence",
-        cast: ["Tom Blyth", "Rachel Zegler", "Peter Dinklage", "Hunter Schafer", "Josh Andrés Rivera", "Jason Schwartzman", "Viola Davis"],
-        synopsis: "Years before he would become the tyrannical President of Panem, 18-year-old Coriolanus Snow is the last hope for his fading lineage. With the 10th annual Hunger Games fast approaching, Snow is mentoring Lucy Gray Baird from the impoverished District 12.",
+        cast: ["Tom Blyth", "Rachel Zegler", "Peter Dinklage", "Hunter Schafer", "Josh Andrés Rivera", "Jason Schwartzman", "Viola Davis"],        synopsis: "Years before he would become the tyrannical President of Panem, 18-year-old Coriolanus Snow is the last hope for his fading lineage. With the 10th annual Hunger Games fast approaching, Snow is mentoring Lucy Gray Baird from the impoverished District 12.",
         poster: "assets/posters/hunger-games-ballad.jpg",
-        trailer: "NxW_X4kzeus",
+        trailer: "dQw4w9WgXcQ",
         qualities: {
             "4K": { 
                 size: "7.0 GB",
@@ -156,10 +152,9 @@ const moviesDatabase = [
         rating: 6.7,
         genres: ["Horror", "Thriller"],
         director: "James Wong",
-        cast: ["Devon Sawa", "Ali Larter", "Kerr Smith", "Tony Todd"],
-        synopsis: "After a teenager has a terrifying vision of him and his friends dying in a plane crash, he prevents the accident only to have Death hunt them, one by one.",
+        cast: ["Devon Sawa", "Ali Larter", "Kerr Smith", "Tony Todd"],        synopsis: "After a teenager has a terrifying vision of him and his friends dying in a plane crash, he prevents the accident only to have Death hunt them, one by one.",
         poster: "assets/posters/final-destination-1.jpg",
-        trailer: "8taUWNJPFyA",
+        trailer: "dQw4w9WgXcQ",
         qualities: {
             "1080p": {
                 size: "1.8 GB",
@@ -175,10 +170,9 @@ const moviesDatabase = [
         rating: 6.2,
         genres: ["Horror", "Thriller"],
         director: "David R. Ellis",
-        cast: ["A.J. Cook", "Ali Larter", "Michael Landes", "Tony Todd"],
-        synopsis: "Kimberly has a premonition of a horrible highway accident, blocking the freeway and saving a group of people from death. But Death is not to be cheated.",
+        cast: ["A.J. Cook", "Ali Larter", "Michael Landes", "Tony Todd"],        synopsis: "Kimberly has a premonition of a horrible highway accident, blocking the freeway and saving a group of people from death. But Death is not to be cheated.",
         poster: "assets/posters/final-destination-2.jpg",
-        trailer: "lA5pjOxR0Lw",
+        trailer: "dQw4w9WgXcQ",
         qualities: {
             "720p": {
                 size: "601 MB",
@@ -194,10 +188,9 @@ const moviesDatabase = [
         rating: 5.8,
         genres: ["Horror", "Thriller"],
         director: "James Wong",
-        cast: ["Mary Elizabeth Winstead", "Ryan Merriman", "Kris Lemche"],
-        synopsis: "A student's premonition of a deadly rollercoaster ride saves her life and a lucky few, but not from death itself.",
+        cast: ["Mary Elizabeth Winstead", "Ryan Merriman", "Kris Lemche"],        synopsis: "A student's premonition of a deadly rollercoaster ride saves her life and a lucky few, but not from death itself.",
         poster: "assets/posters/final-destination-3.jpg",
-        trailer: "_5G3pGvH8b8",
+        trailer: "dQw4w9WgXcQ",
         qualities: {
             "720p": {
                 size: "602 MB",
@@ -213,10 +206,9 @@ const moviesDatabase = [
         rating: 5.2,
         genres: ["Horror", "Thriller"],
         director: "David R. Ellis",
-        cast: ["Shantel VanSanten", "Bobby Campo", "Mykelti Williamson"],
-        synopsis: "A premonition helps a young man save a group of people from death when a disaster strikes, but Death soon returns to claim the lives of those who were meant to die.",
+        cast: ["Shantel VanSanten", "Bobby Campo", "Mykelti Williamson"],        synopsis: "A premonition helps a young man save a group of people from death when a disaster strikes, but Death soon returns to claim the lives of those who were meant to die.",
         poster: "assets/posters/final-destination-4.jpg",
-        trailer: "DSyFSgZ6ngw",
+        trailer: "dQw4w9WgXcQ",
         qualities: {
             "1080p": {
                 size: "1.5 GB",
@@ -232,10 +224,9 @@ const moviesDatabase = [
         rating: 5.8,
         genres: ["Horror", "Thriller"],
         director: "Steven Quale",
-        cast: ["Nicholas D'Agosto", "Emma Bell", "Arlen Escarpeta", "Tony Todd"],
-        synopsis: "Survivors of a suspension-bridge collapse learn there's no way you can cheat Death.",
+        cast: ["Nicholas D'Agosto", "Emma Bell", "Arlen Escarpeta", "Tony Todd"],        synopsis: "Survivors of a suspension-bridge collapse learn there's no way you can cheat Death.",
         poster: "assets/posters/final-destination-5.jpg",
-        trailer: "8i2Zrb8AO6Y",
+        trailer: "dQw4w9WgXcQ",
         qualities: {
             "1080p": {
                 size: "1.7 GB",
