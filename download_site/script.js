@@ -90,25 +90,7 @@ const moviesDatabase = [
             }
         }
     },
-    {
-        id: 5,
-        title: "Dragon",
-        year: 2025,
-        duration: "118 min",
-        rating: 7.8,
-        genres: ["Action", "Adventure", "Fantasy"],
-        director: "TBD",
-        cast: ["TBD"],
-        synopsis: "An epic fantasy adventure following a young warrior's quest to defeat an ancient dragon that threatens to destroy the realm. Spectacular visuals and intense battle sequences bring this mythical tale to life.",
-        poster: "assets/posters/dragon.jpg",
-        trailer: "dQw4w9WgXcQ",
-        qualities: {
-            "1080p": { 
-                size: "2.5 GB",
-                downloadLink: "https://drive.usercontent.google.com/download?id=REPLACE_WITH_ACTUAL_DRAGON_FILE_ID&export=download"
-            }
-        }
-    },
+    
     {
         id: 6,
         title: "The Hunger Games: The Ballad Of Songbirds & Snakes",
@@ -487,7 +469,43 @@ function openMovieModal(movieId) {
     } else if (trailerBtn) {
         trailerBtn.style.display = 'none';
     }
-    
+
+    // Setup Watch Now button (open highest quality in Google Drive viewer)
+    const watchNowBtn = document.getElementById('watchNowBtn');
+    if (watchNowBtn) {
+        // Define quality order (highest to lowest)
+        const qualityOrder = ['4K', '2160p', '1080p', '720p', '480p'];
+        let bestQuality = null;
+        for (const q of qualityOrder) {
+            if (movie.qualities[q]) {
+                bestQuality = movie.qualities[q];
+                break;
+            }
+        }
+        // If no preferred quality found, pick the first available
+        if (!bestQuality) {
+            const firstKey = Object.keys(movie.qualities)[0];
+            bestQuality = movie.qualities[firstKey];
+        }
+        if (bestQuality && bestQuality.downloadLink) {
+            // Extract Google Drive file ID
+            const match = bestQuality.downloadLink.match(/id=([^&]+)/);
+            const fileId = match ? match[1] : null;
+            if (fileId) {
+                watchNowBtn.onclick = () => {
+                    window.open(`https://drive.google.com/file/d/${fileId}/view`, '_blank');
+                };
+                watchNowBtn.style.display = 'inline-flex';
+            } else {
+                watchNowBtn.onclick = null;
+                watchNowBtn.style.display = 'none';
+            }
+        } else {
+            watchNowBtn.onclick = null;
+            watchNowBtn.style.display = 'none';
+        }
+    }
+
     // Show modal
     const modal = document.getElementById('movieModal');
     if (modal) {
