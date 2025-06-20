@@ -283,16 +283,21 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Movies grid element not found!');
         return;
     }
-    
-    // Clear search input to make sure it's empty
+      // Clear search input to make sure it's empty
     if (searchInput) {
         searchInput.value = '';
     }
+      // Set the sort dropdown to show "recently-added" as selected
+    if (sortSelect) {
+        sortSelect.value = 'recently-added';
+        console.log('Set sort dropdown value to:', sortSelect.value);
+    }
     
-    // Initialize with all movies first
-    console.log('About to call displayMovies...');
-    displayMovies(currentMovies, moviesGrid);
-    updateMovieCount(movieCountElement);
+    console.log('Current sort before filterAndDisplayMovies:', currentSort);
+    
+    // Initialize with correct sorting applied
+    console.log('About to call filterAndDisplayMovies with default sort...');
+    filterAndDisplayMovies(searchInput, moviesGrid, movieCountElement);
     
     // Set up event listeners after initial display
     setupEventListeners(searchInput, filterBtns, sortSelect, closeBtn, modal, moviesGrid, movieCountElement);
@@ -428,11 +433,11 @@ function filterAndDisplayMovies(searchInput, moviesGrid, movieCountElement) {
             movie.genres.some(genre => genre.toLowerCase().includes(searchTerm));
         
         return genreMatch && searchMatch;
-    });
-      // Sort movies
+    });    // Sort movies
     filteredMovies.sort((a, b) => {
         switch(currentSort) {
             case 'recently-added':
+                console.log(`Sorting: ${a.title} (ID: ${a.id}) vs ${b.title} (ID: ${b.id}) = ${b.id - a.id}`);
                 return b.id - a.id; // Higher ID means more recently added
             case 'year':
                 return b.year - a.year;
@@ -446,6 +451,8 @@ function filterAndDisplayMovies(searchInput, moviesGrid, movieCountElement) {
                 return b.id - a.id; // Default to recently added
         }
     });
+    
+    console.log('Sorted movies order:', filteredMovies.map(m => `${m.title} (ID: ${m.id})`));
     
     currentMovies = filteredMovies;
     displayMovies(currentMovies, moviesGrid);
