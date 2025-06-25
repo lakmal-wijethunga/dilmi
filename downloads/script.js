@@ -12,9 +12,8 @@ const moviesDatabase = [
         genres: ["Action", "War", "Thriller"],
         director: "Ray Mendoza, Alex Garland",
         cast: ["D'Pharaoh Woon-A-Tai", "Kit Connor", "Finn Bennett", "Taylor John Smith", "Alex Neustaedter"],
-        synopsis: "A series of unfolding war stories told through the eyes of soldiers in different eras, from the American Civil War to modern combat. An intense and immersive war experience.",
-        poster: "assets/posters/warfare.jpg",
-        trailer: "dQw4w9WgXcQ",
+        synopsis: "A series of unfolding war stories told through the eyes of soldiers in different eras, from the American Civil War to modern combat. An intense and immersive war experience.",        poster: "assets/posters/warfare.jpg",
+        trailer: "JER0Fkyy3tw",
         qualities: {
             "1080p": { 
                 size: "2.15 GB",
@@ -38,9 +37,8 @@ const moviesDatabase = [
         genres: ["Horror", "Thriller", "Supernatural"],
         director: "Zach Lipovsky, Adam Stein",
         cast: ["Kaitlyn Santa Juana", "Teo Briones", "Richard Harmon", "Owen Patrick Joyner", "Anna Lore", "Brec Bassinger", "Tony Todd"],        
-        synopsis: "A college student inherits visions of a deadly 1968 tower collapse from her dying grandmother and discovers that Death is coming for her family. As descendants of survivors from a prevented disaster, they must find a way to break Death's design before it claims them all.",
-        poster: "assets/posters/final-destination-bloodlines.jpg",
-        trailer: "dQw4w9WgXcQ",
+        synopsis: "A college student inherits visions of a deadly 1968 tower collapse from her dying grandmother and discovers that Death is coming for her family. As descendants of survivors from a prevented disaster, they must find a way to break Death's design before it claims them all.",        poster: "assets/posters/final-destination-bloodlines.jpg",
+        trailer: "UWMzKXsY9A4",
         qualities: {
             "1080p": { 
                 size: "1.51 GB",
@@ -56,9 +54,8 @@ const moviesDatabase = [
         rating: 8.4,
         genres: ["Horror", "Supernatural", "Musical", "Southern Gothic"],
         director: "Ryan Coogler",
-        cast: ["Michael B. Jordan", "Hailee Steinfeld", "Miles Caton", "Jack O'Connell", "Wunmi Mosaku", "Jayme Lawson", "Omar Miller", "Delroy Lindo", "Li Jun Li", "Lola Kirke"],        synopsis: "Set in 1932 Mississippi Delta, identical twin brothers and World War I veterans return to their hometown to start a juke joint with stolen money. When their opening night summons both spirits and vampires, they must fight supernatural forces while confronting their past.",
-        poster: "assets/posters/sinners.jpg",
-        trailer: "dQw4w9WgXcQ",
+        cast: ["Michael B. Jordan", "Hailee Steinfeld", "Miles Caton", "Jack O'Connell", "Wunmi Mosaku", "Jayme Lawson", "Omar Miller", "Delroy Lindo", "Li Jun Li", "Lola Kirke"],        synopsis: "Set in 1932 Mississippi Delta, identical twin brothers and World War I veterans return to their hometown to start a juke joint with stolen money. When their opening night summons both spirits and vampires, they must fight supernatural forces while confronting their past.",        poster: "assets/posters/sinners.jpg",
+        trailer: "bKGxHflevuk",
         qualities: {
             "1080p": { 
                 size: "2.8 GB",
@@ -78,9 +75,8 @@ const moviesDatabase = [
         rating: 7.6,
         genres: ["Action", "Thriller", "Drama"],
         director: "James Hawes",
-        cast: ["Rami Malek", "Rachel Brosnahan", "Caitríona Balfe", "Laurence Fishburne", "Jon Bernthal", "Michael Stuhlbarg", "Holt McCallany"],        synopsis: "A CIA cryptographer's wife and daughter are killed in a London terrorist attack. When his agency refuses to act, he blackmails them into training him and launches his own mission for revenge against the terrorists.",
-        poster: "assets/posters/the-amateur.jpg",
-        trailer: "dQw4w9WgXcQ",
+        cast: ["Rami Malek", "Rachel Brosnahan", "Caitríona Balfe", "Laurence Fishburne", "Jon Bernthal", "Michael Stuhlbarg", "Holt McCallany"],        synopsis: "A CIA cryptographer's wife and daughter are killed in a London terrorist attack. When his agency refuses to act, he blackmails them into training him and launches his own mission for revenge against the terrorists.",        poster: "assets/posters/the-amateur.jpg",
+        trailer: "DCWcK4c-F8Q",
         qualities: {
             "4K": { 
                 size: "5.5 GB",
@@ -97,9 +93,8 @@ const moviesDatabase = [
         rating: 7.0,
         genres: ["Action", "Adventure", "Drama", "Sci-Fi"],
         director: "Francis Lawrence",
-        cast: ["Tom Blyth", "Rachel Zegler", "Peter Dinklage", "Hunter Schafer", "Josh Andrés Rivera", "Jason Schwartzman", "Viola Davis"],        synopsis: "Years before he would become the tyrannical President of Panem, 18-year-old Coriolanus Snow is the last hope for his fading lineage. With the 10th annual Hunger Games fast approaching, Snow is mentoring Lucy Gray Baird from the impoverished District 12.",
-        poster: "assets/posters/hunger-games-ballad.jpg",
-        trailer: "dQw4w9WgXcQ",
+        cast: ["Tom Blyth", "Rachel Zegler", "Peter Dinklage", "Hunter Schafer", "Josh Andrés Rivera", "Jason Schwartzman", "Viola Davis"],        synopsis: "Years before he would become the tyrannical President of Panem, 18-year-old Coriolanus Snow is the last hope for his fading lineage. With the 10th annual Hunger Games fast approaching, Snow is mentoring Lucy Gray Baird from the impoverished District 12.",        poster: "assets/posters/hunger-games-ballad.jpg",
+        trailer: "RDE6Uz73A7g",
         qualities: {
             "4K": { 
                 size: "7.0 GB",
@@ -114,11 +109,17 @@ const moviesDatabase = [
         duration: "106 min",
         rating: 7.4,
         genres: ["Action", "Sci-Fi", "Thriller"],
-        director: "TBD",
-        cast: ["TBD"],
-        synopsis: "The deadliest Predator ever encountered arrives on Earth to hunt the most dangerous prey. When elite soldiers become the hunted, survival becomes the ultimate test in this intense sci-fi thriller.",
+        director: "Dan Trachtenberg",
+        cast: [
+            "Amber Midthunder",
+            "Dane DiLiegro",
+            "Dakota Beavers",
+            "Stormee Kipp",
+            "Michelle Thrush"
+        ],
+        synopsis: "A new breed of Predator arrives on Earth, hunting the most dangerous prey. Elite soldiers must fight for survival in this intense sci-fi thriller set in the Predator universe.",
         poster: "assets/posters/predator-killer.jpg",
-        trailer: "dQw4w9WgXcQ",
+        trailer: "fbddYji1F8s", // Official trailer (20th Century Studios)
         qualities: {
             "4K": { 
                 size: "3.8 GB",
@@ -135,9 +136,8 @@ const moviesDatabase = [
         genres: ["Adventure", "Family", "Fantasy"],
         director: "Isaiah Saxon",
         cast: ["Helena Zengel", "Finn Wolfhard", "Emily Watson", "Willem Dafoe"],
-        synopsis: "In a remote northern village, a young girl forms an unlikely bond with a mysterious creature called an Ochi. Together they embark on an adventure that will change both their worlds forever.",
-        poster: "assets/posters/legend-of-ochi.jpg",
-        trailer: "dQw4w9WgXcQ",
+        synopsis: "In a remote northern village, a young girl forms an unlikely bond with a mysterious creature called an Ochi. Together they embark on an adventure that will change both their worlds forever.",        poster: "assets/posters/legend-of-ochi.jpg",
+        trailer: "_jTFLg3arYU",
         qualities: {
             "1080p": { 
                 size: "1.6 GB",
@@ -153,9 +153,8 @@ const moviesDatabase = [
         rating: 6.7,
         genres: ["Horror", "Thriller"],
         director: "James Wong",
-        cast: ["Devon Sawa", "Ali Larter", "Kerr Smith", "Tony Todd"],        synopsis: "After a teenager has a terrifying vision of him and his friends dying in a plane crash, he prevents the accident only to have Death hunt them, one by one.",
-        poster: "assets/posters/final-destination-1.jpg",
-        trailer: "dQw4w9WgXcQ",
+        cast: ["Devon Sawa", "Ali Larter", "Kerr Smith", "Tony Todd"],        synopsis: "After a teenager has a terrifying vision of him and his friends dying in a plane crash, he prevents the accident only to have Death hunt them, one by one.",        poster: "assets/posters/final-destination-1.jpg",
+        trailer: "bIf5pgKcu9s",
         qualities: {
             "1080p": {
                 size: "1.8 GB",
@@ -171,9 +170,8 @@ const moviesDatabase = [
         rating: 6.2,
         genres: ["Horror", "Thriller"],
         director: "David R. Ellis",
-        cast: ["A.J. Cook", "Ali Larter", "Michael Landes", "Tony Todd"],        synopsis: "Kimberly has a premonition of a horrible highway accident, blocking the freeway and saving a group of people from death. But Death is not to be cheated.",
-        poster: "assets/posters/final-destination-2.jpg",
-        trailer: "dQw4w9WgXcQ",
+        cast: ["A.J. Cook", "Ali Larter", "Michael Landes", "Tony Todd"],        synopsis: "Kimberly has a premonition of a horrible highway accident, blocking the freeway and saving a group of people from death. But Death is not to be cheated.",        poster: "assets/posters/final-destination-2.jpg",
+        trailer: "QzU9OrZl2iA", // Official trailer (Warner Bros. Pictures)
         qualities: {
             "720p": {
                 size: "601 MB",
@@ -189,9 +187,8 @@ const moviesDatabase = [
         rating: 5.8,
         genres: ["Horror", "Thriller"],
         director: "James Wong",
-        cast: ["Mary Elizabeth Winstead", "Ryan Merriman", "Kris Lemche"],        synopsis: "A student's premonition of a deadly rollercoaster ride saves her life and a lucky few, but not from death itself.",
-        poster: "assets/posters/final-destination-3.jpg",
-        trailer: "dQw4w9WgXcQ",
+        cast: ["Mary Elizabeth Winstead", "Ryan Merriman", "Kris Lemche"],        synopsis: "A student's premonition of a deadly rollercoaster ride saves her life and a lucky few, but not from death itself.",        poster: "assets/posters/final-destination-3.jpg",
+        trailer: "_9lR4lQeP7w", // Official trailer (New Line Cinema)
         qualities: {
             "720p": {
                 size: "602 MB",
@@ -207,9 +204,8 @@ const moviesDatabase = [
         rating: 5.2,
         genres: ["Horror", "Thriller"],
         director: "David R. Ellis",
-        cast: ["Shantel VanSanten", "Bobby Campo", "Mykelti Williamson"],        synopsis: "A premonition helps a young man save a group of people from death when a disaster strikes, but Death soon returns to claim the lives of those who were meant to die.",
-        poster: "assets/posters/final-destination-4.jpg",
-        trailer: "dQw4w9WgXcQ",
+        cast: ["Shantel VanSanten", "Bobby Campo", "Mykelti Williamson"],        synopsis: "A premonition helps a young man save a group of people from death when a disaster strikes, but Death soon returns to claim the lives of those who were meant to die.",        poster: "assets/posters/final-destination-4.jpg",
+        trailer: "8gcQCUfDzjc",
         qualities: {
             "1080p": {
                 size: "1.5 GB",
@@ -225,13 +221,85 @@ const moviesDatabase = [
         rating: 5.8,
         genres: ["Horror", "Thriller"],
         director: "Steven Quale",
-        cast: ["Nicholas D'Agosto", "Emma Bell", "Arlen Escarpeta", "Tony Todd"],        synopsis: "Survivors of a suspension-bridge collapse learn there's no way you can cheat Death.",
-        poster: "assets/posters/final-destination-5.jpg",
-        trailer: "dQw4w9WgXcQ",
+        cast: ["Nicholas D'Agosto", "Emma Bell", "Arlen Escarpeta", "Tony Todd"],        synopsis: "Survivors of a suspension-bridge collapse learn there's no way you can cheat Death.",        poster: "assets/posters/final-destination-5.jpg",
+        trailer: "PI87-0g_SI8",
         qualities: {
             "1080p": {
                 size: "1.7 GB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=1TyJRZ4wG5L_VEyqKVfcUpsX4TdU1onGV&export=download"
+            }
+        }
+    },
+    {
+        id: 14,
+        title: "KPop Demon Hunters",
+        year: 2025,
+        duration: "118 min", // Update as needed
+        rating: 7.1, // Update as needed
+        genres: ["Action", "Horror", "Comedy"],
+        director: "Park Jin-woo", // Update as needed
+        cast: ["Kim Min-jun", "Lee So-young", "Park Hae-jin", "Choi Jung-woo"], // Update as needed
+        synopsis: "A group of K-pop idols discover they have supernatural abilities and must hunt demons that threaten the entertainment industry while maintaining their pop star careers.",
+        poster: "assets/posters/kpop-demon-hunters.jpg",
+        trailer: "AzCAwdp1uIQ", // No official trailer as of June 2025
+        qualities: {
+    
+            "1080p": {
+                size: "1.7 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1ULCHOtQu18F0-GbH5R6eowvc8ixBO8Fm&export=download"
+            },
+            
+        }
+    },
+    {
+        id: 15,
+        title: "Sitaare Zameen Par (HDCAM)",
+        year: 2025,
+        duration: "142 min",
+        rating: 8.2,
+        genres: ["Drama", "Family", "Adventure"],
+        director: "Aamir Khan",
+        cast: ["Aamir Khan", "Genelia D'Souza", "Darsheel Safary", "Tisca Chopra"],
+        synopsis: "A sequel to the beloved Taare Zameen Par, following a new generation of children with learning differences as they discover their unique talents and overcome challenges.",        poster: "assets/posters/sitaare-zameen-par.jpg",
+        trailer: "YH6k5weqwy8", // No official trailer as of June 2025
+        qualities: {
+            "1080p": {
+                size: "2.8 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1wGd0aBWqfqeMlheai0Rq8aaaAxtIYxTs&export=download"
+            },
+            "720p": {
+                size: "1.2 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1IkfHW8LzDZCbqMktkIzJfE7MKDVYCd8c&export=download"
+            },
+            "480p": {
+                size: "599 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1YcKMIjWBjeFZnSZgk9_ACK6UB7u_apfJ&export=download"
+            }
+        }
+    },
+    {
+        id: 16,
+        title: "Ironheart (Season 01)",
+        year: 2025,
+        duration: "6 x 50 min", // Example for a series
+        rating: 7.8,
+        genres: ["Action", "Sci-Fi", "Adventure"],
+        director: "Sam Bailey", // Update as needed
+        cast: ["Dominique Thorne", "Anthony Ramos", "Alden Ehrenreich", "Regan Aliyah"],
+        synopsis: "Riri Williams, a brilliant young inventor, creates the most advanced suit of armor since Iron Man. When the technology falls into the wrong hands, she must become the hero she was meant to be.",        poster: "assets/posters/ironheart.jpg",
+        trailer: "WpW36ldAqnM", // Marvel Television's Ironheart Official Trailer
+        qualities: {
+            "Episode 01": {
+                size: "567 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1vHqLRzBRGGlb8LeU-iF-bl2T7R_sPS9c&export=download"
+            },
+            "Episode 02": {
+                size: "596 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=15gBjNlNaYNdatJYr7prO8kg1Ch-g-2-n&export=download"
+            },
+            "Episode 03": {
+                size: "594 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1SgTKDUd2NYzF7_gx3ilsekbumEw8UBKL&export=download"
             }
         }
     }
@@ -340,8 +408,7 @@ function setupEventListeners(searchInput, filterBtns, sortSelect, closeBtn, moda
         console.log('Close button event listener attached');
     } else {
         console.error('Close button not found');
-    }
-      window.addEventListener('click', function(e) {
+    }      window.addEventListener('click', function(e) {
         if (e.target === modal) {
             closeModal();
         }
@@ -350,6 +417,16 @@ function setupEventListeners(searchInput, filterBtns, sortSelect, closeBtn, moda
         }
         if (e.target === document.getElementById('movieViewerModal')) {
             closeMovieViewer();
+        }
+        
+        // Hide episode picker when clicking outside
+        const episodePicker = document.getElementById('episodePicker');
+        if (episodePicker && episodePicker.classList.contains('show')) {
+            // Check if click is outside episode picker and not on watch now button
+            const watchNowBtn = document.getElementById('watchNowBtn');
+            if (!episodePicker.contains(e.target) && e.target !== watchNowBtn && !watchNowBtn.contains(e.target)) {
+                hideEpisodePicker();
+            }
         }
     });
     
@@ -581,38 +658,83 @@ function openMovieModal(movieId) {
         trailerBtn.style.display = 'none';
     }
 
-    // Setup Watch Now button (open highest quality in Google Drive viewer)
+    // Setup Watch Now button (open highest quality in Google Drive viewer or episode picker for TV shows)
     const watchNowBtn = document.getElementById('watchNowBtn');
+    const episodePicker = document.getElementById('episodePicker'); // Add this div in your modal HTML if not present
     if (watchNowBtn) {
-        // Define quality order (highest to lowest)
-        const qualityOrder = ['4K', '2160p', '1080p', '720p', '480p'];
-        let bestQuality = null;
-        for (const q of qualityOrder) {
-            if (movie.qualities[q]) {
-                bestQuality = movie.qualities[q];
-                break;
+        // Detect if this is a TV show (qualities keys look like 'Episode 01', etc.)
+        const isTVShow = Object.keys(movie.qualities).some(key => key.toLowerCase().includes('episode'));        if (isTVShow) {
+            watchNowBtn.onclick = () => {
+                if (episodePicker) {
+                    // Check if already visible, toggle if so
+                    if (episodePicker.classList.contains('show')) {
+                        hideEpisodePicker();
+                        return;
+                    }
+                      episodePicker.innerHTML = `
+                        <div class="episode-picker-header">
+                            <h4>Select Episode</h4>
+                        </div>
+                        <div class="episode-buttons-container">
+                        ${Object.entries(movie.qualities).map(([ep, info], idx) => {
+                            return `<button class="episode-btn" data-episode="${ep.replace(/&/g, '&amp;').replace(/"/g, '&quot;')}">${ep}</button>`;
+                        }).join('')}
+                        </div>
+                    `;
+                    
+                    // Show with animation
+                    showEpisodePicker();
+                      // Add close event
+                    setTimeout(() => {
+                        // Attach event listeners to episode buttons
+                        const btns = episodePicker.querySelectorAll('.episode-btn');
+                        btns.forEach(btn => {
+                            btn.onclick = function(e) {
+                                e.stopPropagation();
+                                openMovieViewerByEpisode(movie.id, this.getAttribute('data-episode'));
+                            };
+                        });
+                        
+                        // Stop propagation on episode picker clicks
+                        episodePicker.onclick = (e) => e.stopPropagation();
+                    }, 0);
+                }
+            };
+            watchNowBtn.style.display = 'inline-flex';
+        } else {
+            // Movie: open highest quality
+            // Define quality order (highest to lowest)
+            const qualityOrder = ['4K', '2160p', '1080p', '720p', '480p'];
+            let bestQuality = null;
+            for (const q of qualityOrder) {
+                if (movie.qualities[q]) {
+                    bestQuality = movie.qualities[q];
+                    break;
+                }
             }
-        }
-        // If no preferred quality found, pick the first available
-        if (!bestQuality) {
-            const firstKey = Object.keys(movie.qualities)[0];
-            bestQuality = movie.qualities[firstKey];
-        }
-        if (bestQuality && bestQuality.downloadLink) {
-            // Extract Google Drive file ID
-            const match = bestQuality.downloadLink.match(/id=([^&]+)/);
-            const fileId = match ? match[1] : null;            if (fileId) {
-                watchNowBtn.onclick = () => {
-                    openMovieViewer(movie, bestQuality, fileId);
-                };
-                watchNowBtn.style.display = 'inline-flex';
+            // If no preferred quality found, pick the first available
+            if (!bestQuality) {
+                const firstKey = Object.keys(movie.qualities)[0];
+                bestQuality = movie.qualities[firstKey];
+            }
+            if (bestQuality && bestQuality.downloadLink) {
+                // Extract Google Drive file ID
+                const match = bestQuality.downloadLink.match(/id=([^&]+)/);
+                const fileId = match ? match[1] : null;
+                if (fileId) {
+                    watchNowBtn.onclick = () => {
+                        openMovieViewer(movie, bestQuality, fileId);
+                    };
+                    watchNowBtn.style.display = 'inline-flex';
+                } else {
+                    watchNowBtn.onclick = null;
+                    watchNowBtn.style.display = 'none';
+                }
             } else {
                 watchNowBtn.onclick = null;
                 watchNowBtn.style.display = 'none';
             }
-        } else {
-            watchNowBtn.onclick = null;
-            watchNowBtn.style.display = 'none';
+            if (episodePicker) episodePicker.style.display = 'none';
         }
     }
 
@@ -631,6 +753,8 @@ function closeModal() {
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
     }
+    // Hide episode picker when modal closes
+    hideEpisodePicker();
 }
 
 // Download movie
@@ -822,7 +946,7 @@ const additionalMoviesToAdd = [
         cast: ["TBD"],
         synopsis: "Based on the popular video game, Call of Duty: Vanguard follows elite soldiers fighting across multiple theaters of World War II.",
         poster: "assets/posters/cod-vanguard.jpg",
-        trailer: "dQw4w9WgXcQ", // Replace with actual trailer
+        trailer: "QzAloq19e3U", // Official Launch Trailer
         qualities: {
             "1080p": { 
                 size: "TBD",
@@ -841,7 +965,7 @@ const additionalMoviesToAdd = [
         cast: ["TBD"],
         synopsis: "A modern twist on the classic Cinderella story, told from the perspective of one of the stepsisters.",
         poster: "assets/posters/ugly-stepsister.jpg",
-        trailer: "dQw4w9WgXcQ", // Replace with actual trailer
+        trailer: "dQw4w9WgXcQ", // No official trailer as of June 2025
         qualities: {
             "1080p": { 
                 size: "TBD",
@@ -978,6 +1102,48 @@ function toggleQualitySelector() {
     if (viewerQualitySelector) {
         const isVisible = viewerQualitySelector.style.display !== 'none';
         viewerQualitySelector.style.display = isVisible ? 'none' : 'block';
+    }
+}
+
+// Helper for TV show episode viewing
+function openMovieViewerByEpisode(movieId, episodeKey) {
+    const movie = moviesDatabase.find(m => m.id === movieId);
+    if (!movie) return;
+    const info = movie.qualities[episodeKey];
+    if (!info) return;
+    const match = info.downloadLink.match(/id=([^&]+)/);
+    const fileId = match ? match[1] : null;
+    if (fileId) {
+        openMovieViewer(movie, info, fileId);
+        // Hide episode picker after selection
+        const episodePicker = document.getElementById('episodePicker');
+        if (episodePicker) episodePicker.style.display = 'none';
+    }
+}
+
+// Episode Picker Animation Functions
+function showEpisodePicker() {
+    const episodePicker = document.getElementById('episodePicker');
+    if (episodePicker) {
+        episodePicker.style.display = 'block';
+        episodePicker.classList.remove('hide');
+        // Trigger animation after display
+        setTimeout(() => {
+            episodePicker.classList.add('show');
+        }, 10);
+    }
+}
+
+function hideEpisodePicker() {
+    const episodePicker = document.getElementById('episodePicker');
+    if (episodePicker) {
+        episodePicker.classList.remove('show');
+        episodePicker.classList.add('hide');
+        // Hide completely after animation
+        setTimeout(() => {
+            episodePicker.style.display = 'none';
+            episodePicker.classList.remove('hide');
+        }, 400);
     }
 }
 

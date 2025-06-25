@@ -1028,6 +1028,118 @@ body {
     transform: scale(1.1);
 }
 
+/* Episode Picker Styles */
+.episode-picker {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(45, 45, 45, 0.9) 100%);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 107, 107, 0.2);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.episode-picker.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    max-height: 500px;
+}
+
+.episode-picker.hide {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+    pointer-events: none;
+    max-height: 0;
+}
+
+.episode-picker h4 {
+    color: #fff;
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.episode-picker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.episode-picker-close {
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.episode-picker-close:hover {
+    color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.1);
+}
+
+.episode-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.episode-btn {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(255, 142, 142, 0.1) 100%);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.episode-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.2) 0%, rgba(255, 142, 142, 0.2) 100%);
+    border-color: #ff6b6b;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(255, 107, 107, 0.3);
+}
+
+.episode-btn:active {
+    transform: translateY(0);
+}
+
+.episode-btn .episode-size {
+    display: block;
+    font-size: 0.75rem;
+    color: #aaa;
+    margin-top: 0.25rem;
+}
+
+.episode-btn:hover .episode-size {
+    color: #ccc;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-container {
@@ -1093,6 +1205,21 @@ body {
 
     .quality-options {
         grid-template-columns: 1fr;
+    }
+
+    .episode-picker {
+        margin-top: 1rem;
+        padding: 1rem;
+    }
+    
+    .episode-buttons-container {
+        gap: 0.5rem;
+    }
+    
+    .episode-btn {
+        min-width: 100px;
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
     }
 }
 
