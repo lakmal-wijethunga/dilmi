@@ -2,18 +2,131 @@
 console.log('Script loading...');
 console.log('Testing: Script file is being executed');
 
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCzB8U5qFBcB8yHn7NoEhmjvyMWn3HM8vk",
+  authDomain: "movie-download-counter.firebaseapp.com",
+  projectId: "movie-download-counter",
+  storageBucket: "movie-download-counter.firebasestorage.app",
+  messagingSenderId: "542837864447",
+  appId: "1:542837864447:web:a643a8ab3d8d2ae7d359ca"
+};
+
+// Initialize Firebase (add this script tag to your HTML: https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js)
+// import { initializeApp } from 'firebase/app';
+// import { getFirestore, doc, updateDoc, increment, getDoc, setDoc } from 'firebase/firestore';
+
+let db;
+let downloadCounts = {};
+
+// Initialize Firebase
+function initializeFirebase() {
+    try {
+        // For web version using CDN
+        if (typeof firebase !== 'undefined') {
+            firebase.initializeApp(firebaseConfig);
+            db = firebase.firestore();
+            console.log('Firebase initialized successfully');
+            loadDownloadCounts();
+        } else {
+            console.warn('Firebase not loaded. Download counter will work locally only.');
+            // Fallback to localStorage
+            downloadCounts = JSON.parse(localStorage.getItem('movieDownloadCounts')) || {};
+        }
+    } catch (error) {
+        console.error('Firebase initialization failed:', error);
+        // Fallback to localStorage
+        downloadCounts = JSON.parse(localStorage.getItem('movieDownloadCounts')) || {};
+    }
+}
+
+// Load download counts from Firebase
+async function loadDownloadCounts() {
+    if (!db) {
+        console.log('Firebase not available, using localStorage');
+        downloadCounts = JSON.parse(localStorage.getItem('movieDownloadCounts')) || {};
+        updateMovieDownloadCounts();
+        return;
+    }
+
+    try {
+        const docRef = db.collection('downloadCounts').doc('movies');
+        const doc = await docRef.get();
+        
+        if (doc.exists) {
+            downloadCounts = doc.data();
+            console.log('Download counts loaded from Firebase:', downloadCounts);
+        } else {
+            console.log('No download counts found, creating new document');
+            downloadCounts = {};
+            // Create initial document
+            await docRef.set({});
+        }
+        updateMovieDownloadCounts();
+    } catch (error) {
+        console.error('Error loading download counts:', error);
+        // Fallback to localStorage
+        downloadCounts = JSON.parse(localStorage.getItem('movieDownloadCounts')) || {};
+        updateMovieDownloadCounts();
+    }
+}
+
+// Update movie objects with download counts
+function updateMovieDownloadCounts() {
+    moviesDatabase.forEach(movie => {
+        movie.downloadCount = downloadCounts[`movie_${movie.id}`] || 0;
+    });
+}
+
+// Increment download count in Firebase
+async function incrementDownloadCount(movieId) {
+    const countKey = `movie_${movieId}`;
+    
+    if (db) {
+        try {
+            const docRef = db.collection('downloadCounts').doc('movies');
+            await docRef.update({
+                [countKey]: firebase.firestore.FieldValue.increment(1)
+            });
+            
+            // Update local count
+            downloadCounts[countKey] = (downloadCounts[countKey] || 0) + 1;
+            
+            console.log(`Download count incremented for movie ${movieId}`);
+            return downloadCounts[countKey];
+        } catch (error) {
+            console.error('Error incrementing download count:', error);
+            // Fallback to localStorage
+            downloadCounts[countKey] = (downloadCounts[countKey] || 0) + 1;
+            localStorage.setItem('movieDownloadCounts', JSON.stringify(downloadCounts));
+            return downloadCounts[countKey];
+        }
+    } else {
+        // Fallback to localStorage
+        downloadCounts[countKey] = (downloadCounts[countKey] || 0) + 1;
+        localStorage.setItem('movieDownloadCounts', JSON.stringify(downloadCounts));
+        return downloadCounts[countKey];
+    }
+}
+
+// Get download count for a movie
+function getDownloadCount(movieId) {
+    return downloadCounts[`movie_${movieId}`] || 0;
+}
+
 const moviesDatabase = [
     {
         id: 1,
         title: "Warfare",
         year: 2025,
         duration: "104 min",
-        rating: 7.2,
+        rating: 6.1,
         genres: ["Action", "War", "Thriller"],
         director: "Ray Mendoza, Alex Garland",
         cast: ["D'Pharaoh Woon-A-Tai", "Kit Connor", "Finn Bennett", "Taylor John Smith", "Alex Neustaedter"],
         synopsis: "A series of unfolding war stories told through the eyes of soldiers in different eras, from the American Civil War to modern combat. An intense and immersive war experience.",        poster: "assets/posters/warfare.jpg",
         trailer: "JER0Fkyy3tw",
+        downloadCount: 0, // Will be updated from Firebase
         qualities: {
             "1080p": { 
                 size: "2.15 GB",
@@ -33,12 +146,13 @@ const moviesDatabase = [
         title: "Final Destination: Bloodlines",
         year: 2025,
         duration: "110 min",
-        rating: 7.3,
+        rating: 5.8,
         genres: ["Horror", "Thriller", "Supernatural"],
         director: "Zach Lipovsky, Adam Stein",
         cast: ["Kaitlyn Santa Juana", "Teo Briones", "Richard Harmon", "Owen Patrick Joyner", "Anna Lore", "Brec Bassinger", "Tony Todd"],        
         synopsis: "A college student inherits visions of a deadly 1968 tower collapse from her dying grandmother and discovers that Death is coming for her family. As descendants of survivors from a prevented disaster, they must find a way to break Death's design before it claims them all.",        poster: "assets/posters/final-destination-bloodlines.jpg",
         trailer: "UWMzKXsY9A4",
+        downloadCount: 0, // Will be updated from Firebase
         qualities: {
             "1080p": { 
                 size: "1.51 GB",
@@ -51,11 +165,12 @@ const moviesDatabase = [
         title: "Sinners",
         year: 2025,
         duration: "137 min",
-        rating: 8.4,
+        rating: 7.1,
         genres: ["Horror", "Supernatural", "Musical", "Southern Gothic"],
         director: "Ryan Coogler",
         cast: ["Michael B. Jordan", "Hailee Steinfeld", "Miles Caton", "Jack O'Connell", "Wunmi Mosaku", "Jayme Lawson", "Omar Miller", "Delroy Lindo", "Li Jun Li", "Lola Kirke"],        synopsis: "Set in 1932 Mississippi Delta, identical twin brothers and World War I veterans return to their hometown to start a juke joint with stolen money. When their opening night summons both spirits and vampires, they must fight supernatural forces while confronting their past.",        poster: "assets/posters/sinners.jpg",
         trailer: "bKGxHflevuk",
+        downloadCount: 0, // Will be updated from Firebase
         qualities: {
             "1080p": { 
                 size: "2.8 GB",
@@ -72,11 +187,12 @@ const moviesDatabase = [
         title: "The Amateur",
         year: 2025,
         duration: "110 min",
-        rating: 7.6,
+        rating: 6.4,
         genres: ["Action", "Thriller", "Drama"],
         director: "James Hawes",
         cast: ["Rami Malek", "Rachel Brosnahan", "Caitríona Balfe", "Laurence Fishburne", "Jon Bernthal", "Michael Stuhlbarg", "Holt McCallany"],        synopsis: "A CIA cryptographer's wife and daughter are killed in a London terrorist attack. When his agency refuses to act, he blackmails them into training him and launches his own mission for revenge against the terrorists.",        poster: "assets/posters/the-amateur.jpg",
         trailer: "DCWcK4c-F8Q",
+        downloadCount: 0, // Will be updated from Firebase
         qualities: {
             "4K": { 
                 size: "5.5 GB",
@@ -90,11 +206,12 @@ const moviesDatabase = [
         title: "The Hunger Games: The Ballad Of Songbirds & Snakes",
         year: 2023,
         duration: "157 min",
-        rating: 7.0,
+        rating: 6.7,
         genres: ["Action", "Adventure", "Drama", "Sci-Fi"],
         director: "Francis Lawrence",
         cast: ["Tom Blyth", "Rachel Zegler", "Peter Dinklage", "Hunter Schafer", "Josh Andrés Rivera", "Jason Schwartzman", "Viola Davis"],        synopsis: "Years before he would become the tyrannical President of Panem, 18-year-old Coriolanus Snow is the last hope for his fading lineage. With the 10th annual Hunger Games fast approaching, Snow is mentoring Lucy Gray Baird from the impoverished District 12.",        poster: "assets/posters/hunger-games-ballad.jpg",
         trailer: "RDE6Uz73A7g",
+        downloadCount: 0, // Will be updated from Firebase
         qualities: {
             "4K": { 
                 size: "7.0 GB",
@@ -107,7 +224,7 @@ const moviesDatabase = [
         title: "Predator: Killer Of Killers",
         year: 2025,
         duration: "106 min",
-        rating: 7.4,
+        rating: 6.8,
         genres: ["Action", "Sci-Fi", "Thriller"],
         director: "Dan Trachtenberg",
         cast: [
@@ -132,7 +249,7 @@ const moviesDatabase = [
         title: "The Legend Of Ochi",
         year: 2025,
         duration: "99 min",
-        rating: 7.2,
+        rating: 6.5,
         genres: ["Adventure", "Family", "Fantasy"],
         director: "Isaiah Saxon",
         cast: ["Helena Zengel", "Finn Wolfhard", "Emily Watson", "Willem Dafoe"],
@@ -235,7 +352,7 @@ const moviesDatabase = [
         title: "KPop Demon Hunters",
         year: 2025,
         duration: "118 min", // Update as needed
-        rating: 7.1, // Update as needed
+        rating: 5.9, // Update as needed
         genres: ["Action", "Horror", "Comedy"],
         director: "Park Jin-woo", // Update as needed
         cast: ["Kim Min-jun", "Lee So-young", "Park Hae-jin", "Choi Jung-woo"], // Update as needed
@@ -256,7 +373,7 @@ const moviesDatabase = [
         title: "Sitaare Zameen Par (HDCAM)",
         year: 2025,
         duration: "142 min",
-        rating: 8.2,
+        rating: 7.8,
         genres: ["Drama", "Family", "Adventure"],
         director: "Aamir Khan",
         cast: ["Aamir Khan", "Genelia D'Souza", "Darsheel Safary", "Tisca Chopra"],
@@ -282,7 +399,7 @@ const moviesDatabase = [
         title: "Ironheart (Season 01)",
         year: 2025,
         duration: "6 x 50 min", // Example for a series
-        rating: 7.8,
+        rating: 5.1,
         genres: ["Action", "Sci-Fi", "Adventure"],
         director: "Sam Bailey", // Update as needed
         cast: ["Dominique Thorne", "Anthony Ramos", "Alden Ehrenreich", "Regan Aliyah"],
@@ -302,6 +419,51 @@ const moviesDatabase = [
                 downloadLink: "https://drive.usercontent.google.com/download?id=1SgTKDUd2NYzF7_gx3ilsekbumEw8UBKL&export=download"
             }
         }
+    },
+    {
+        id: 17,
+        title: "Squid Game (Season 03)",
+        year: 2025,
+        duration: "6 x 55 min",
+        rating: 8.6,
+        genres: ["Drama", "Thriller", "Survival", "TV Series"],
+        director: "Hwang Dong-hyuk",
+        cast: [
+            "Lee Jung-jae",
+            "Wi Ha-joon",
+            "Gong Yoo",
+            "Park Hae-soo",
+            "Jung Ho-yeon"
+        ],
+        synopsis: "The deadly games return for a third season as new and returning contestants face even more twisted challenges for a chance at unimaginable wealth. Loyalties are tested and secrets unravel as the stakes reach new heights.",
+        poster: "assets/posters/squid-game-season-3.jpg",
+        trailer: "0zQ9bD0uk1w", // Official Netflix Teaser Trailer (as of June 2025)
+        qualities: {
+            "Episode 01": {
+                size: "316 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1BAHSWqKoYe9v001U8NVLC-YFrD1C9pKh&export=download"
+            },
+            "Episode 02": {
+                size: "346 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1gXmzWnsPMXoHpAcIfEJi-55lAvHafMl3&export=download"
+            },
+            "Episode 03": {
+                size: "367 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1H4apvtH-E8WOlbTNIcDCZAlhJ6tv8GZK&export=download"
+            },
+            "Episode 04": {
+                size: "347 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1JFvK4AP-OcZLawEG8pw-xqwu9gkBJlhz&export=download"
+            },
+            "Episode 05": {
+                size: "340 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1ukKItEAkRzvqFq2sbxziRwwFjl9c6X37&export=download"
+            },
+            "Episode 06": {
+                size: "314 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1rj8GI2lXT1-X-qw-pgWrlM6ibH-eqOqB&export=download"
+            }
+        }
     }
 ];
 
@@ -318,6 +480,10 @@ let currentSort = 'recently-added';
 document.addEventListener('DOMContentLoaded', function() {
     console.log('====== DOM LOADED - APP STARTING ======');
     console.log('DOM loaded, initializing app...');
+    
+    // Initialize Firebase and load download counts
+    initializeFirebase();
+    
     console.log('Movies database:', moviesDatabase);
     console.log('Movies database length:', moviesDatabase.length);
     
@@ -369,6 +535,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Set up event listeners after initial display
     setupEventListeners(searchInput, filterBtns, sortSelect, closeBtn, modal, moviesGrid, movieCountElement);
+    
+    // Setup real-time download count listener
+    setupRealtimeDownloadListener();
+    
     console.log('App initialized successfully');
 });
 
@@ -585,6 +755,10 @@ function displayMovies(movies, moviesGrid) {
                 <div class="movie-genres">
                     ${movie.genres.map(genre => `<span class="genre-tag">${genre}</span>`).join('')}
                 </div>
+                <div class="download-stats">
+                    <i class="fas fa-download"></i>
+                    <span>${movie.downloadCount || 0} downloads</span>
+                </div>
             </div>
         </div>
     `).join('');
@@ -641,7 +815,7 @@ function openMovieModal(movieId) {
     // Populate quality options
     if (qualityOptions) {
         qualityOptions.innerHTML = Object.entries(movie.qualities).map(([quality, info]) => `
-            <div class="quality-option" onclick="downloadMovie('${info.downloadLink}', '${movie.title}', '${quality}')">
+            <div class="quality-option" onclick="downloadMovie('${info.downloadLink}', '${movie.title}', '${quality}', ${movie.id})">
                 <div class="quality-label">${quality}</div>
                 <div class="quality-size">${info.size}</div>
                 <i class="fas fa-download"></i>
@@ -758,8 +932,23 @@ function closeModal() {
 }
 
 // Download movie
-function downloadMovie(downloadLink, movieTitle, quality) {
+async function downloadMovie(downloadLink, movieTitle, quality, movieId) {
     console.log(`Downloading ${movieTitle} in ${quality}...`);
+    
+    // Increment download counter
+    if (movieId) {
+        try {
+            const newCount = await incrementDownloadCount(movieId);
+            const movie = moviesDatabase.find(m => m.id === movieId);
+            if (movie) {
+                movie.downloadCount = newCount;
+                updateDownloadCountDisplay(movieId);
+                console.log(`Download count for ${movieTitle}: ${newCount}`);
+            }
+        } catch (error) {
+            console.error('Error updating download count:', error);
+        }
+    }
     
     // Convert Google Drive link to direct download format to bypass virus scan
     let directDownloadLink = downloadLink;
@@ -787,363 +976,62 @@ function downloadMovie(downloadLink, movieTitle, quality) {
     document.body.removeChild(link);
 }
 
-
-
-// Open trailer modal
-function openTrailerModal(trailerVideoId) {
-    const trailerModal = document.getElementById('trailerModal');
-    const trailerFrame = document.getElementById('trailerFrame');
-    
-    if (trailerModal && trailerFrame) {
-        trailerFrame.src = `https://www.youtube.com/embed/${trailerVideoId}?autoplay=1&rel=0`;
-        trailerModal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-// Close trailer modal
-function closeTrailerModal() {
-    const trailerModal = document.getElementById('trailerModal');
-    const trailerFrame = document.getElementById('trailerFrame');
-    
-    if (trailerModal) {
-        trailerModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-    
-    if (trailerFrame) {
-        trailerFrame.src = '';
-    }
-}
-
-// Handle image loading errors
-function handleImageError(img) {
-    console.log('Image failed to load:', img.src);
-    img.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-    img.style.display = 'flex';
-    img.style.alignItems = 'center';
-    img.style.justifyContent = 'center';
-    img.style.color = 'white';
-    img.style.fontSize = '2rem';
-    img.style.fontWeight = 'bold';
-    img.style.textAlign = 'center';
-    img.innerHTML = `
-        <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-        </svg>
-    `;
-    img.onerror = null; // Prevent infinite loop
-}
-
-function getPosterPath(movie) {
-    // Return the poster path with fallback
-    return movie.poster || `assets/posters/${movie.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}.jpg`;
-}
-
-/*
-================================================================================
-INSTRUCTIONS FOR ADDING NEW MOVIES FROM GOOGLE DRIVE FOLDERS
-================================================================================
-
-Based on the Google Drive folder: https://drive.google.com/drive/folders/10D8Ie6DcdK7bf_HSWRek8ymkEYfWF2Fl
-
-The folder contains these movies that can be added:
-- Call of Duty Vanguard (2021)
-- Call of Duty: Modern Warfare (2019)
-- Dragon (2025) ✓ ADDED
-- Final Destination Bloodlines (2025) ✓ ADDED
-- Maranamass (2025)
-- Officer On Duty (2025)
-- Padakkalam (2025)
-- Perusu (2025)
-- Predator Killer Of Killers (2025) ✓ ADDED
-- Retro (2025)
-- Sinners (2025) ✓ ADDED
-- The Amateur (2025) ✓ ADDED
-- The Hunger Games: The Ballad Of Songbirds Snakes (2023) ✓ ADDED
-- The Legend Of Ochi (2025) ✓ ADDED
-- The Ugly Stepsister (2025)
-- Thrayam (2024)
-- Thudarum (2025)
-- Tourist Family (2025)
-- Warfare (2025) ✓ ADDED
-
-HOW TO ADD A NEW MOVIE:
-
-1. RESEARCH THE MOVIE:
-   - Go to IMDB or TMDB to get movie details
-   - Get: title, year, duration, rating, genres, director, cast, synopsis
-   - Find a YouTube trailer ID (the part after "watch?v=" in YouTube URL)
-
-2. GET GOOGLE DRIVE FILE ID:
-   - Right-click the movie file in Google Drive
-   - Select "Get link" and choose "Anyone with the link can view"
-   - The file ID is the long string between "/d/" and "/view" in the URL
-   - Example: https://drive.google.com/file/d/FILE_ID_HERE/view?usp=sharing
-
-3. CREATE DOWNLOAD LINK:
-   - Use this format: https://drive.usercontent.google.com/download?id=FILE_ID_HERE&export=download
-
-4. ADD TO MOVIES DATABASE:
-   - Copy an existing movie object in the moviesDatabase array
-   - Update all the fields with the new movie's information
-   - Increment the ID number
-   - Add multiple quality options if available
-
-5. ADD POSTER IMAGE:
-   - Download a poster image for the movie
-   - Save it in assets/posters/ folder
-   - Name it using lowercase title with hyphens (e.g., "movie-title.jpg")
-   - Update the poster path in the movie object
-
-EXAMPLE OF ADDING A NEW MOVIE:
-
-{
-    id: 9, // Increment this number
-    title: "Movie Title",
-    year: 2025,
-    duration: "120 min",
-    rating: 7.5,
-    genres: ["Action", "Adventure"], // Array of genres
-    director: "Director Name",
-    cast: ["Actor 1", "Actor 2", "Actor 3"], // Array of main cast
-    synopsis: "Movie synopsis here...",
-    poster: "assets/posters/movie-title.jpg",
-    trailer: "YOUTUBE_VIDEO_ID", // Just the ID, not full URL
-    qualities: {
-        "1080p": { 
-            size: "2.5 GB",
-            downloadLink: "https://drive.usercontent.google.com/download?id=GOOGLE_DRIVE_FILE_ID&export=download"
-        },
-        "720p": { 
-            size: "1.2 GB", 
-            downloadLink: "https://drive.usercontent.google.com/download?id=ANOTHER_FILE_ID&export=download"
-        }
-    }
-}
-
-NOTES:
-- Always test the download links before adding them
-- Make sure poster images are optimized (not too large)
-- Update genre filters in index.html if adding new genres
-- Check that the trailer ID works on YouTube
-- Use proper movie information from reliable sources (IMDB/TMDB)
-
-================================================================================
-*/
-
-// Additional movies ready to be added (templates with placeholders):
-
-const additionalMoviesToAdd = [
-    {
-        id: 9,
-        title: "Call of Duty: Vanguard",
-        year: 2021,
-        duration: "120 min",
-        rating: 7.0,
-        genres: ["Action", "War", "Adventure"],
-        director: "TBD",
-        cast: ["TBD"],
-        synopsis: "Based on the popular video game, Call of Duty: Vanguard follows elite soldiers fighting across multiple theaters of World War II.",
-        poster: "assets/posters/cod-vanguard.jpg",
-        trailer: "QzAloq19e3U", // Official Launch Trailer
-        qualities: {
-            "1080p": { 
-                size: "TBD",
-                downloadLink: "https://drive.usercontent.google.com/download?id=REPLACE_WITH_ACTUAL_FILE_ID&export=download"
-            }
-        }
-    },
-    {
-        id: 10,
-        title: "The Ugly Stepsister",
-        year: 2025,
-        duration: "95 min",
-        rating: 6.8,
-        genres: ["Comedy", "Romance", "Drama"],
-        director: "TBD",
-        cast: ["TBD"],
-        synopsis: "A modern twist on the classic Cinderella story, told from the perspective of one of the stepsisters.",
-        poster: "assets/posters/ugly-stepsister.jpg",
-        trailer: "dQw4w9WgXcQ", // No official trailer as of June 2025
-        qualities: {
-            "1080p": { 
-                size: "TBD",
-                downloadLink: "https://drive.usercontent.google.com/download?id=REPLACE_WITH_ACTUAL_FILE_ID&export=download"
-            }
-        }
-    }
-    // Add more movies here following the same pattern
-];
-
-/*
-TO ACTIVATE ADDITIONAL MOVIES:
-1. Research each movie to fill in the TBD fields
-2. Get the actual Google Drive file IDs 
-3. Download and add poster images
-4. Move the movie objects from additionalMoviesToAdd to the main moviesDatabase array
-5. Update the IDs to be sequential
-*/
-
-// Movie Viewer Functions
-function openMovieViewer(movie, bestQuality, fileId) {
-    const movieViewerModal = document.getElementById('movieViewerModal');
-    const movieViewerFrame = document.getElementById('movieViewerFrame');
-    const viewerMovieTitle = document.getElementById('viewerMovieTitle');
-    const viewerMovieYear = document.getElementById('viewerMovieYear');
-    const viewerMovieRating = document.getElementById('viewerMovieRating');
-    const viewerMovieDuration = document.getElementById('viewerMovieDuration');
-    
-    if (movieViewerModal && movieViewerFrame) {
-        // Set movie information
-        if (viewerMovieTitle) viewerMovieTitle.textContent = movie.title;
-        if (viewerMovieYear) viewerMovieYear.textContent = movie.year;
-        if (viewerMovieRating) viewerMovieRating.textContent = `★ ${movie.rating}`;
-        if (viewerMovieDuration) viewerMovieDuration.textContent = movie.duration;
-        
-        // Setup quality options
-        setupQualityOptions(movie);
-        
-        // Load movie in Google Drive viewer
-        movieViewerFrame.src = `https://drive.google.com/file/d/${fileId}/preview`;
-        
-        // Show modal
-        movieViewerModal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-        
-        // Close movie details modal
-        const movieModal = document.getElementById('movieModal');
-        if (movieModal) {
-            movieModal.style.display = 'none';
-        }
-        
-        // Store current movie data for quality switching
-        movieViewerModal.dataset.currentMovie = JSON.stringify(movie);
-    }
-}
-
-function closeMovieViewer() {
-    const movieViewerModal = document.getElementById('movieViewerModal');
-    const movieViewerFrame = document.getElementById('movieViewerFrame');
-    const viewerQualitySelector = document.getElementById('viewerQualitySelector');
-    
-    if (movieViewerModal) {
-        movieViewerModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-    
-    if (movieViewerFrame) {
-        movieViewerFrame.src = '';
-    }
-    
-    if (viewerQualitySelector) {
-        viewerQualitySelector.style.display = 'none';
-    }
-}
-
-function setupQualityOptions(movie) {
-    const viewerQualityOptions = document.getElementById('viewerQualityOptions');
-    if (!viewerQualityOptions || !movie.qualities) return;
-    
-    viewerQualityOptions.innerHTML = '';
-    
-    // Quality order for display
-    const qualityOrder = ['4K', '2160p', '1080p', '720p', '480p'];
-    
-    qualityOrder.forEach(quality => {
-        if (movie.qualities[quality]) {
-            const qualityData = movie.qualities[quality];
-            const qualityBtn = document.createElement('div');
-            qualityBtn.className = 'quality-option-btn';
-            qualityBtn.innerHTML = `
-                <div class="quality-icon">
-                    <i class="fas fa-play-circle"></i>
-                </div>
-                <div class="quality-name">${quality}</div>
-                <div class="quality-size">${qualityData.size}</div>
-            `;
-            
-            qualityBtn.onclick = () => switchQuality(quality, qualityData);
-            viewerQualityOptions.appendChild(qualityBtn);
-        }
-    });
-}
-
-function switchQuality(quality, qualityData) {
-    const movieViewerFrame = document.getElementById('movieViewerFrame');
-    const viewerQualitySelector = document.getElementById('viewerQualitySelector');
-    
-    // Extract file ID from download link
-    const match = qualityData.downloadLink.match(/id=([^&]+)/);
-    const fileId = match ? match[1] : null;
-    
-    if (fileId && movieViewerFrame) {
-        // Update iframe source
-        movieViewerFrame.src = `https://drive.google.com/file/d/${fileId}/preview`;
-        
-        // Update active quality button
-        document.querySelectorAll('.quality-option-btn').forEach(btn => {
-            btn.classList.remove('active');
-        });
-        event.currentTarget.classList.add('active');
-        
-        // Hide quality selector
-        if (viewerQualitySelector) {
-            viewerQualitySelector.style.display = 'none';
-        }
-        
-        // Show notification
-        showNotification(`Quality changed to ${quality}`);
-    }
-}
-
-function toggleQualitySelector() {
-    const viewerQualitySelector = document.getElementById('viewerQualitySelector');
-    if (viewerQualitySelector) {
-        const isVisible = viewerQualitySelector.style.display !== 'none';
-        viewerQualitySelector.style.display = isVisible ? 'none' : 'block';
-    }
-}
-
-// Helper for TV show episode viewing
-function openMovieViewerByEpisode(movieId, episodeKey) {
+// Update download count display in modal and movie cards
+function updateDownloadCountDisplay(movieId) {
     const movie = moviesDatabase.find(m => m.id === movieId);
     if (!movie) return;
-    const info = movie.qualities[episodeKey];
-    if (!info) return;
-    const match = info.downloadLink.match(/id=([^&]+)/);
-    const fileId = match ? match[1] : null;
-    if (fileId) {
-        openMovieViewer(movie, info, fileId);
-        // Hide episode picker after selection
-        const episodePicker = document.getElementById('episodePicker');
-        if (episodePicker) episodePicker.style.display = 'none';
-    }
+    
+    // Update movie card if visible in current display
+    setTimeout(() => {
+        const movieCards = document.querySelectorAll('.movie-card');
+        movieCards.forEach(card => {
+            const onclickStr = card.getAttribute('onclick');
+            if (onclickStr && onclickStr.includes(`openMovieModal(${movieId})`)) {
+                const downloadStats = card.querySelector('.download-stats span');
+                if (downloadStats) {
+                    downloadStats.textContent = `${movie.downloadCount || 0} downloads`;
+                }
+            }
+        });
+    }, 100);
 }
 
-// Episode Picker Animation Functions
-function showEpisodePicker() {
-    const episodePicker = document.getElementById('episodePicker');
-    if (episodePicker) {
-        episodePicker.style.display = 'block';
-        episodePicker.classList.remove('hide');
-        // Trigger animation after display
-        setTimeout(() => {
-            episodePicker.classList.add('show');
-        }, 10);
-    }
-}
-
-function hideEpisodePicker() {
-    const episodePicker = document.getElementById('episodePicker');
-    if (episodePicker) {
-        episodePicker.classList.remove('show');
-        episodePicker.classList.add('hide');
-        // Hide completely after animation
-        setTimeout(() => {
-            episodePicker.style.display = 'none';
-            episodePicker.classList.remove('hide');
-        }, 400);
+// Real-time listener for download count updates (optional)
+function setupRealtimeDownloadListener() {
+    if (db) {
+        const docRef = db.collection('downloadCounts').doc('movies');
+        docRef.onSnapshot((doc) => {
+            if (doc.exists) {
+                const newCounts = doc.data();
+                let hasChanges = false;
+                
+                // Update local counts and movie objects
+                Object.keys(newCounts).forEach(key => {
+                    if (downloadCounts[key] !== newCounts[key]) {
+                        downloadCounts[key] = newCounts[key];
+                        hasChanges = true;
+                        
+                        // Extract movie ID from key
+                        const movieId = parseInt(key.replace('movie_', ''));
+                        const movie = moviesDatabase.find(m => m.id === movieId);
+                        if (movie) {
+                            movie.downloadCount = newCounts[key];
+                        }
+                    }
+                });
+                
+                // Update display if there were changes
+                if (hasChanges) {
+                    // Refresh current movies display to show updated counts
+                    const moviesGrid = document.getElementById('moviesGrid');
+                    if (moviesGrid && currentMovies) {
+                        displayMovies(currentMovies, moviesGrid);
+                    }
+                }
+            }
+        }, (error) => {
+            console.error('Error listening to download counts:', error);
+        });
     }
 }
 
