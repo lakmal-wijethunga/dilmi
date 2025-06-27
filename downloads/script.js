@@ -27,7 +27,12 @@ function initializeFirebase() {
             firebase.initializeApp(firebaseConfig);
             db = firebase.firestore();
             console.log('Firebase initialized successfully');
-            loadDownloadCounts();
+            
+            // Load download counts and setup real-time listener
+            loadDownloadCounts().then(() => {
+                setupRealtimeDownloadListener();
+                console.log('Firebase setup complete with real-time listener');
+            });
         } else {
             console.warn('Firebase not loaded. Download counter will work locally only.');
             // Fallback to localStorage
@@ -92,26 +97,62 @@ async function incrementDownloadCount(movieId) {
     if (db) {
         try {
             const docRef = db.collection('downloadCounts').doc('movies');
+            
+            // First, ensure document exists
+            const docSnapshot = await docRef.get();
+            if (!docSnapshot.exists) {
+                console.log('Creating new download counts document');
+                await docRef.set({ [countKey]: 1 });
+                downloadCounts[countKey] = 1;
+                return 1;
+            }
+            
+            // Increment the count
             await docRef.update({
                 [countKey]: firebase.firestore.FieldValue.increment(1)
             });
             
-            // Update local count
+            // Update local count immediately
             downloadCounts[countKey] = (downloadCounts[countKey] || 0) + 1;
             
-            console.log(`Download count incremented for movie ${movieId}`);
+            console.log(`Download count incremented for movie ${movieId}: ${downloadCounts[countKey]}`);
+            
+            // Update UI immediately
+            const movie = moviesDatabase.find(m => m.id === movieId);
+            if (movie) {
+                movie.downloadCount = downloadCounts[countKey];
+                updateDownloadCountDisplay(movieId);
+            }
+            
             return downloadCounts[countKey];
         } catch (error) {
             console.error('Error incrementing download count:', error);
             // Fallback to localStorage
             downloadCounts[countKey] = (downloadCounts[countKey] || 0) + 1;
             localStorage.setItem('movieDownloadCounts', JSON.stringify(downloadCounts));
+            
+            // Update movie object and UI
+            const movie = moviesDatabase.find(m => m.id === movieId);
+            if (movie) {
+                movie.downloadCount = downloadCounts[countKey];
+                updateDownloadCountDisplay(movieId);
+            }
+            
             return downloadCounts[countKey];
         }
     } else {
         // Fallback to localStorage
         downloadCounts[countKey] = (downloadCounts[countKey] || 0) + 1;
         localStorage.setItem('movieDownloadCounts', JSON.stringify(downloadCounts));
+        
+        // Update movie object and UI
+        const movie = moviesDatabase.find(m => m.id === movieId);
+        if (movie) {
+            movie.downloadCount = downloadCounts[countKey];
+            updateDownloadCountDisplay(movieId);
+        }
+        
+        console.log(`Local download count incremented for movie ${movieId}: ${downloadCounts[countKey]}`);
         return downloadCounts[countKey];
     }
 }
@@ -965,22 +1006,18 @@ function closeModal() {
 async function downloadMovie(downloadLink, movieTitle, quality, movieId) {
     console.log(`Downloading ${movieTitle} in ${quality}...`);
     
-    // Increment download counter
+    // Increment download counter FIRST
     if (movieId) {
         try {
+            console.log('Incrementing download counter for movie ID:', movieId);
             const newCount = await incrementDownloadCount(movieId);
-            const movie = moviesDatabase.find(m => m.id === movieId);
-            if (movie) {
-                movie.downloadCount = newCount;
-                updateDownloadCountDisplay(movieId);
-                console.log(`Download count for ${movieTitle}: ${newCount}`);
-            }
+            console.log(`Download count updated to: ${newCount} for ${movieTitle}`);
         } catch (error) {
             console.error('Error updating download count:', error);
         }
     }
     
-    // Convert Google Drive link to direct download format to bypass virus scan
+    // Then proceed with download
     let directDownloadLink = downloadLink;
     
     // Check if it's a Google Drive link with file ID
@@ -1004,6 +1041,8 @@ async function downloadMovie(downloadLink, movieTitle, quality, movieId) {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    
+    console.log('Download initiated for:', movieTitle);
 }
 
 // Update download count display in modal and movie cards
@@ -1029,10 +1068,14 @@ function updateDownloadCountDisplay(movieId) {
 // Real-time listener for download count updates (optional)
 function setupRealtimeDownloadListener() {
     if (db) {
+        console.log('Setting up real-time download listener...');
         const docRef = db.collection('downloadCounts').doc('movies');
+        
         docRef.onSnapshot((doc) => {
             if (doc.exists) {
                 const newCounts = doc.data();
+                console.log('Real-time update received:', newCounts);
+                
                 let hasChanges = false;
                 
                 // Update local counts and movie objects
@@ -1046,7 +1089,8 @@ function setupRealtimeDownloadListener() {
                         const movie = moviesDatabase.find(m => m.id === movieId);
                         if (movie) {
                             movie.downloadCount = newCounts[key];
-                            // Update individual movie display
+                            console.log(`Updated ${movie.title} download count to ${newCounts[key]}`);
+                            // Update individual movie display immediately
                             updateDownloadCountDisplay(movieId);
                         }
                     }
@@ -1055,20 +1099,52 @@ function setupRealtimeDownloadListener() {
                 // Update display if there were changes
                 if (hasChanges) {
                     console.log('Download counts updated from real-time listener');
-                    // Refresh current movies display to show updated counts
+                    // Force refresh of the movie grid
                     const moviesGrid = document.getElementById('moviesGrid');
                     if (moviesGrid && currentMovies) {
-                        setTimeout(() => {
-                            displayMovies(currentMovies, moviesGrid);
-                        }, 100);
+                        displayMovies(currentMovies, moviesGrid);
                     }
                 }
+            } else {
+                console.log('No download counts document found in real-time listener');
             }
         }, (error) => {
             console.error('Error listening to download counts:', error);
         });
+        
+        console.log('Real-time listener setup complete');
+    } else {
+        console.log('No Firebase database available for real-time listener');
     }
 }
+
+// Debug function to test Firebase connection
+function testFirebaseConnection() {
+    console.log('=== FIREBASE CONNECTION TEST ===');
+    console.log('Firebase available:', typeof firebase !== 'undefined');
+    console.log('Database initialized:', !!db);
+    console.log('Download counts:', downloadCounts);
+    
+    if (db) {
+        // Test reading from Firebase
+        db.collection('downloadCounts').doc('movies').get()
+            .then((doc) => {
+                if (doc.exists) {
+                    console.log('Firebase data:', doc.data());
+                } else {
+                    console.log('No document found in Firebase');
+                }
+            })
+            .catch((error) => {
+                console.error('Firebase read error:', error);
+            });
+    }
+}
+
+// Call test function after DOM loads
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(testFirebaseConnection, 2000);
+});
 
 // Handle image errors by showing a placeholder
 function handleImageError(img) {
@@ -1247,31 +1323,39 @@ function updateAllDownloadCounts() {
 // Enhanced download count display update
 function updateDownloadCountDisplay(movieId) {
     const movie = moviesDatabase.find(m => m.id === movieId);
-    if (!movie) return;
+    if (!movie) {
+        console.log('Movie not found for ID:', movieId);
+        return;
+    }
     
-    // Update movie card if visible in current display
-    setTimeout(() => {
-        const movieCards = document.querySelectorAll('.movie-card');
-        movieCards.forEach(card => {
-            const onclickStr = card.getAttribute('onclick');
-            if (onclickStr && onclickStr.includes(`openMovieModal(${movieId})`)) {
-                const downloadStats = card.querySelector('.download-stats span');
-                if (downloadStats) {
-                    const newText = `${movie.downloadCount || 0} downloads`;
-                    if (downloadStats.textContent !== newText) {
-                        // Add animation for count update
-                        downloadStats.style.transform = 'scale(1.1)';
-                        downloadStats.style.transition = 'transform 0.2s ease';
-                        downloadStats.textContent = newText;
-                        
-                        setTimeout(() => {
-                            downloadStats.style.transform = 'scale(1)';
-                        }, 200);
-                    }
+    console.log(`Updating download count display for ${movie.title}: ${movie.downloadCount}`);
+    
+    // Update movie card if visible in current display - immediate update
+    const movieCards = document.querySelectorAll('.movie-card');
+    movieCards.forEach(card => {
+        const onclickStr = card.getAttribute('onclick');
+        if (onclickStr && onclickStr.includes(`openMovieModal(${movieId})`)) {
+            const downloadStats = card.querySelector('.download-stats span');
+            if (downloadStats) {
+                const newText = `${movie.downloadCount || 0} downloads`;
+                if (downloadStats.textContent !== newText) {
+                    console.log(`Updating card display for ${movie.title}: ${newText}`);
+                    // Add animation for count update
+                    downloadStats.style.transform = 'scale(1.2)';
+                    downloadStats.style.color = '#00ff88';
+                    downloadStats.style.transition = 'all 0.3s ease';
+                    downloadStats.textContent = newText;
+                    
+                    setTimeout(() => {
+                        downloadStats.style.transform = 'scale(1)';
+                        downloadStats.style.color = '';
+                    }, 500);
+                } else {
+                    downloadStats.textContent = newText;
                 }
             }
-        });
-    }, 100);
+        }
+    });
 }
 
 // Add CSS animations dynamically if not present
