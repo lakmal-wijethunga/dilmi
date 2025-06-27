@@ -32,11 +32,15 @@ function initializeFirebase() {
             console.warn('Firebase not loaded. Download counter will work locally only.');
             // Fallback to localStorage
             downloadCounts = JSON.parse(localStorage.getItem('movieDownloadCounts')) || {};
+            updateMovieDownloadCounts();
+            updateAllDownloadCounts();
         }
     } catch (error) {
         console.error('Firebase initialization failed:', error);
         // Fallback to localStorage
         downloadCounts = JSON.parse(localStorage.getItem('movieDownloadCounts')) || {};
+        updateMovieDownloadCounts();
+        updateAllDownloadCounts();
     }
 }
 
@@ -46,6 +50,7 @@ async function loadDownloadCounts() {
         console.log('Firebase not available, using localStorage');
         downloadCounts = JSON.parse(localStorage.getItem('movieDownloadCounts')) || {};
         updateMovieDownloadCounts();
+        updateAllDownloadCounts();
         return;
     }
 
@@ -63,11 +68,13 @@ async function loadDownloadCounts() {
             await docRef.set({});
         }
         updateMovieDownloadCounts();
+        updateAllDownloadCounts();
     } catch (error) {
         console.error('Error loading download counts:', error);
         // Fallback to localStorage
         downloadCounts = JSON.parse(localStorage.getItem('movieDownloadCounts')) || {};
         updateMovieDownloadCounts();
+        updateAllDownloadCounts();
     }
 }
 
@@ -437,7 +444,7 @@ const moviesDatabase = [
         ],
         synopsis: "The deadly games return for a third season as new and returning contestants face even more twisted challenges for a chance at unimaginable wealth. Loyalties are tested and secrets unravel as the stakes reach new heights.",
         poster: "assets/posters/squid-game-season-3.jpg",
-        trailer: "0zQ9bD0uk1w", // Official Netflix Teaser Trailer (as of June 2025)
+        trailer: "zgGTVaG2UiQ", // Official Netflix Teaser Trailer (as of June 2025)
         qualities: {
             "Episode 01": {
                 size: "316 MB",
@@ -826,10 +833,15 @@ function openMovieModal(movieId) {
     // Setup trailer button
     const trailerBtn = document.getElementById('trailerBtn');
     if (trailerBtn && movie.trailer) {
-        trailerBtn.onclick = () => openTrailerModal(movie.trailer);
+        trailerBtn.onclick = () => {
+            console.log('Trailer button clicked for:', movie.title, 'Trailer ID:', movie.trailer);
+            openTrailerModal(movie.trailer);
+        };
         trailerBtn.style.display = 'inline-flex';
+        console.log('Trailer button setup for:', movie.title);
     } else if (trailerBtn) {
         trailerBtn.style.display = 'none';
+        console.log('No trailer available for:', movie.title);
     }
 
     // Setup Watch Now button (open highest quality in Google Drive viewer or episode picker for TV shows)
@@ -837,8 +849,13 @@ function openMovieModal(movieId) {
     const episodePicker = document.getElementById('episodePicker'); // Add this div in your modal HTML if not present
     if (watchNowBtn) {
         // Detect if this is a TV show (qualities keys look like 'Episode 01', etc.)
-        const isTVShow = Object.keys(movie.qualities).some(key => key.toLowerCase().includes('episode'));        if (isTVShow) {
+        const isTVShow = Object.keys(movie.qualities).some(key => key.toLowerCase().includes('episode'));
+        
+        console.log('Setting up Watch Now button for:', movie.title, 'Is TV Show:', isTVShow);
+        
+        if (isTVShow) {
             watchNowBtn.onclick = () => {
+                console.log('Watch Now clicked for TV show:', movie.title);
                 if (episodePicker) {
                     // Check if already visible, toggle if so
                     if (episodePicker.classList.contains('show')) {
@@ -865,6 +882,7 @@ function openMovieModal(movieId) {
                         btns.forEach(btn => {
                             btn.onclick = function(e) {
                                 e.stopPropagation();
+                                console.log('Episode button clicked:', this.getAttribute('data-episode'));
                                 openMovieViewerByEpisode(movie.id, this.getAttribute('data-episode'));
                             };
                         });
@@ -880,9 +898,11 @@ function openMovieModal(movieId) {
             // Define quality order (highest to lowest)
             const qualityOrder = ['4K', '2160p', '1080p', '720p', '480p'];
             let bestQuality = null;
+            let bestQualityKey = null;
             for (const q of qualityOrder) {
                 if (movie.qualities[q]) {
                     bestQuality = movie.qualities[q];
+                    bestQualityKey = q;
                     break;
                 }
             }
@@ -890,21 +910,31 @@ function openMovieModal(movieId) {
             if (!bestQuality) {
                 const firstKey = Object.keys(movie.qualities)[0];
                 bestQuality = movie.qualities[firstKey];
+                bestQualityKey = firstKey;
             }
+            
+            console.log('Best quality found for', movie.title, ':', bestQualityKey, bestQuality);
+            
             if (bestQuality && bestQuality.downloadLink) {
                 // Extract Google Drive file ID
                 const match = bestQuality.downloadLink.match(/id=([^&]+)/);
                 const fileId = match ? match[1] : null;
+                
+                console.log('File ID extracted:', fileId);
+                
                 if (fileId) {
                     watchNowBtn.onclick = () => {
+                        console.log('Watch Now clicked for movie:', movie.title, 'Quality:', bestQualityKey);
                         openMovieViewer(movie, bestQuality, fileId);
                     };
                     watchNowBtn.style.display = 'inline-flex';
                 } else {
+                    console.error('Could not extract file ID from:', bestQuality.downloadLink);
                     watchNowBtn.onclick = null;
                     watchNowBtn.style.display = 'none';
                 }
             } else {
+                console.error('No quality/download link found for:', movie.title);
                 watchNowBtn.onclick = null;
                 watchNowBtn.style.display = 'none';
             }
@@ -1016,16 +1046,21 @@ function setupRealtimeDownloadListener() {
                         const movie = moviesDatabase.find(m => m.id === movieId);
                         if (movie) {
                             movie.downloadCount = newCounts[key];
+                            // Update individual movie display
+                            updateDownloadCountDisplay(movieId);
                         }
                     }
                 });
                 
                 // Update display if there were changes
                 if (hasChanges) {
+                    console.log('Download counts updated from real-time listener');
                     // Refresh current movies display to show updated counts
                     const moviesGrid = document.getElementById('moviesGrid');
                     if (moviesGrid && currentMovies) {
-                        displayMovies(currentMovies, moviesGrid);
+                        setTimeout(() => {
+                            displayMovies(currentMovies, moviesGrid);
+                        }, 100);
                     }
                 }
             }
@@ -1034,5 +1069,262 @@ function setupRealtimeDownloadListener() {
         });
     }
 }
+
+// Handle image errors by showing a placeholder
+function handleImageError(img) {
+    img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQ1MCIgdmlld0JveD0iMCAwIDMwMCA0NTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iNDUwIiBmaWxsPSIjMzMzIi8+CjxwYXRoIGQ9Ik0xNTAgMjI1TDEyNSAyMDBMMTc1IDIwMEwxNTAgMjI1WiIgZmlsbD0iIzU1NSIvPgo8Y2lyY2xlIGN4PSIxNTAiIGN5PSIxODAiIHI9IjE1IiBmaWxsPSIjNTU1Ii8+CjxyZWN0IHg9IjEwMCIgeT0iMjUwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjNTU1Ii8+CjxyZWN0IHg9IjEyMCIgeT0iMjgwIiB3aWR0aD0iNjAiIGhlaWdodD0iMTUiIGZpbGw9IiM1NTUiLz4KPC9zdmc+';
+    img.alt = 'Movie poster not available';
+    img.style.opacity = '0.6';
+}
+
+// Open trailer modal
+function openTrailerModal(trailerUrl) {
+    const trailerModal = document.getElementById('trailerModal');
+    const trailerIframe = document.getElementById('trailerFrame'); // Updated ID to match HTML
+    
+    if (trailerModal && trailerIframe) {
+        // Construct YouTube embed URL
+        const embedUrl = `https://www.youtube.com/embed/${trailerUrl}?autoplay=1&rel=0&modestbranding=1`;
+        trailerIframe.src = embedUrl;
+        trailerModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        // Add fade-in animation
+        trailerModal.style.opacity = '0';
+        setTimeout(() => {
+            trailerModal.style.opacity = '1';
+            trailerModal.style.transition = 'opacity 0.3s ease';
+        }, 10);
+        
+        console.log('Trailer modal opened with URL:', embedUrl);
+    } else {
+        console.error('Trailer modal elements not found:', {
+            trailerModal: !!trailerModal,
+            trailerIframe: !!trailerIframe
+        });
+    }
+}
+
+// Close trailer modal
+function closeTrailerModal() {
+    const trailerModal = document.getElementById('trailerModal');
+    const trailerIframe = document.getElementById('trailerFrame'); // Updated ID to match HTML
+    
+    if (trailerModal) {
+        // Add fade-out animation
+        trailerModal.style.opacity = '0';
+        setTimeout(() => {
+            trailerModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            
+            // Stop the video
+            if (trailerIframe) {
+                trailerIframe.src = '';
+            }
+        }, 300);
+        
+        console.log('Trailer modal closed');
+    }
+}
+
+// Show episode picker with animation
+function showEpisodePicker() {
+    const episodePicker = document.getElementById('episodePicker');
+    if (episodePicker) {
+        episodePicker.style.display = 'block';
+        episodePicker.style.opacity = '0';
+        episodePicker.style.transform = 'translateY(-20px)';
+        
+        // Force reflow
+        episodePicker.offsetHeight;
+        
+        episodePicker.classList.add('show');
+        episodePicker.style.transition = 'all 0.3s ease';
+        episodePicker.style.opacity = '1';
+        episodePicker.style.transform = 'translateY(0)';
+    }
+}
+
+// Hide episode picker with animation
+function hideEpisodePicker() {
+    const episodePicker = document.getElementById('episodePicker');
+    if (episodePicker && episodePicker.classList.contains('show')) {
+        episodePicker.style.opacity = '0';
+        episodePicker.style.transform = 'translateY(-20px)';
+        
+        setTimeout(() => {
+            episodePicker.classList.remove('show');
+            episodePicker.style.display = 'none';
+        }, 300);
+    }
+}
+
+// Open movie viewer
+function openMovieViewer(movie, quality, fileId) {
+    const movieViewerModal = document.getElementById('movieViewerModal');
+    const movieViewerIframe = document.getElementById('movieViewerFrame'); // Updated ID to match HTML
+    const movieViewerTitle = document.getElementById('viewerMovieTitle'); // Updated ID to match HTML
+    
+    if (movieViewerModal && movieViewerIframe) {
+        // Set title
+        if (movieViewerTitle) {
+            movieViewerTitle.textContent = `${movie.title} - ${Object.keys(movie.qualities).find(key => movie.qualities[key] === quality) || 'Best Quality'}`;
+        }
+        
+        // Create Google Drive viewer URL
+        const viewerUrl = `https://drive.google.com/file/d/${fileId}/preview`;
+        movieViewerIframe.src = viewerUrl;
+        
+        movieViewerModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        // Add fade-in animation
+        movieViewerModal.style.opacity = '0';
+        setTimeout(() => {
+            movieViewerModal.style.opacity = '1';
+            movieViewerModal.style.transition = 'opacity 0.3s ease';
+        }, 10);
+        
+        console.log('Movie viewer opened with URL:', viewerUrl);
+    } else {
+        console.error('Movie viewer elements not found:', {
+            movieViewerModal: !!movieViewerModal,
+            movieViewerIframe: !!movieViewerIframe,
+            movieViewerTitle: !!movieViewerTitle
+        });
+    }
+}
+
+// Open movie viewer by episode
+function openMovieViewerByEpisode(movieId, episodeName) {
+    const movie = moviesDatabase.find(m => m.id === movieId);
+    if (!movie || !movie.qualities[episodeName]) return;
+    
+    const quality = movie.qualities[episodeName];
+    const match = quality.downloadLink.match(/id=([^&]+)/);
+    const fileId = match ? match[1] : null;
+    
+    if (fileId) {
+        // Hide episode picker first
+        hideEpisodePicker();
+        
+        // Delay opening viewer to allow picker to close
+        setTimeout(() => {
+            openMovieViewer(movie, quality, fileId);
+        }, 300);
+    }
+}
+
+// Close movie viewer
+function closeMovieViewer() {
+    const movieViewerModal = document.getElementById('movieViewerModal');
+    const movieViewerIframe = document.getElementById('movieViewerFrame'); // Updated ID to match HTML
+    
+    if (movieViewerModal) {
+        // Add fade-out animation
+        movieViewerModal.style.opacity = '0';
+        setTimeout(() => {
+            movieViewerModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            
+            // Stop the video
+            if (movieViewerIframe) {
+                movieViewerIframe.src = '';
+            }
+        }, 300);
+        
+        console.log('Movie viewer closed');
+    }
+}
+
+// Update all download counts in the UI
+function updateAllDownloadCounts() {
+    moviesDatabase.forEach(movie => {
+        updateDownloadCountDisplay(movie.id);
+    });
+}
+
+// Enhanced download count display update
+function updateDownloadCountDisplay(movieId) {
+    const movie = moviesDatabase.find(m => m.id === movieId);
+    if (!movie) return;
+    
+    // Update movie card if visible in current display
+    setTimeout(() => {
+        const movieCards = document.querySelectorAll('.movie-card');
+        movieCards.forEach(card => {
+            const onclickStr = card.getAttribute('onclick');
+            if (onclickStr && onclickStr.includes(`openMovieModal(${movieId})`)) {
+                const downloadStats = card.querySelector('.download-stats span');
+                if (downloadStats) {
+                    const newText = `${movie.downloadCount || 0} downloads`;
+                    if (downloadStats.textContent !== newText) {
+                        // Add animation for count update
+                        downloadStats.style.transform = 'scale(1.1)';
+                        downloadStats.style.transition = 'transform 0.2s ease';
+                        downloadStats.textContent = newText;
+                        
+                        setTimeout(() => {
+                            downloadStats.style.transform = 'scale(1)';
+                        }, 200);
+                    }
+                }
+            }
+        });
+    }, 100);
+}
+
+// Add CSS animations dynamically if not present
+function addMissingStyles() {
+    const style = document.createElement('style');
+    style.textContent = `
+        .quality-section-highlight {
+            animation: highlightPulse 1.2s ease-in-out;
+            border: 2px solid #00ff88 !important;
+        }
+        
+        @keyframes highlightPulse {
+            0%, 100% { 
+                border-color: #00ff88;
+                box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7);
+            }
+            50% { 
+                border-color: #00ff88;
+                box-shadow: 0 0 0 10px rgba(0, 255, 136, 0);
+            }
+        }
+        
+        .movie-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+        
+        .quality-option:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s ease;
+        }
+        
+        .episode-btn {
+            transition: all 0.2s ease;
+        }
+        
+        .episode-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        #episodePicker.show {
+            display: block !important;
+        }
+        
+        .download-stats {
+            transition: all 0.2s ease;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Initialize missing styles when DOM loads
+document.addEventListener('DOMContentLoaded', addMissingStyles);
 
 
