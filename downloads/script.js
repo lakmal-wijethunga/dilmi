@@ -512,6 +512,174 @@ const moviesDatabase = [
                 downloadLink: "https://drive.usercontent.google.com/download?id=1rj8GI2lXT1-X-qw-pgWrlM6ibH-eqOqB&export=download"
             }
         }
+    },
+    {
+        id: 18,
+        title: "Ginny & Georgia (Season 01)",
+        year: 2021,
+        duration: "10 x 50 min",
+        rating: 7.5,
+        genres: ["Drama", "Comedy", "Teen", "TV Series"],
+        director: "Sarah Lampert",
+        cast: ["Brianne Howey", "Antonia Gentry", "Diesel La Torraca", "Jennifer Robertson", "Felix Mallard", "Sara Waisglass", "Scott Porter"],
+        synopsis: "Ginny Miller, an angsty fifteen-year-old, often feels more mature than her thirty-year-old mother Georgia. After years on the run, Georgia desperately wants to put down roots in picturesque New England and give her family something they've never had... a normal life.",
+        poster: "assets/posters/ginny-georgia-season-1.jpg",
+        trailer: "qMfqOOznPQk", // Official Netflix trailer
+        downloadCount: 0,
+        qualities: {
+            "Episode 01": {
+                size: "378 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1p40FQ2P_LLY25pE0r5lxp75-eQmJPUse&export=download"
+            },
+            "Episode 02": {
+                size: "288 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1BYqhBIyDsiiWJPThO9yK8kDyWYVp2VMb&export=download"
+            },
+            "Episode 03": {
+                size: "322 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1_bt2Tbm-jqEgeghysFxlSARVDuSaQ1Xr&export=download"
+            },
+            "Episode 04": {
+                size: "254 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1QgE9EbVUffCve6b7gl_uETfYHKb4OS1p&export=download"
+            },
+            "Episode 05": {
+                size: "311 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1aA_hkSejpiwpygqiSIyZZGtd9dQed1p6&export=download"
+            },
+            "Episode 06": {
+                size: "248 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1ghjttqiTi2zFoT02Ra0mFWRdUQe3QVtN&export=download"
+            },
+            "Episode 07": {
+                size: "318 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1PhZWUu7KCQu6wLE3wxCZWLzgmpomWT31&export=download"
+            },
+            "Episode 08": {
+                size: "251 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1cn1tD_dZTkSXxMYI6wBrD32iYmLii6QM&export=download"
+            },
+            "Episode 09": {
+                size: "253 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1XwJ2rf69VB4IIBUmz8n9zatcS-sBWfAu&export=download"
+            },
+            "Episode 10": {
+                size: "303 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1VKY69DvnCEF_AzNpFdFjLefoQEPS6_Eh&export=download"
+            }
+        }
+    },
+    {
+        id: 19,
+        title: "Ginny & Georgia (Season 02)",
+        year: 2023,
+        duration: "10 x 52 min",
+        rating: 7.8,
+        genres: ["Drama", "Comedy", "Teen", "TV Series"],
+        director: "Sarah Lampert",
+        cast: ["Brianne Howey", "Antonia Gentry", "Diesel La Torraca", "Jennifer Robertson", "Felix Mallard", "Sara Waisglass", "Scott Porter"],
+        synopsis: "Georgia and Ginny are back and facing new challenges as Georgia's past threatens to catch up with her and Ginny navigates the complexities of being a teenager. Family secrets, romance, and drama unfold in this highly anticipated second season.",
+        poster: "assets/posters/ginny-georgia-season-2.jpg",
+        trailer: "w6kTHkTzfmY", // Official Netflix Season 2 trailer
+        downloadCount: 0,
+        qualities: {
+            "Episode 01": {
+                size: "338 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1tD3kteEgZY-jGLs1nkFh0w1YfJABF6e1&export=download"
+            },
+            "Episode 02": {
+                size: "311 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1CRR26tFrbF3thC73De45obrWVefsfuxc&export=download"
+            },
+            "Episode 03": {
+                size: "312 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1Q7YPYn4xgVQcWRuIDRqlQQTElgnpl3a5&export=download"
+            },
+            "Episode 04": {
+                size: "332 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1Rp1cQbJ8ggwt83JNzvVeYBM92lBdixGf&export=download"
+            },
+            "Episode 05": {
+                size: "341 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1vb8iLh9mXaUF92Z07loXMuKy-mB0jvse&export=download"
+            },
+            "Episode 06": {
+                size: "394 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1UdddUTFg5HO4-xg8Rx3_TshVItYmMOqu&export=download"
+            },
+            "Episode 07": {
+                size: "376 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1aARjAqf1kpH0uIDQJYE2lzzJZHuQvSCG&export=download"
+            },
+            "Episode 08": {
+                size: "353 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1iEZZsQCv1gHDMr1enZaluTgIUgGMMFM7&export=download"
+            },
+            "Episode 09": {
+                size: "341 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1wTYDAP1GCwzSfkdR0WzYQuyFyb1QlEkc&export=download"
+            },
+            "Episode 10": {
+                size: "357 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1ePRlxIm6C16akZ1cyBAH9ncrLUNeHDwm&export=download"
+            }
+        }
+    },
+    {
+        id: 20,
+        title: "Ginny & Georgia (Season 03)",
+        year: 2024,
+        duration: "10 x 55 min",
+        rating: 8.0,
+        genres: ["Drama", "Comedy", "Teen", "TV Series"],
+        director: "Sarah Lampert",
+        cast: ["Brianne Howey", "Antonia Gentry", "Diesel La Torraca", "Jennifer Robertson", "Felix Mallard", "Sara Waisglass", "Scott Porter"],
+        synopsis: "In the explosive third season, Georgia's dark past finally catches up to her as old enemies resurface. Ginny faces her biggest challenges yet as she prepares for graduation while dealing with family drama, relationships, and discovering shocking truths about her mother.",
+        poster: "assets/posters/ginny-georgia-season-3.jpg",
+        trailer: "dQw4w9WgXcQ", // Placeholder - update with actual trailer when available
+        downloadCount: 0,
+        qualities: {
+            "Episode 01": {
+                size: "277 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1t2Hoy-K46m3roYSVenOUKZ6GDu4fDu68&export=download"
+            },
+            "Episode 02": {
+                size: "353 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1pcfbsjOe1yUtqLiPFgB-yL2rD4M450FC&export=download"
+            },
+            "Episode 03": {
+                size: "387 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1bvysaGTKUz_fw7qpn227n1W_zvaqSw73&export=download"
+            },
+            "Episode 04": {
+                size: "394 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1bG-it4ywhDV2HEETREoFjzShIGG-mVgb&export=download"
+            },
+            "Episode 05": {
+                size: "388 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1TvvQxkAwwwbQUchWxFUXQSsZJ1Oql1Mw&export=download"
+            },
+            "Episode 06": {
+                size: "355 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1hVxQVeagiNsepGorf2xLeh_S3dcv0r0h&export=download"
+            },
+            "Episode 07": {
+                size: "320 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1Ur07MjN__2c1R5JnX7p9eTicrIVGuQ2U&export=download"
+            },
+            "Episode 08": {
+                size: "324 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1KaXRRDpWuTRqxXM-k4LfECPQ9e-m3_UW&export=download"
+            },
+            "Episode 09": {
+                size: "327 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1g7e9ywcH3JKoZsq9g7BMvFaEbAX4ZNWs&export=download"
+            },
+            "Episode 10": {
+                size: "339 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=14IhD1pDbKMUerNVHDjMbzDdQWNP9882f&export=download"
+            }
+        }
     }
 ];
 
@@ -908,9 +1076,13 @@ function openMovieModal(movieId) {
                             <h4>Select Episode</h4>
                         </div>
                         <div class="episode-buttons-container">
-                        ${Object.entries(movie.qualities).map(([ep, info], idx) => {
-                            return `<button class="episode-btn" data-episode="${ep.replace(/&/g, '&amp;').replace(/"/g, '&quot;')}">${ep}</button>`;
-                        }).join('')}
+                        ${(() => {
+                            console.log('Total episodes for', movie.title, ':', Object.keys(movie.qualities).length);
+                            return Object.entries(movie.qualities).map(([ep, info], idx) => {
+                                console.log('Generating episode button for:', ep);
+                                return `<button class="episode-btn" data-episode="${ep.replace(/&/g, '&amp;').replace(/"/g, '&quot;')}">${ep}</button>`;
+                            }).join('');
+                        })()}
                         </div>
                     `;
                     

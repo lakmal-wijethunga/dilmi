@@ -1048,7 +1048,7 @@ body {
     opacity: 1;
     transform: translateY(0) scale(1);
     pointer-events: auto;
-    max-height: 500px;
+    max-height: 600px;
 }
 
 .episode-picker.hide {
@@ -1100,6 +1100,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
 }
 
 .episode-btn {
@@ -1138,6 +1141,25 @@ body {
 
 .episode-btn:hover .episode-size {
     color: #ccc;
+}
+
+/* Custom scrollbar for episode buttons container */
+.episode-buttons-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.episode-buttons-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.episode-buttons-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 107, 107, 0.5);
+    border-radius: 3px;
+}
+
+.episode-buttons-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 107, 107, 0.7);
 }
 
 /* Responsive Design */
@@ -1210,10 +1232,12 @@ body {
     .episode-picker {
         margin-top: 1rem;
         padding: 1rem;
+        max-height: 70vh;
     }
     
     .episode-buttons-container {
         gap: 0.5rem;
+        max-height: 50vh;
     }
     
     .episode-btn {
