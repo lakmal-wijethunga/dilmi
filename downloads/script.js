@@ -680,6 +680,462 @@ const moviesDatabase = [
                 downloadLink: "https://drive.usercontent.google.com/download?id=14IhD1pDbKMUerNVHDjMbzDdQWNP9882f&export=download"
             }
         }
+    },
+    {
+        id: 21,
+        title: "Prison Break (Season 01)",
+        year: 2005,
+        duration: "22 x 45 min",
+        rating: 8.3,
+        genres: ["Drama", "Crime", "Thriller", "TV Series"],
+        director: "Paul Scheuring",
+        cast: ["Wentworth Miller", "Dominic Purcell", "Robin Tunney", "Amaury Nolasco", "Marshall Allman", "Wade Williams", "Sarah Wayne Callies"],
+        synopsis: "Michael Scofield gets himself imprisoned in Fox River State Penitentiary to break out his brother Lincoln Burrows, who is on death row for a crime he didn't commit. With an elaborate escape plan tattooed on his body, Michael must navigate prison politics and dangerous inmates.",
+        poster: "assets/posters/prison-break-season-1.jpg",
+        trailer: "AL9zLctDJaU", // Official Fox trailer
+        downloadCount: 0,
+        qualities: {
+            "Episode 01": {
+                size: "243 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1eWI8LEu8z4BksCbclbb_sUYU3_BiwlFx&export=download"
+            },
+            "Episode 02": {
+                size: "270 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1jU_99yZimUZF6bY_rg7R05mlPrz_BaE2&export=download"
+            },
+            "Episode 03": {
+                size: "231 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1f77SRYbfXt6YMsCebhy5RzaDogll6Awc&export=download"
+            },
+            "Episode 04": {
+                size: "269 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1cAywfqfVdWieF7E5PnU1WH5ETI0wmUDb&export=download"
+            },
+            "Episode 05": {
+                size: "231 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1f77SRYbfXt6YMsCebhy5RzaDogll6Awc&export=download"
+            },
+            "Episode 06": {
+                size: "267 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1YNtRcLZZ1Ctp3tyoJLjEvlWn6j0QzLcF&export=download"
+            },
+            "Episode 07": {
+                size: "268 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1dNum79TkUdPQJt28lFtTWQ9kUwfHbD5V&export=download"
+            },
+            "Episode 08": {
+                size: "257 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1tmJE-jMFOz1NdtTXVKdteUZr0D6kCohO&export=download"
+            },
+            "Episode 09": {
+                size: "260 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1IQMuPQ7yJng7gkWExjG1rOQ6JmlC61Dg&export=download"
+            },
+            "Episode 10": {
+                size: "281 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1cw3TDcNjRhfwWnmts1-35yiOyOP1RQ0x&export=download"
+            },
+            "Episode 11": {
+                size: "266 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1yMnDeSqGczZbvJDtyARB37adwsoLzBG3&export=download"
+            },
+            "Episode 12": {
+                size: "258 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1WK0Rhk_ECCz_FLN_CfM2uvjsXmnjXASR&export=download"
+            },
+            "Episode 13": {
+                size: "230 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1VB-6t7GtY3AZl2Oz4yH_YdockVc9r5o4&export=download"
+            },
+            "Episode 14": {
+                size: "202 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1skOdA3gI8lXEVk1SS8yIJ0bF7L61V3Cn&export=download"
+            },
+            "Episode 15": {
+                size: "186 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1Vq8Td-BVrC_AOStJnfnc9Wu5X0hDPzRV&export=download"
+            },
+            "Episode 16": {
+                size: "181 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=10AradGfTesWGd_zDruPvAX6YHz5sE2dz&export=download"
+            },
+            "Episode 17": {
+                size: "230 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=18JHBanodoOXo5NQW9iZFYriRAlKWZ5xa&export=download"
+            },
+            "Episode 18": {
+                size: "218 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1Bp9qHmQYbsKWzjbImBQgj8ITnpeKvGs8&export=download"
+            },
+            "Episode 19": {
+                size: "261 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1PB6JO7r1isXyj5Fy09KNuXk5oSM_lYoO&export=download"
+            },
+            "Episode 20": {
+                size: "211 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1arLzPy7oMik-XbWXnPAy07m8lILxNyts&export=download"
+            },
+            "Episode 21": {
+                size: "193 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1J8gU7LO5351zhz-ymR7l9Ad1PzB9_K5a&export=download"
+            },
+            "Episode 22": {
+                size: "186 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1xsKJEwE8D2QnXaoVD6PJ13ctKrCRnJ0c&export=download"
+            }
+        }
+    },
+    {
+        id: 22,
+        title: "Prison Break (Season 02)",
+        year: 2006,
+        duration: "22 x 45 min",
+        rating: 8.2,
+        genres: ["Drama", "Crime", "Thriller", "TV Series"],
+        director: "Paul Scheuring",
+        cast: ["Wentworth Miller", "Dominic Purcell", "Sarah Wayne Callies", "Amaury Nolasco", "Marshall Allman", "Wade Williams", "Robert Knepper"],
+        synopsis: "After their escape from Fox River, Michael and Lincoln are on the run from the FBI and The Company. While being pursued across the country, they must uncover the conspiracy that put Lincoln on death row and clear his name.",
+        poster: "assets/posters/prison-break-season-2.jpg",
+        trailer: "AL9zLctDJaU", // Official Fox trailer
+        downloadCount: 0,
+        qualities: {
+            "Episode 01": {
+                size: "277 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1D1qeF9L2wvyZkmATxuP8m87sicj4zZce&export=download"
+            },
+            "Episode 02": {
+                size: "232 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1jjM2kdpWdmOWJNC4xURdurVU79y0qnyV&export=download"
+            },
+            "Episode 03": {
+                size: "272 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1qlYarLmjhF_8ra_jtK4iUvSrYrUZkWbP&export=download"
+            },
+            "Episode 04": {
+                size: "231 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1mIFIqf9GSlGM6QRr-qb3E7tKjFj_lEv2&export=download"
+            },
+            "Episode 05": {
+                size: "261 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1lO1XRnPJEX2-tlbLnI6E8ZKtPnMuoHAB&export=download"
+            },
+            "Episode 06": {
+                size: "234 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1zrSGwZXFwNKSbq2LDYWYmbAaPHXU5CNT&export=download"
+            },
+            "Episode 07": {
+                size: "230 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1d9B13-qocvqu00O0AiXu-DQgpVS5ZxrQ&export=download"
+            },
+            "Episode 08": {
+                size: "298 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1ca0_Ka0d7JwEtxdZNzMhwcObKMhuk41P&export=download"
+            },
+            "Episode 09": {
+                size: "292 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1vAfQTU2S5xWlfXbvkRhEquP7XTnJg_bP&export=download"
+            },
+            "Episode 10": {
+                size: "280 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=11av1770tjylbX53XvwXTXCmUSuNubjqZ&export=download"
+            },
+            "Episode 11": {
+                size: "294 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1nuIl_R7aemzTR1C2L38eyjuDeNJ1bZbu&export=download"
+            },
+            "Episode 12": {
+                size: "270 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=12fKIgAUTHeod4mQc3N7zHnXCBQL1aPgK&export=download"
+            },
+            "Episode 13": {
+                size: "248 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1_lRhfvCa6YJOzxlr3pD9tNMxwxSqZPfc&export=download"
+            },
+            "Episode 14": {
+                size: "243 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1mQ-4Eb6k_mpfpx3gKktooNLO7s3rgLEe&export=download"
+            },
+            "Episode 15": {
+                size: "261 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1eGhdzGPiEvYk5Plz2X_xvdpgaicVApnw&export=download"
+            },
+            "Episode 16": {
+                size: "256 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=115r0WLw0rOQ_drmF3wsp-C5vQl7beQt1&export=download"
+            },
+            "Episode 17": {
+                size: "215 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1thg9PyDJF_lXYOZJmmtYrQYFWDUL3Sc7&export=download"
+            },
+            "Episode 18": {
+                size: "216 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1VXyER0lzNIFTDgCtHvRKpkPecRjii80l&export=download"
+            },
+            "Episode 19": {
+                size: "196 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1aqgXFeYuNZHHwDgHOBQ152zfPhX3VH07&export=download"
+            },
+            "Episode 20": {
+                size: "225 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1JbNaDez3Z8fAmSDocyyFiD7rVZ1LqaW-&export=download"
+            },
+            "Episode 21": {
+                size: "276 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1yY95SjPJtavRZ_iuUUVYpr56mssZll-g&export=download"
+            },
+            "Episode 22": {
+                size: "282 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1KkVGzUOb51J7vz7ZRboh3Phd3wvwV_QJ&export=download"
+            }
+        }
+    },
+    {
+        id: 23,
+        title: "Prison Break (Season 03)",
+        year: 2007,
+        duration: "13 x 45 min",
+        rating: 7.9,
+        genres: ["Drama", "Crime", "Thriller", "TV Series"],
+        director: "Paul Scheuring",
+        cast: ["Wentworth Miller", "Dominic Purcell", "Sarah Wayne Callies", "Amaury Nolasco", "Robert Knepper", "Jodi Lyn O'Keefe", "Danay Garcia"],
+        synopsis: "Michael finds himself imprisoned in Sona Federal Penitentiary in Panama, a hell-hole prison where the inmates rule and guards stay outside. He must break out his brother Lincoln and the other prisoners to survive.",
+        poster: "assets/posters/prison-break-season-3.jpg",
+        trailer: "AL9zLctDJaU", // Official Fox trailer
+        downloadCount: 0,
+        qualities: {
+            "Episode 01": {
+                size: "307 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1EufqAsGceKt9_Zf-0EU1rxC_wfughH3N&export=download"
+            },
+            "Episode 02": {
+                size: "261 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1spD95B5irj1qIKsTinQb6jHEozdi1Hqy&export=download"
+            },
+            "Episode 03": {
+                size: "252 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1aDXv1_1sYbkHrm0r5GoDGA9q_hugJ1FY&export=download"
+            },
+            "Episode 04": {
+                size: "274 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=17ggF7p_4ec1FPqOKLZcRYD0WMu5k-5gw&export=download"
+            },
+            "Episode 05": {
+                size: "295 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1yLmnNDqIAZQqsCscrsy_WQs2yXMKQhb0&export=download"
+            },
+            "Episode 06": {
+                size: "312 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1fC7Iqa1qccORSABFnmWb0YuhzvRpg4qz&export=download"
+            },
+            "Episode 07": {
+                size: "339 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1Xx10pDYzq0s3XGQuubcs6sJUem4hHV02&export=download"
+            },
+            "Episode 08": {
+                size: "274 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1_HvGrqRZ__w2MOTCpccqfGB_EOzMBjHT&export=download"
+            },
+            "Episode 09": {
+                size: "272 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1kESHWdjWDUsso1BfMK_tu1liasdRFU0k&export=download"
+            },
+            "Episode 10": {
+                size: "269 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1g9v1MPiPSRXhjr6B2OzrpCLhf1i5t7U2&export=download"
+            },
+            "Episode 11": {
+                size: "243 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1Bw-_KQkR5v8UC74X8Vq7hmQgpb_iz503&export=download"
+            },
+            "Episode 12": {
+                size: "374 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1q97nidputc6iU7xvZt2y706UtZkjtEwN&export=download"
+            },
+            "Episode 13": {
+                size: "313 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1bgrCcRvgglWpexC5VMfibmiI5d2fZ_RG&export=download"
+            }
+        }
+    },
+    {
+        id: 24,
+        title: "Prison Break (Season 04)",
+        year: 2008,
+        duration: "22 x 45 min",
+        rating: 8.0,
+        genres: ["Drama", "Crime", "Thriller", "TV Series"],
+        director: "Paul Scheuring",
+        cast: ["Wentworth Miller", "Dominic Purcell", "Sarah Wayne Callies", "Amaury Nolasco", "Robert Knepper", "Michael Rapaport", "Jodi Lyn O'Keefe"],
+        synopsis: "Michael assembles a team of previous escapees to break into the Company's headquarters. Working with Homeland Security, they must infiltrate the most secure building in America to expose the conspiracy once and for all.",
+        poster: "assets/posters/prison-break-season-4.jpg",
+        trailer: "AL9zLctDJaU", // Official Fox trailer
+        downloadCount: 0,
+        qualities: {
+            "Episode 01-02": {
+                size: "493 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1FB7GTjgCA0acdy3Lt4rQNa3nGNLmyIFe&export=download"
+            },
+            "Episode 03": {
+                size: "283 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1OHBUyjAnzIYjr6v0mFt6AXV_obTO1U6C&export=download"
+            },
+            "Episode 04": {
+                size: "244 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1DN-0hIYfBxQKbpFz8PrMa_wTEv-Tr0sK&export=download"
+            },
+            "Episode 05": {
+                size: "238 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1SDWK3KmMDfYoxD4hT9MloM4WYQgyaC3L&export=download"
+            },
+            "Episode 06": {
+                size: "242 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1y5ud0TrznSlAcT8Ijaj6hTPSfYQbwcaC&export=download"
+            },
+            "Episode 07": {
+                size: "253 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1j9o7ZlQzFRW0TPBWPdsYwPKc95mDWSVl&export=download"
+            },
+            "Episode 08": {
+                size: "236 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1IZPy10QJ5FxvMFkvPerltbqZ3CvFnZCc&export=download"
+            },
+            "Episode 09": {
+                size: "224 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=15LdJ7qcUaz6f2CYdSYI1artnpf7qduaC&export=download"
+            },
+            "Episode 10": {
+                size: "199 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1wvPdYjLkzSP2838Q8A9KnuqhqOjaXbq8&export=download"
+            },
+            "Episode 11": {
+                size: "212 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=14ATYKjvhzZL5OPY-I_0M6u1AZcfIwyO-&export=download"
+            },
+            "Episode 12": {
+                size: "225 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1XN-VK0AE5i0IHxS2mLj4hPw0Jvbp35Ru&export=download"
+            },
+            "Episode 13": {
+                size: "230 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1-utrueIlDx9xQBehZVVYuocZ8CpU08_5&export=download"
+            },
+            "Episode 14": {
+                size: "240 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1ePYmvbdtfEZ9HIKFE-HfF9X8VW0ub1bS&export=download"
+            },
+            "Episode 15": {
+                size: "252 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1oLXlyYyG1JbirAwn0BCXJffi-9CpL0ec&export=download"
+            },
+            "Episode 16": {
+                size: "261 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=16TpPr71ItDNFhRgwMN-YiGKFLc93Nuyl&export=download"
+            },
+            "Episode 17": {
+                size: "242 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1sJL6ARu3oV_gUA0JJmVG0rEAOk0uOj8V&export=download"
+            },
+            "Episode 18": {
+                size: "226 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1YDxdmR1m1ohBHJl3QPlNsXIeEqQApnDW&export=download"
+            },
+            "Episode 19": {
+                size: "232 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1S9n63vvtbVV3nAUwbJikEkcVhjTjx-vX&export=download"
+            },
+            "Episode 20": {
+                size: "218 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1Be2WC7Vb4hy8JNJFXfRB-0O9KCWZpiGz&export=download"
+            },
+            "Episode 21": {
+                size: "222 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=18IvdsLNUefv-AbMkOLYDfeoAKH4M9bH-&export=download"
+            },
+            "Episode 22": {
+                size: "275 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1MEUN66r5_8yzOn-UA_qYU3P0T9aRI7DE&export=download"
+            }
+        }
+    },
+    {
+        id: 25,
+        title: "Prison Break (Season 05)",
+        year: 2017,
+        duration: "9 x 45 min",
+        rating: 7.5,
+        genres: ["Drama", "Crime", "Thriller", "TV Series"],
+        director: "Paul Scheuring",
+        cast: ["Wentworth Miller", "Dominic Purcell", "Sarah Wayne Callies", "Amaury Nolasco", "Robert Knepper", "Rockmond Dunbar", "Augustus Prew"],
+        synopsis: "Seven years after Michael's apparent death, Lincoln receives evidence that his brother might still be alive in a Yemeni prison called Ogygia. The brothers reunite for one final escape that will test their bond and skills to the limit.",
+        poster: "assets/posters/prison-break-season-5.jpg",
+        trailer: "yTiw4lN0jgA", // Official Season 5 trailer
+        downloadCount: 0,
+        qualities: {
+            "Episode 01": {
+                size: "751 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=12_cyaiS4Pr2wNATobO3RUezlcmL3mnsA&export=download"
+            },
+            "Episode 02": {
+                size: "800 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1YOQOYyquxwwE6rfr4Oe9OuEwD1tZLCgE&export=download"
+            },
+            "Episode 03": {
+                size: "851 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=10OztZHUsxHgktB9LnWHO9-ZuNlnBe5LO&export=download"
+            },
+            "Episode 04": {
+                size: "851 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=14-p03qSVUBB5AQAISS1CTnQ9kauJ1u8M&export=download"
+            },
+            "Episode 05": {
+                size: "801 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1nCsYlyE4aGgbvAGT_BLPz4HaOsMo1Cmp&export=download"
+            },
+            "Episode 06": {
+                size: "800 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1ITwHsWAXL6fnKVG2Ot3fCU28r5NY9jyg&export=download"
+            },
+            "Episode 07": {
+                size: "800 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=14WDI38EBqRXquS7qCAKgVlJGOtZdu1rf&export=download"
+            },
+            "Episode 08": {
+                size: "801 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1h691hgd0qYeyVzdzUNJzOxaJuHuQBW-J&export=download"
+            },
+            "Episode 09": {
+                size: "751 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=13biwsYIpfBMgTFwWArhDsIzIcIXBtuBZ&export=download"
+            }
+        }
+    },
+    {
+        id: 26,
+        title: "Eleven (2025)",
+        year: 2025,
+        duration: "135 min",
+        rating: 7.8,
+        genres: ["Action", "Thriller", "Drama", "Tamil"],
+        director: "Lokkesh Ajls",
+        cast: ["Naveen Chandra", "Reyaa", "Abhirami Gopikumar", "Dileepan", "Riythvika"],
+        synopsis: "A high-octane action thriller set in Chennai, where an elite team of eleven is assembled to take down a powerful crime syndicate. As secrets unravel and loyalties are tested, the fate of the city hangs in the balance.",
+        poster: "assets/posters/eleven-2025.jpg",
+        trailer: "uUeV7yVC3fQ", // Official Tamil trailer (placeholder)
+        downloadCount: 0,
+        qualities: {
+            "720p": {
+                size: "1.7 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1ACTlo6u_745jlbR-jOUJ895UlpscrmO6&export=download"
+            },
+            "480p": {
+                size: "700 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=182CsJcNTNDZ3uggdaWN2x6Ef_uQn112E&export=download"
+            },
+            "360p": {
+                size: "400 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1wwsw92tWhBtIpm8FU95Di88Z9Edy_g9s&export=download"
+            }
+        }
     }
 ];
 
@@ -769,10 +1225,15 @@ function setupEventListeners(searchInput, filterBtns, sortSelect, closeBtn, moda
     // Filter buttons
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-            console.log('Filter button clicked:', this.dataset.genre);
             filterBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
-            currentGenre = this.dataset.genre;
+            if (this.dataset.type === 'tv') {
+                currentGenre = null;
+                window.currentTypeFilter = 'tv';
+            } else {
+                currentGenre = this.dataset.genre;
+                window.currentTypeFilter = null;
+            }
             filterAndDisplayMovies(searchInput, moviesGrid, movieCountElement);
         });
     });
@@ -884,18 +1345,22 @@ function filterAndDisplayMovies(searchInput, moviesGrid, movieCountElement) {
     const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
     
     let filteredMovies = moviesDatabase.filter(movie => {
+        // TV Series filter
+        if (window.currentTypeFilter === 'tv') {
+            if (!(movie.type === 'tv' || (movie.genres && movie.genres.map(g => g.toLowerCase()).includes('tv series')))) {
+                return false;
+            }
+        }
         // Genre filter
-        const genreMatch = currentGenre === 'all' || 
-            movie.genres.map(g => g.toLowerCase()).includes(currentGenre);
-        
+        const genreMatch = !window.currentTypeFilter && (currentGenre === 'all' || 
+            movie.genres.map(g => g.toLowerCase()).includes(currentGenre));
         // Search filter
         const searchMatch = !searchTerm || 
             movie.title.toLowerCase().includes(searchTerm) ||
             movie.director.toLowerCase().includes(searchTerm) ||
             movie.cast.some(actor => actor.toLowerCase().includes(searchTerm)) ||
             movie.genres.some(genre => genre.toLowerCase().includes(searchTerm));
-        
-        return genreMatch && searchMatch;
+        return (window.currentTypeFilter === 'tv' ? true : genreMatch) && searchMatch;
     });    // Sort movies
     filteredMovies.sort((a, b) => {
         switch(currentSort) {
@@ -1077,9 +1542,7 @@ function openMovieModal(movieId) {
                         </div>
                         <div class="episode-buttons-container">
                         ${(() => {
-                            console.log('Total episodes for', movie.title, ':', Object.keys(movie.qualities).length);
                             return Object.entries(movie.qualities).map(([ep, info], idx) => {
-                                console.log('Generating episode button for:', ep);
                                 return `<button class="episode-btn" data-episode="${ep.replace(/&/g, '&amp;').replace(/"/g, '&quot;')}">${ep}</button>`;
                             }).join('');
                         })()}
@@ -1414,18 +1877,15 @@ function openMovieViewer(movie, quality, fileId) {
     const movieViewerTitle = document.getElementById('viewerMovieTitle'); // Updated ID to match HTML
     
     if (movieViewerModal && movieViewerIframe) {
-        // Set title
+        // Set title only (no rating/duration/year)
         if (movieViewerTitle) {
-            movieViewerTitle.textContent = `${movie.title} - ${Object.keys(movie.qualities).find(key => movie.qualities[key] === quality) || 'Best Quality'}`;
+            movieViewerTitle.textContent = `${movie.title}`;
         }
-        
         // Create Google Drive viewer URL
         const viewerUrl = `https://drive.google.com/file/d/${fileId}/preview`;
         movieViewerIframe.src = viewerUrl;
-        
         movieViewerModal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
-        
         // Add fade-in animation
         movieViewerModal.style.opacity = '0';
         setTimeout(() => {

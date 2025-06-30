@@ -32,7 +32,7 @@
     <!-- Filter Section -->
     <section class="filters" id="movies">
         <div class="container">            <div class="filter-tabs">
-                <button class="filter-btn active" data-genre="all">All Movies</button>
+                <button class="filter-btn active" data-genre="all">All</button>
                 <button class="filter-btn" data-genre="action">Action</button>
                 <button class="filter-btn" data-genre="horror">Horror</button>
                 <button class="filter-btn" data-genre="thriller">Thriller</button>
@@ -40,6 +40,7 @@
                 <button class="filter-btn" data-genre="adventure">Adventure</button>
                 <button class="filter-btn" data-genre="sci-fi">Sci-Fi</button>
                 <button class="filter-btn" data-genre="fantasy">Fantasy</button>
+                <button class="filter-btn" data-type="tv">TV Series</button>
             </div>
             <div class="sort-options">                <select id="sortSelect">
                     <option value="recently-added">Recently Added</option>
@@ -88,11 +89,6 @@
                     <h2 id="modalTitle"></h2>
                     <div class="movie-meta">
                         <span class="year" id="modalYear"></span>
-                        <span class="duration" id="modalDuration"></span>
-                        <span class="rating" id="modalRating">
-                            <i class="fas fa-star"></i>
-                            <span id="modalRatingValue"></span>
-                        </span>
                     </div>
                     <div class="genres" id="modalGenres"></div>
                     <p class="synopsis" id="modalSynopsis"></p>
@@ -135,13 +131,11 @@
             <!-- Movie Viewer Header -->
             <div class="movie-viewer-header">
                 <div class="viewer-movie-info">
-                    <h3 id="viewerMovieTitle">Movie Title</h3>                    <div class="viewer-movie-meta">
+                    <h3 id="viewerMovieTitle">Movie Title</h3>
+                    <div class="viewer-movie-meta">
                         <span id="viewerMovieYear">2025</span>
-                        <span>•</span>
-                        <span id="viewerMovieRating">★ 8.5</span>
-                        <span>•</span>
-                        <span id="viewerMovieDuration">120 min</span>
-                    </div></div>
+                    </div>
+                </div>
             </div>
 
             <!-- Main Video Container -->
