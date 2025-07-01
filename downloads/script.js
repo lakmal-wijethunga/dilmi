@@ -1171,6 +1171,148 @@ const moviesDatabase = [
         },
        
     },
+    {
+        id: 28,
+        title: "Raid",
+        year: 2018,
+        duration: "122 min",
+        rating: 7.4,
+        genres: ["Action", "Crime", "Drama", "Hindi"],
+        director: "Raj Kumar Gupta",
+        cast: ["Ajay Devgn", "Ileana D'Cruz", "Saurabh Shukla"],
+        synopsis: "A fearless income tax officer raids the mansion of the most powerful man in Lucknow after someone mysteriously draws his attention to the evidence.",
+        poster: "assets/posters/raid-2018.jpg",
+        trailer: "3h4thS-Hcrk",
+        qualities: {
+            "720p": {
+                size: "1.0 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1cEiUpWIOp5t7JOKWWjsTAuB6FprE7rTr&export=download"
+            },
+            "1080p": {
+                size: "2.0 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1UJocPIQthSxbb63tY_5AuAKj9kNwG8S0&export=download"
+            }
+        }
+    },
+    {
+        id: 29,
+        title: "Raid 2",
+        year: 2025,
+        duration: "130 min",
+        rating: 7.5,
+        genres: ["Action", "Crime", "Drama", "Hindi"],
+        director: "Raj Kumar Gupta",
+        cast: ["Ajay Devgn","Vaaanita Kaur", "Riteish Deshmukh", "Tamanna Bhatia"],
+        synopsis: "Sequel to the 2018 hit Raid. The fearless income tax officer returns for another high-stakes mission against corruption.",
+        poster: "assets/posters/raid-2-2025.jpg",
+        trailer: "GCObs0_MszA",
+        qualities: {
+            "720p": {
+                size: "1.2 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1w62MYMJ4MiP3nvksQ9Kc6411pYB83aTR&export=download"
+            },
+            "1080p": {
+                size: "2.5 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1acKAarxFg5Dn72ThdBcSXCn2TlY031oJ&export=download"
+            }
+        }
+    },
+    {
+        id: 30,
+        title: "Ballerina",
+        year: 2025,
+        duration: "124 min",
+        rating: 7.1,
+        genres: ["Action", "Thriller", "Crime"],
+        director: "Len Wiseman",
+        cast: ["Ana de Armas", "Keanu Reeves", "Ian McShane", "Anjelica Huston", "Gabriel Byrne", "Norman Reedus", "Catalina Sandino Moreno", "Lance Reddick"],
+        synopsis: "An assassin trained in the traditions of the Ruska Roma organization sets out to seek revenge after her father's death. Set in the John Wick universe.",
+        poster: "assets/posters/balerina-2025.jpg",
+        trailer: "0FSwsrFpkbw", // IMDb trailer key
+        qualities: {
+            "720p": {
+                size: "1.1 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=17Q6d36jaH8Ro0fplrpgRYWT9jmBeS_65&export=download"
+            },
+            "1080p": {
+                size: "2.3 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=11TYeLocjWw4bDqwlG6m2JocxlmITIz8f&export=download"
+            }
+        }
+    },
+    {
+        id: 31,
+        title: "Off the Grid",
+        year: 2025,
+        duration: "104 min",
+        rating: 5.2,
+        genres: ["Action", "Drama"],
+        director: "Johnny Martin",
+        cast: ["Josh Duhamel", "Greg Kinnear", "María Elisa Camargo", "Peter Stormare", "Ricky Russert", "Michael Zapesotsky", "Joe Bucaro III", "Daniel Farag"],
+        synopsis: "A brilliant scientist goes on the run instead of weaponizing his invention, turning the wilderness into a battleground as he is hunted by a ruthless corporation.",
+        poster: "assets/posters/off-the-grid-2025.jpg",
+        trailer: "c3WkhVLqKaI", // IMDb trailer key
+        qualities: {
+            "720p": {
+                size: "969 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1x07aQ5w_0wkHlSL-JfFcSjslB3LPK_ks&export=download"
+            },
+            "1080p": {
+                size: "1.9 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1Lhpehx1px90u-nJYI2htYfzftwfzt9gP&export=download"
+            },
+            "4K": {
+                size: "4.7 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1B8QqLv7iH2eEq8PPG4ViA2oZ7YZkauoO&export=download"
+            }
+        }
+    },
+    {
+        id: 32,
+        title: "Ice Road: Vengeance",
+        year: 2025,
+        duration: "95 min",
+        rating: 7.5, // IMDb rating not available yet
+        genres: ["Action", "Thriller"],
+        director: "Jonathan Hensleigh",
+        cast: [
+            "Liam Neeson", "Bingbing Fan", "Michala Banas", "Mahesh Jadu", "Bernard Curry", "Amelia Bishop", "Grace O'Sullivan", "Geoff Morrell", "Saksham Sharma", "CJ. Bloomfield", "Rosie Traynor", "Sunny S. Walia", "Shivantha Wijesinha", "Ira Chakraborty", "Kaden Hartcher", "Salim Fayad", "Seth Kannof", "Kaivu Suvarna"
+        ],
+        synopsis: "Mike travels to Nepal to scatter his late brother's ashes on Mt. Everest. When Mike and his mountain guide encounter mercenaries on a tour bus, they are forced to fight to save themselves, the passengers, and the country.",
+        poster: "assets/posters/ice-road-vengeance-2025.jpg",
+        trailer: "K6lJh9ADfbQ", // YouTube Vertical Official Trailer
+        qualities: {
+            "4K": {
+                size: "5.4 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1V2zuudRWn8YNlluXDSojeO9o0-_z3Hr4&export=download"
+            }
+        }
+    },
+    {
+        id: 33,
+        title: "Bring Her Back",
+        year: 2025,
+        duration: "104 min",
+        rating: 7.5, // IMDb rating not yet available
+        genres: ["Horror", "Mystery", "Supernatural Horror", "Body Horror"],
+        director: "Danny Philippou, Michael Philippou",
+        cast: [
+            "Billy Barratt", "Sally Hawkins", "Mischa Heywood", "Jonah Wren Phillips", "Stephen Phillips", "Sally-Anne Upton", "Sora Wong", "Kathryn Adams", "Brian Godfrey", "Brendan Bacon", "Olga Miller", "Nicola Tiele", "Frances Cassar", "Asha O'Connell", "Arianny Ross", "Amya Mollison", "Keith Warrior", "Ryan Linton Brown"
+        ],
+        synopsis: "A brother and sister uncover a terrifying ritual at the secluded home of their new foster mother.",
+        poster: "assets/posters/bring-her-back-2025.jpg",
+        trailer: "kBskrYZfhw8", // YouTube: Bring Her Back | Official Trailer HD | A24
+        qualities: {
+            "720p": {
+                size: "953 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=13MWHHk0pQfQcrBUypAl5jWyThyGDxPHW&export=download"
+            },
+            "1080p": {
+                size: "1.9 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1hUHUM_4-tkxfZiddMbRlpUFo-8DtR9t7&export=download"
+            }
+        }
+    }
 ];
 
 // Test if we can access the movies database
@@ -1276,6 +1418,7 @@ function setupEventListeners(searchInput, filterBtns, sortSelect, closeBtn, moda
     if (sortSelect) {
         sortSelect.addEventListener('change', function() {
             console.log('Sort changed to:', this.value);
+           
             currentSort = this.value;
             filterAndDisplayMovies(searchInput, moviesGrid, movieCountElement);
         });
@@ -1909,11 +2052,15 @@ function openMovieViewer(movie, quality, fileId) {
     const movieViewerModal = document.getElementById('movieViewerModal');
     const movieViewerIframe = document.getElementById('movieViewerFrame'); // Updated ID to match HTML
     const movieViewerTitle = document.getElementById('viewerMovieTitle'); // Updated ID to match HTML
+    const movieViewerYear = document.getElementById('viewerMovieYear'); // Add this line
     
     if (movieViewerModal && movieViewerIframe) {
-        // Set title only (no rating/duration/year)
+        // Set title and year
         if (movieViewerTitle) {
             movieViewerTitle.textContent = `${movie.title}`;
+        }
+        if (movieViewerYear) {
+            movieViewerYear.textContent = movie.year;
         }
         // Create Google Drive viewer URL
         const viewerUrl = `https://drive.google.com/file/d/${fileId}/preview`;
