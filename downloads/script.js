@@ -1148,26 +1148,29 @@ const moviesDatabase = [
         director: "Jake Schreier",
         cast: ["Florence Pugh", "Sebastian Stan", "David Harbour", "Wyatt Russell", "Hannah John-Kamen", "Olga Kurylenko", "Julia Louis-Dreyfus", "Harrison Ford"],
         synopsis: "A team of antiheroes and reformed villains is assembled by the government for a high-stakes mission that only they can handle. Marvel's Thunderbolts brings together fan-favorite characters from across the MCU in a new action-packed adventure.",
-        poster: "assets/posters/thunderboltsposter.jpg",
+        poster: "assets/posters/thunderbolts-2025.jpg",
         trailer: "-sAOWhvheK8",
         downloadCount: 0,
         qualities: {
             "Sinhala Subtitles": {
-                size: "211 KB",
+                size: "500 MB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=1WcO-xeGLrYVLLslzDv3YDFxJ2xQ6brZm&export=download"
             },
-            "1080p": {
-                size: "2.4 GB",
-                downloadLink: "https://drive.usercontent.google.com/download?id=1mQrCuyyz3MvSNmz4Ckq8fDmP94USISJU&export=download"
-            },
             "720p": {
-                size: "1.2 GB",
-                downloadLink: "https://drive.usercontent.google.com/download?id=1bsxM0-KTZfFTNp-7-hfseFjBll_HmjfI&export=download"
+                size: "918 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1rkVVk0x2eakZv5UgdooM-wMq6181VR03&export=download"
+            },
+            "1080p": {
+                size: "1.7 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1R9f-pmLRRgGken1jE34XsyCeXAgFRKzE&export=download"
+            },
+            "4K": {
+                size: "2.9 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1loCHKX9GocGIOlJ-Vr0g6_ojWinDZamQ&export=download"
             }
-            
-    }
-    }
+        },
        
+    },
 ];
 
 // Test if we can access the movies database
