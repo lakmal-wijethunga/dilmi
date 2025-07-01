@@ -163,6 +163,7 @@ function getDownloadCount(movieId) {
 }
 
 const moviesDatabase = [
+    
     {
         id: 1,
         title: "Warfare",
@@ -1136,7 +1137,37 @@ const moviesDatabase = [
                 downloadLink: "https://drive.usercontent.google.com/download?id=1wwsw92tWhBtIpm8FU95Di88Z9Edy_g9s&export=download"
             }
         }
+    },
+    {
+        id: 27,
+        title: "Thunderbolts",
+        year: 2025,
+        duration: "127 min",
+        rating: 7.5,
+        genres: ["Action", "Adventure", "Sci-Fi", "Marvel"],
+        director: "Jake Schreier",
+        cast: ["Florence Pugh", "Sebastian Stan", "David Harbour", "Wyatt Russell", "Hannah John-Kamen", "Olga Kurylenko", "Julia Louis-Dreyfus", "Harrison Ford"],
+        synopsis: "A team of antiheroes and reformed villains is assembled by the government for a high-stakes mission that only they can handle. Marvel's Thunderbolts brings together fan-favorite characters from across the MCU in a new action-packed adventure.",
+        poster: "assets/posters/thunderboltsposter.jpg",
+        trailer: "-sAOWhvheK8",
+        downloadCount: 0,
+        qualities: {
+            "Sinhala Subtitles": {
+                size: "211 KB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1WcO-xeGLrYVLLslzDv3YDFxJ2xQ6brZm&export=download"
+            },
+            "1080p": {
+                size: "2.4 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1mQrCuyyz3MvSNmz4Ckq8fDmP94USISJU&export=download"
+            },
+            "720p": {
+                size: "1.2 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1bsxM0-KTZfFTNp-7-hfseFjBll_HmjfI&export=download"
+            }
+            
     }
+    }
+       
 ];
 
 // Test if we can access the movies database
