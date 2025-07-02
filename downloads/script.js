@@ -1153,7 +1153,7 @@ const moviesDatabase = [
         downloadCount: 0,
         qualities: {
             "Sinhala Subtitles": {
-                size: "500 MB",
+                size: "211 KB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=1WcO-xeGLrYVLLslzDv3YDFxJ2xQ6brZm&export=download"
             },
             "720p": {
@@ -1310,6 +1310,31 @@ const moviesDatabase = [
             "1080p": {
                 size: "1.9 GB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=1hUHUM_4-tkxfZiddMbRlpUFo-8DtR9t7&export=download"
+            }
+        }
+    },
+    {
+        id: 34,
+        title: "Lilo & Stitch",
+        year: 2025,
+        duration: "108 min",
+        rating: 6.9, // IMDb rating not yet available
+        genres: ["Family", "Comedy", "Adventure", "Sci-Fi"],
+        director: "Dean Fleischer Camp",
+        cast: [
+            "Maia Kealoha", "Sydney Agudong", "Chris Sanders", "Zach Galifianakis", "Billy Magnussen", "Courtney B. Vance", "Amy Hill", "Tia Carrere", "Kaipo Dudoit", "Hannah Waddingham", "Jason Scott Lee", "Celia Kenney", "Blake La Benz", "Skyler Bible", "Judy Nguyen", "Christian Yeung", "Courtney Coleman", "Christina Souza"
+        ],
+        synopsis: "A lonely Hawaiian girl and a fugitive alien help mend a broken family in this live-action reimagining of the Disney classic.",
+        poster: "assets/posters/lilo-and-stitch-2025.jpg",
+        trailer: "VWqJifMMgZE", // YouTube: Lilo & Stitch | Official Trailer | In Theaters May 23
+        qualities: {
+            "720p": {
+                size: "991 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1vnBTagjij2fYL7G3wRFAYErh30t0NQUZ&export=download"
+            },
+            "1080p": {
+                size: "1.9 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1oPHX19b1LsPVCCUBVJl_10DZkFBBrXLx&export=download"
             }
         }
     }
