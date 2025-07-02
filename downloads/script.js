@@ -466,7 +466,20 @@ const moviesDatabase = [
             "Episode 03": {
                 size: "594 MB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=1SgTKDUd2NYzF7_gx3ilsekbumEw8UBKL&export=download"
+            },
+            "Episode 04": {
+                size: "706 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1QdO6DIGG6zpgOrtCUqauR610uNkRLBQd&export=download"
+            },
+            "Episode 05": {
+                size: "612 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1EFEqNihvZdkPGXjjIWhjipxfOfzXzU78&export=download"
+            },
+            "Episode 06": {
+                size: "551 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1CPrsTLIuCkUJ64K52yYZG_MCYR1WfbKd&export=download"
             }
+
         }
     },
     {
