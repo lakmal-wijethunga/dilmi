@@ -466,20 +466,7 @@ const moviesDatabase = [
             "Episode 03": {
                 size: "594 MB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=1SgTKDUd2NYzF7_gx3ilsekbumEw8UBKL&export=download"
-            },
-            "Episode 04": {
-                size: "706 MB",
-                downloadLink: "https://drive.usercontent.google.com/download?id=1QdO6DIGG6zpgOrtCUqauR610uNkRLBQd&export=download"
-            },
-            "Episode 05": {
-                size: "612 MB",
-                downloadLink: "https://drive.usercontent.google.com/download?id=1EFEqNihvZdkPGXjjIWhjipxfOfzXzU78&export=download"
-            },
-            "Episode 06": {
-                size: "551 MB",
-                downloadLink: "https://drive.usercontent.google.com/download?id=1CPrsTLIuCkUJ64K52yYZG_MCYR1WfbKd&export=download"
             }
-
         }
     },
     {
@@ -1243,6 +1230,10 @@ const moviesDatabase = [
         poster: "assets/posters/balerina-2025.jpg",
         trailer: "0FSwsrFpkbw", // IMDb trailer key
         qualities: {
+            "Sinhala Subtitles": {
+                size: "83 KB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1eSrCqd8E7--fpyqGggIZdzNh3x7klyup&export=download"
+            },
             "720p": {
                 size: "1.1 GB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=17Q6d36jaH8Ro0fplrpgRYWT9jmBeS_65&export=download"
@@ -1295,6 +1286,18 @@ const moviesDatabase = [
         poster: "assets/posters/ice-road-vengeance-2025.jpg",
         trailer: "K6lJh9ADfbQ", // YouTube Vertical Official Trailer
         qualities: {
+            "Sinhala Subtitles": {
+                size: "101 KB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=11yo7zIejkqushBoO4gyd8h0WkO0cngKi&export=download"
+            },
+            "720p": {
+                size: "1.0 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1GVnYl-hWJgBoEIawkF99eyacX6VPnEjG&export=download"
+            },
+            "1080p": {
+                size: "2.1 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1I7XYsrX5u-__fT9zskgekP3Msg7rKho5&export=download"
+            },
             "4K": {
                 size: "5.4 GB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=1V2zuudRWn8YNlluXDSojeO9o0-_z3Hr4&export=download"
@@ -1316,6 +1319,10 @@ const moviesDatabase = [
         poster: "assets/posters/bring-her-back-2025.jpg",
         trailer: "kBskrYZfhw8", // YouTube: Bring Her Back | Official Trailer HD | A24
         qualities: {
+            "Sinhala Subtitles": {
+                size: "121 KB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1rKvqooaKnSAwoliu2OAeAbMuKjgaO3lv&export=download"
+            },
             "720p": {
                 size: "953 MB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=13MWHHk0pQfQcrBUypAl5jWyThyGDxPHW&export=download"
@@ -1341,6 +1348,10 @@ const moviesDatabase = [
         poster: "assets/posters/lilo-and-stitch-2025.jpg",
         trailer: "VWqJifMMgZE", // YouTube: Lilo & Stitch | Official Trailer | In Theaters May 23
         qualities: {
+            "Sinhala Subtitles": {
+                size: "168 KB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1mZFqh_CkmFhIXYNoe8CYrSw1YMqzW_vP&export=download"
+            },
             "720p": {
                 size: "991 MB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=1vnBTagjij2fYL7G3wRFAYErh30t0NQUZ&export=download"
@@ -1348,6 +1359,170 @@ const moviesDatabase = [
             "1080p": {
                 size: "1.9 GB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=1oPHX19b1LsPVCCUBVJl_10DZkFBBrXLx&export=download"
+            }
+        }
+    },
+    {
+        id: 35,
+        title: "The Old Guard 2",
+        year: 2025,
+        duration: "120 min",
+        rating: 7.7, // IMDb rating not yet available
+        genres: ["Action", "Fantasy", "Thriller"],
+        director: "Victoria Mahoney",
+        cast: [
+            "Charlize Theron", "KiKi Layne", "Matthias Schoenaerts", "Marwan Kenzari", "Luca Marinelli", "Chiwetel Ejiofor", "Uma Thurman", "Henry Golding", "Veronica Ngo"
+        ],
+        synopsis: "The immortal warriors return for a new mission as old enemies resurface and new threats emerge, testing the limits of their loyalty and power.",
+        poster: "assets/posters/the-old-guard-2.jpg",
+        trailer: "lyivgZ074PY", // YouTube: The Old Guard 2 | Official Trailer (Netflix, 2025)
+        qualities: {
+            "720p": {
+                size: "980 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=17B_hpfEPoeBS-1MT5gSakjRB7WiM1Is9&export=download"
+            },
+            "1080p": {
+                size: "2.0 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=16xonXB4d9Lp90blqBFPZBH3wFzuh1kC4&export=download"
+            }
+        }
+    },
+    {
+        id: 36,
+        title: "Heads of State",
+        year: 2025,
+        duration: "105 min",
+        rating: 5.6, // IMDb rating not yet available
+        genres: ["Action", "Comedy", "Thriller"],
+        director: "Ilya Naishuller",
+        cast: [
+            "Idris Elba", "John Cena", "Priyanka Chopra Jonas", "Paddy Considine", "Stephen Root", "Carla Gugino", "Jack Quaid", "Richard Coyle", "Sarah Niles", "Tommy Lee Jones"
+        ],
+        synopsis: "A mismatched pair of special agents must work together to prevent a global catastrophe when a world leader is kidnapped, leading to a wild and action-packed rescue mission.",
+        poster: "assets/posters/heads-of-state-2025.jpg",
+        trailer: "8J646zM7UM8", // YouTube: Heads of State | Official Trailer (2025)
+        qualities: {
+            "720p": {
+                size: "1.0 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1gdnyJF58qQnJen8lNRZYzxOwPEzaaVRX&export=download"
+            },
+            "1080p": {
+                size: "2.1 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1FxdJxfVoEr6FHSpSXhwFWHbP66Q5feXU&export=download"
+            }
+        }
+    },
+    {
+        id: 37,
+        title: "The Sandman (Season 1)",
+        year: 2022,
+        duration: "10 x 45 min",
+        rating: 7.7,
+        genres: ["Drama", "Fantasy", "Horror", "TV Series"],
+        director: "Jamie Childs, Mairzee Almas, Coralie Fargeat, Louise Hooper, Andrés Baiz, Mike Barker",
+        cast: [
+            "Tom Sturridge", "Boyd Holbrook", "Patton Oswalt", "Vivienne Acheampong", "David Thewlis", "Jenna Coleman", "Gwendoline Christie", "Kirby Howell-Baptiste", "Mason Alexander Park", "Donna Preston", "Kyo Ra", "Razane Jammal", "Sandra James-Young", "Stephen Fry", "Mark Hamill"
+        ],
+        synopsis: "Upon escaping after decades of imprisonment by a mortal wizard, Dream, the personification of dreams, sets out to reclaim his lost equipment and restore order to his realm in this acclaimed adaptation of Neil Gaiman's graphic novel.",
+        poster: "assets/posters/sandman-season-1.jpg",
+        trailer: "5znJsyI7SJo", // YouTube: The Sandman | Official Trailer | Netflix
+        qualities: {
+            "Episode 01": {
+                size: "684 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1xU_wyMqOUA9Zq6TCq-GZh0Uv2WusRufA&export=download"
+            },
+            "Episode 02": {
+                size: "551 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1SX0J0OAer7JVSFFdHaqpCzosusl-EAsJ&export=download"
+            },
+            "Episode 03": {
+                size: "508 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1F_OVNZucFwtAXo3HXihRSs8xNeTuYg5G&export=download"
+            },
+            "Episode 04": {
+                size: "515 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=18rZq54y9TPkFOUHfPciPAC3FnQPAsTmF&export=download"
+            },
+            "Episode 05": {
+                size: "622 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1y55wkMHEf-2pt1x2-oMviXgWSzzV-8o9&export=download"
+            },
+            "Episode 06": {
+                size: "829 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1ImGoje3U20ZwNZ-yqyBZvJB18Tvk2ARo&export=download"
+            },
+            "Episode 07": {
+                size: "522 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1LPuihEbC_3gRGSDUMHr33hetEABsjcna&export=download"
+            },
+            "Episode 08": {
+                size: "724 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1blAtv-DnySe_8SoGagR24kXK99chOv-T&export=download"
+            },
+            "Episode 09": {
+                size: "589 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1zLPeNwuGKXmsmplz3LfFi1Uko9MT1Eeb&export=download"
+            },
+            "Episode 10": {
+                size: "575 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1qPsoc1plg9QN76hQ1HcauF4y9mxd98a0&export=download"
+            }
+        }
+    },
+    {
+        id: 38,
+        title: "The Sandman (Season 2)",
+        year: 2025,
+        duration: "10 x 45 min",
+        rating: 7.7,
+        genres: ["Drama", "Fantasy", "Horror", "TV Series"],
+        director: "Jamie Childs, Mairzee Almas, Coralie Fargeat, Louise Hooper, Andrés Baiz, Mike Barker",
+        cast: [
+            "Tom Sturridge", "Boyd Holbrook", "Patton Oswalt", "Vivienne Acheampong", "David Thewlis", "Jenna Coleman", "Gwendoline Christie", "Kirby Howell-Baptiste", "Mason Alexander Park", "Donna Preston", "Kyo Ra", "Razane Jammal", "Sandra James-Young", "Stephen Fry", "Mark Hamill"
+        ],
+        synopsis: "Dream returns for a new season of cosmic challenges, facing new foes and forging new alliances as the boundaries between dreams and reality blur in this acclaimed adaptation of Neil Gaiman's graphic novel.",
+        poster: "assets/posters/sandman-season-2.jpg",
+        trailer: "Er18gmgqy2k", // YouTube: The Sandman Season 2 | Official Trailer (Netflix, 2025)
+        qualities: {
+            "Episode 01": {
+                size: "511 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1aKibsQRAetxSEmEn0YknA1qVK8D-1uyX&export=download"
+            },
+            "Episode 02": {
+                size: "676 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1FzRbqjkyVu1FwKYAH35U25pdEZ7sGQzw&export=download"
+            },
+            "Episode 03": {
+                size: "598 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1CjctSMdPYf0v_Afaxqv53VdsRjmYDE0b&export=download"
+            },
+            "Episode 04": {
+                size: "485 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1HPLGhv_0E3R2EId99-7rROJz8EkR06k0&export=download"
+            },
+            "Episode 05": {
+                size: "899 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1yhH6b_st1NpzwbVi38t8-4fGCAgs96A_&export=download"
+            },
+            "Episode 06": {
+                size: "583 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1dVu9zJf-blPJ8NzEP8LECMVi0fVp20XY&export=download"
+            },
+            "Episode 07": {
+                size: "Not Available",
+                downloadLink: ""
+            },
+            "Episode 08": {
+                size: "Not Available",
+                downloadLink: ""
+            },
+            "Episode 09": {
+                size: "Not Available",
+                downloadLink: ""
+            },
+            "Episode 10": {
+                size: "Not Available",
+                downloadLink: ""
             }
         }
     }
