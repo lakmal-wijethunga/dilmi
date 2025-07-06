@@ -1525,6 +1525,65 @@ const moviesDatabase = [
                 downloadLink: ""
             }
         }
+    },
+    {
+        id: 39,
+        title: "Eden",
+        year: 2024,
+        duration: "129 min",
+        rating: 6.4,
+        genres: ["Psychological Thriller", "Thriller", "Drama"],
+        director: "Ron Howard",
+        cast: ["Jude Law",
+            "Ana de Armas",
+            "Vanessa Kirby",
+            "Daniel Brühl",
+            "Sydney Sweeney",
+            "Jonathan Tittel",
+            "Felix Kammerer",
+            "Toby Wallace",
+            "Ignacio Gasparini",
+            "Richard Roxburgh"],
+        synopsis: "Follows a group of people fueled by a profound desire for change; in order to turn their back to society they leave everything behind and set their futures on the harsh landscape of the Galapagos.",
+        poster: "assets/posters/eden-2024.jpg", // Poster missing, please add to assets/posters
+        trailer: "QQZ1Ti1g8gU", // Replace with official trailer if available
+        qualities: {
+            "720p": {
+                size: "793 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1eP0xQd9Xb5zgHi92Tio--Mg1b3Kz-pQy&export=download"
+            },
+            "1080p": {
+                size: "1.8 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1GgCkJBXz4w-y69eda8d4FPbyNkGaFCFi&export=download"
+            }
+        }
+    },
+    {
+        id: 40,
+        title: "The Ritual",
+        year: 2025,
+        duration: "118 min", // Update if official runtime is available
+        rating: 4.5, // Update if official IMDb rating is available
+        genres: ["Horror", "Thriller"],
+        director: " David Midell",
+        cast: ["Al Pacino","Abigail Cowen","Dan Stevens","Ashley Greene", "Patricia Heaton"], // Update with cast if available
+        synopsis: "A group faces terrifying supernatural events after a mysterious ritual. (Update with official plot if available)",
+        poster: "assets/posters/the-ritual-2025.jpg", // Poster missing, please add to assets/posters
+        trailer: "Y8zUTpO3JAo", // Add YouTube trailer ID if available
+        qualities: {
+            "720p": {
+                size: "906 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=13uQYkBjiQb6TQQbFDQGlcQBCfiWEu0vA&export=download"
+            },
+            "1080p": {
+                size: "1.8 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1ocG0NfMiUIlyFl8kETxZY-MyO542nvHu&export=download"
+            },
+            "4K": {
+                size: "4.4 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1obKNwfo0OnbwUeCb7HTXa4NpolU5-jpA&export=download"
+            }
+        }
     }
 ];
 
