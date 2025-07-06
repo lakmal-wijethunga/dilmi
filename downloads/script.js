@@ -1184,6 +1184,10 @@ const moviesDatabase = [
         poster: "assets/posters/raid-2018.jpg",
         trailer: "3h4thS-Hcrk",
         qualities: {
+            "Sinhala Subtitles": {
+                size: "175 KB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1iSGABKBFrguUnfdDIdWpRv8CUO1GiffD&export=download"
+            },
             "720p": {
                 size: "1.0 GB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=1cEiUpWIOp5t7JOKWWjsTAuB6FprE7rTr&export=download"
@@ -1207,6 +1211,10 @@ const moviesDatabase = [
         poster: "assets/posters/raid-2-2025.jpg",
         trailer: "GCObs0_MszA",
         qualities: {
+            "Sinhala Subtitles": {
+                size: "183 KB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1bZF5mpHNln_ysFQ9txOnzbVhPgNhi0d4&export=download"
+            },
             "720p": {
                 size: "1.2 GB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=1w62MYMJ4MiP3nvksQ9Kc6411pYB83aTR&export=download"
@@ -1377,6 +1385,10 @@ const moviesDatabase = [
         poster: "assets/posters/the-old-guard-2.jpg",
         trailer: "lyivgZ074PY", // YouTube: The Old Guard 2 | Official Trailer (Netflix, 2025)
         qualities: {
+            "Sinhala Subtitles": {
+                size: "192 KB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=180FhFP5LVDstvuvGGDpb3dXFNJ7KMJfY&export=download"
+            },
             "720p": {
                 size: "980 MB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=17B_hpfEPoeBS-1MT5gSakjRB7WiM1Is9&export=download"
