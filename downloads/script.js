@@ -1616,6 +1616,10 @@ const moviesDatabase = [
         poster: "assets/posters/28-days-later-2002.jpg", // Please add this poster image
         trailer: "mWEhfF27O0c", // Official trailer YouTube ID
         qualities: {
+            "Sinhala Subtitles": {
+                size: "97 KB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1c5J5SL-9rk8Svk9XLgXadGY7-v9IM6JW&export=download"
+            },
             "720p": {
                 size: "906 MB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=1Uw4l20xYEPABO1lNLLGmwEopyQBDy9nX&export=download"
@@ -1645,6 +1649,10 @@ const moviesDatabase = [
         poster: "assets/posters/28-weeks-later-2007.jpg", // Please add this poster image
         trailer: "0gGbaXqbAVo", // Official trailer YouTube ID
         qualities: {
+            "Sinhala Subtitles": {
+                size: "83 KB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1xCJ7koZSUdOGv3xKS-f82nt5yNa12E5-&export=download"
+            },
             "720p": {
                 size: "698 MB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=1vGe_jaqphjC3VJCMtftalA_7VzZmhBFC&export=download"
@@ -1674,6 +1682,10 @@ const moviesDatabase = [
         poster: "assets/posters/train-to-busan-2016.jpg", // Please add this poster image
         trailer: "1ovgxN2VWNc", // Official trailer YouTube ID
         qualities: {
+            "Sinhala Subtitles": {
+                size: "90 KB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1BqvFbao3dgTfnTK1F8Us7f5lG7IjsJPU&export=download"
+            },
             "720p": {
                 size: "869 MB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=1J_X08WLAN6h2xPw6VVEC11hK9i_DHcdo&export=download"
@@ -1707,6 +1719,10 @@ const moviesDatabase = [
         poster: "assets/posters/peninsula-2020.jpg", // Please add this poster image
         trailer: "yVucSRLLeIM", // Official trailer YouTube ID
         qualities: {
+            "Sinhala Subtitles": {
+                size: "104 KB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1lsTb_N-pFmgLScNMKJNV__q06_2ErLGy&export=download"
+            },
             "720p": {
                 size: "1.0 GB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=1RDtn5vWGFyNvfxw4Jeg3RPidHploL0Ft&export=download"
@@ -1734,6 +1750,10 @@ const moviesDatabase = [
         poster: "assets/posters/karate-kid-legends-2025.jpg", // Please add this poster image
         trailer: "LhRXf-yEQqA", // Add YouTube trailer ID if available
         qualities: {
+            "Sinhala Subtitles": {
+                size: "140 KB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1H-3iRjckIu2YSyxSzfW04563hz2RFTaZ&export=download"
+            },
             "720p": {
                 size: "865 MB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=1zD2AOFTAIl9VFsD39AjyN1tATkjUqs-5&export=download"
