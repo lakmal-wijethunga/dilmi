@@ -1596,6 +1596,157 @@ const moviesDatabase = [
                 downloadLink: "https://drive.usercontent.google.com/download?id=1obKNwfo0OnbwUeCb7HTXa4NpolU5-jpA&export=download"
             }
         }
+    },
+    {
+        id: 41,
+        title: "28 Days Later",
+        year: 2002,
+        duration: "113 min",
+        rating: 7.6,
+        genres: ["Horror", "Sci-Fi", "Thriller"],
+        director: "Danny Boyle",
+        cast: [
+            "Cillian Murphy",
+            "Naomie Harris",
+            "Christopher Eccleston",
+            "Alex Palmer",
+            "Bindi Miller"
+        ],
+        synopsis: "Four weeks after a mysterious, incurable virus spreads throughout the UK, a handful of survivors try to find sanctuary.",
+        poster: "assets/posters/28-days-later-2002.jpg", // Please add this poster image
+        trailer: "mWEhfF27O0c", // Official trailer YouTube ID
+        qualities: {
+            "720p": {
+                size: "906 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1Uw4l20xYEPABO1lNLLGmwEopyQBDy9nX&export=download"
+            },
+            "1080p": {
+                size: "1.8 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1TJ7IKgEAnPMrM38IiSaenp6iqNbHyxs4&export=download"
+            }
+        }
+    },
+    {
+        id: 42,
+        title: "28 Weeks Later",
+        year: 2007,
+        duration: "100 min",
+        rating: 6.9,
+        genres: ["Horror", "Sci-Fi", "Thriller"],
+        director: "Juan Carlos Fresnadillo",
+        cast: [
+            "Robert Carlyle",
+            "Rose Byrne",
+            "Jeremy Renner",
+            "Harold Perrineau",
+            "Catherine McCormack"
+        ],
+        synopsis: "Six months after the rage virus was inflicted on the population of Great Britain, the US Army helps to secure a small area of London for the survivors, only for the virus to resurface.",
+        poster: "assets/posters/28-weeks-later-2007.jpg", // Please add this poster image
+        trailer: "0gGbaXqbAVo", // Official trailer YouTube ID
+        qualities: {
+            "720p": {
+                size: "698 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1vGe_jaqphjC3VJCMtftalA_7VzZmhBFC&export=download"
+            },
+            "1080p": {
+                size: "1.9 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1aT-ClpTIvKDBB4sQd4ogkZvIteV4tJuk&export=download"
+            }
+        }
+    },
+    {
+        id: 43,
+        title: "Train To Busan",
+        year: 2016,
+        duration: "118 min",
+        rating: 7.6,
+        genres: ["Action", "Horror", "Thriller"],
+        director: "Sang-ho Yeon",
+        cast: [
+            "Gong Yoo",
+            "Jung Yu-mi",
+            "Ma Dong-seok",
+            "Su-an Kim",
+            "Eui-sung Kim"
+        ],
+        synopsis: "While a zombie virus breaks out in South Korea, passengers struggle to survive on the train from Seoul to Busan.",
+        poster: "assets/posters/train-to-busan-2016.jpg", // Please add this poster image
+        trailer: "1ovgxN2VWNc", // Official trailer YouTube ID
+        qualities: {
+            "720p": {
+                size: "869 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1J_X08WLAN6h2xPw6VVEC11hK9i_DHcdo&export=download"
+            },
+            "1080p": {
+                size: "1.8 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1O9MXegDpWiFtgnknBlZc8reLx-uhApIy&export=download"
+            },
+            "4K": {
+                size: "5.1 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1J9AqrVMSLbvqAYq6ytYdAl7CfzYWJ4Tg&export=download"
+            }
+        }
+    },
+    {
+        id: 44,
+        title: "Peninsula (Train To Busan 2)",
+        year: 2020,
+        duration: "116 min",
+        rating: 5.5,
+        genres: ["Action", "Horror", "Thriller"],
+        director: "Sang-ho Yeon",
+        cast: [
+            "Dong-won Gang",
+            "Lee Jung-hyun",
+            "Re Lee",
+            "Hae-hyo Kwon",
+            "Min-jae Kim"
+        ],
+        synopsis: "A soldier and his team battle hordes of post-apocalyptic zombies in the wastelands of the Korean Peninsula.",
+        poster: "assets/posters/peninsula-2020.jpg", // Please add this poster image
+        trailer: "yVucSRLLeIM", // Official trailer YouTube ID
+        qualities: {
+            "720p": {
+                size: "1.0 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1RDtn5vWGFyNvfxw4Jeg3RPidHploL0Ft&export=download"
+            },
+            "1080p": {
+                size: "2.1 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1UT3dr2i4gclwKnFJZ8qEWvn7wJqm34MP&export=download"
+            },
+            "4K": {
+                size: "5.2 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1lFGQzS6HJaAJHhf1Nl4WMb0VnjK5Jim3&export=download"
+            }
+        }
+    },
+    {
+        id: 45,
+        title: "Karate Kid Legends",
+        year: 2025,
+        duration: "94 min",
+        rating: 6.6,
+        genres: ["Action", "Drama", "Family"],
+        director: "Jonathan Entwistle",
+        cast: ["Jackie Chan","Ralph Macchio","Ben Wang","Sadie Stanley","Joshua Jackson","Aramis Knight"], // Update with cast if available
+        synopsis: "A new generation takes on the legacy of the Karate Kid. (Update with official plot if available)",
+        poster: "assets/posters/karate-kid-legends-2025.jpg", // Please add this poster image
+        trailer: "LhRXf-yEQqA", // Add YouTube trailer ID if available
+        qualities: {
+            "720p": {
+                size: "865 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1zD2AOFTAIl9VFsD39AjyN1tATkjUqs-5&export=download"
+            },
+            "1080p": {
+                size: "1.6 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1P0B-pRXUEY-acGPStk-eeuevHkuJHhOc&export=download"
+            },
+            "4K": {
+                size: "2.9 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=14iugdHZZjdwXy5B5H12WbUrrA53_I111&export=download"
+            }
+        }
     }
 ];
 
