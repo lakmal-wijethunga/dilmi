@@ -2275,7 +2275,7 @@ function openMovieModal(movieId) {
     // Populate quality options
     if (qualityOptions) {
         qualityOptions.innerHTML = Object.entries(movie.qualities).map(([quality, info]) => `
-            <div class="quality-option" onclick="downloadMovie('${info.downloadLink}', '${movie.title}', ${quality}, ${movie.id})">
+             <div class="quality-option" onclick="downloadMovie('${info.downloadLink}', '${movie.title}', '${quality}', ${movie.id})">
                 <div class="quality-label">${quality}</div>
                 <div class="quality-size">${info.size}</div>
                 <i class="fas fa-download"></i>
@@ -2458,6 +2458,8 @@ async function downloadMovie(downloadLink, movieTitle, quality, movieId) {
     
     console.log('Download initiated for:', movieTitle);
 }
+
+window.downloadMovie = downloadMovie;
 
 // Update download count display in modal and movie cards
 function updateDownloadCountDisplay(movieId) {
@@ -2742,7 +2744,10 @@ function updateDownloadCountDisplay(movieId) {
         console.log('Movie not found for ID:', movieId);
         return;
     }
+    console.log(`Updating download count display for ${movie.title}: ${movie.downloadCount}`);
     
+    // Update movie card if visible in current display - immediate update
+    const movieCards = document.querySelectorAll('.movie-card');
     movieCards.forEach(card => {
         const onclickStr = card.getAttribute('onclick');
         if (onclickStr && onclickStr.includes(`openMovieModal(${movieId})`)) {
