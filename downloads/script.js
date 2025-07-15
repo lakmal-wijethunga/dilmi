@@ -1767,7 +1767,154 @@ const moviesDatabase = [
                 downloadLink: "https://drive.usercontent.google.com/download?id=14iugdHZZjdwXy5B5H12WbUrrA53_I111&export=download"
             }
         }
+    },
+    {
+        id: 46,
+        title: "Alice in Borderland (Season 1)",
+        year: 2020,
+        duration: "8 x 50 min",
+        rating: 7.7,
+        genres: ["Drama", "Thriller", "Sci-Fi", "Survival", "TV Series"],
+        director: "Shinsuke Sato",
+        cast: ["Kento Yamazaki", "Tao Tsuchiya", "Nijirô Murakami", "Aya Asahina", "Dôri Sakurada"],
+        synopsis: "Arisu, a listless, jobless and video-game-obsessed young man, suddenly finds himself in a strange, emptied-out version of Tokyo in which he and his friends must compete in dangerous games in order to survive.",
+        poster: "assets/posters/alice-in-borderland.jpg",
+        trailer: "49_44FFKZ1M",
+        type: "tv",
+        qualities: {
+            "Episode 01": {
+                size: "750 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1NjR5yQgtU_ZOOvWZoKDtrMERPXrToCFg&export=download"
+            },
+            "Episode 02": {
+                size: "621 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=13Eb8Aijz2B2H8RksxEOpV3uTBl7lvDcm&export=download"
+            },
+            "Episode 03": {
+                size: "539 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=12Fpf1gKhnmEOCJIGVw1aYeZ-XkQqwOWG&export=download"
+            },
+            "Episode 04": {
+                size: "542 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1rQvBXJ7vNMBQTPplQ9yqy-cUVQvXw9je&export=download"
+            },
+            "Episode 05": {
+                size: "695 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1iO6C7cRO0r7XvOjKKXwKDc3u6bhx4UpE&export=download"
+            },
+            "Episode 06": {
+                size: "500 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1brM79mRnsx4pbiPVcyIfoqYrSlfnBkUT&export=download"
+            },
+            "Episode 07": {
+                size: "580 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=13hIZDzgdSZV0pdsXxvzbc6nbNWgUpMl1&export=download"
+            },
+            "Episode 08": {
+                size: "936 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1SpnvCZsVoYudMkF4Mlnf7oX4g11k-kyE&export=download"
+            }
+        }
+    },
+    {
+        id: 47,
+        title: "Alice in Borderland (Season 2)",
+        year: 2022,
+        duration: "8 x 50 min",
+        rating: 7.7,
+        genres: ["Drama", "Thriller", "Sci-Fi", "Survival", "TV Series"],
+        director: "Shinsuke Sato",
+        cast: ["Kento Yamazaki", "Tao Tsuchiya", "Nijirô Murakami", "Aya Asahina", "Dôri Sakurada"],
+        synopsis: "Arisu and his friends continue to fight for survival in the deadly games of Borderland, facing even more dangerous challenges and uncovering deeper mysteries.",
+        poster: "assets/posters/alice-in-borderland-S2.jpg",
+        trailer: "1ifgEQCevYc",
+        type: "tv",
+        qualities: {
+            "Episode 01": {
+                size: "763 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1jrYtC9DDtoX3XFDGyf2HJWs8cY4oEDCO&export=download"
+            },
+            "Episode 02": {
+                size: "818 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=19CzU_o9MinVTVC10UserBpTZqhQY-0pZ&export=download"
+            },
+            "Episode 03": {
+                size: "696 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1-vc0Kgq9Iu9TzoQnaLqjnPzUHbiL7Hj2&export=download"
+            },
+            "Episode 04": {
+                size: "663 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1_xECrbsDVjJnGF1twAb2Ha_uGEDZwoGi&export=download"
+            },
+            "Episode 05": {
+                size: "1.0 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1WEC4rS_BLNUiALCqoPGo8AK5ecJifRcz&export=download"
+            },
+            "Episode 06": {
+                size: "910 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1IXVmsnCqfTWNc-iE_B4zg1MKXcM0LqtX&export=download"
+            },
+            "Episode 07": {
+                size: "1.0 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1Vp3kkEfKUB2YwCq68F1GE8G1xbzsZTmE&export=download"
+            },
+            "Episode 08": {
+                size: "951 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1zbu6P-YU3fsbhYw-Io-Dl4PYRWJs6KGN&export=download"
+            }
+        }
+    },
+    {
+        id: 48,
+        title: "Dora And The Search For Sol Dorado",
+        year: 2025,
+        duration: "98 min",
+        rating: 5.5, // Update if IMDb rating available
+        genres: ["Adventure", "Family", "Animation"],
+        director: "Alberto Belli", // Update if director info available
+        cast: ["Samantha Lorraine","Jacob Rodriguez","Daniella Pineda","Gabriel Iglesias"], // Update if cast info available
+        synopsis: "Dora embarks on a new adventure to find the legendary city of Sol Dorado, facing new challenges and making new friends along the way.",
+        poster: "assets/posters/dora-and-the-search-for-sol-dorado.jpg",
+        trailer: "92nh9E3B0do", // Add trailer key if available
+        qualities: {
+            "1080p": {
+                size: "1.6 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1fEWJgz0PhSzvMa--7XPZa8FTgvgykvcy&export=download"
+            },
+            "4K": {
+                size: "4.3 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1SOResDWDVZQpnab582bK9LCJepaeHYu8&export=download"
+            }
+        }
+    },
+    {
+        id: 49,
+        title: "How to Train Your Dragon",
+        year: 2025,
+        duration: "125 min",
+        rating: 8.1, // Update if IMDb rating available
+        genres: ["Animation", "Adventure", "Family"],
+        director: "Dean DeBlois", // Update if director info available
+        cast: ["Mason Thames","Nico Parker","Gerard Butler","Julian Dennison","Nick Frost", "Bronwyn James" ,"Ruth Codd", "Gabriel Howell"], // Update if cast info available
+        synopsis: "A new adventure in the How to Train Your Dragon universe. Hiccup and Toothless return for another epic journey.",
+        poster: "assets/posters/how-to-train-your-dragon-2025.jpg",
+        trailer: "22w7z_lT6YM", // Add trailer key if available
+        qualities: {
+            "480p": {
+                size: "552 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1pqzT_hpbDlSEDEFVC6puYCRScRNOgbtw&export=download"
+            },
+            "720p": {
+                size: "847 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1bDtDdsuGAGKYwNrVvh0HGZSpxX21qx3i&export=download"
+            },
+            "1080p": {
+                size: "2.4 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1KWWGqA5ZNSBWBB0is7jnxhm8OlHlKuRs&export=download"
+            }
+        }
     }
+
 ];
 
 // Test if we can access the movies database
@@ -2128,7 +2275,7 @@ function openMovieModal(movieId) {
     // Populate quality options
     if (qualityOptions) {
         qualityOptions.innerHTML = Object.entries(movie.qualities).map(([quality, info]) => `
-            <div class="quality-option" onclick="downloadMovie('${info.downloadLink}', '${movie.title}', '${quality}', ${movie.id})">
+            <div class="quality-option" onclick="downloadMovie('${info.downloadLink}', '${movie.title}', ${quality}, ${movie.id})">
                 <div class="quality-label">${quality}</div>
                 <div class="quality-size">${info.size}</div>
                 <i class="fas fa-download"></i>
@@ -2596,10 +2743,6 @@ function updateDownloadCountDisplay(movieId) {
         return;
     }
     
-    console.log(`Updating download count display for ${movie.title}: ${movie.downloadCount}`);
-    
-    // Update movie card if visible in current display - immediate update
-    const movieCards = document.querySelectorAll('.movie-card');
     movieCards.forEach(card => {
         const onclickStr = card.getAttribute('onclick');
         if (onclickStr && onclickStr.includes(`openMovieModal(${movieId})`)) {
