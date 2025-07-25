@@ -1898,22 +1898,317 @@ const moviesDatabase = [
         cast: ["Mason Thames","Nico Parker","Gerard Butler","Julian Dennison","Nick Frost", "Bronwyn James" ,"Ruth Codd", "Gabriel Howell"], // Update if cast info available
         synopsis: "A new adventure in the How to Train Your Dragon universe. Hiccup and Toothless return for another epic journey.",
         poster: "assets/posters/how-to-train-your-dragon-2025.jpg",
-        trailer: "22w7z_lT6YM", // Add trailer key if available
-        qualities: {
-            "480p": {
+        // Add trailer key if available
+            qualities: {
+                "480p": {
                 size: "552 MB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=1pqzT_hpbDlSEDEFVC6puYCRScRNOgbtw&export=download"
-            },
-            "720p": {
+                // links.txt: 1pqzT_hpbDlSEDEFVC6puYCRScRNOgbtw 552MB
+                },
+                "720p": {
                 size: "847 MB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=1bDtDdsuGAGKYwNrVvh0HGZSpxX21qx3i&export=download"
-            },
-            "1080p": {
+                // links.txt: 1bDtDdsuGAGKYwNrVvh0HGZSpxX21qx3i 847MB
+                },
+                "1080p": {
                 size: "2.4 GB",
                 downloadLink: "https://drive.usercontent.google.com/download?id=1KWWGqA5ZNSBWBB0is7jnxhm8OlHlKuRs&export=download"
+                // links.txt: 1KWWGqA5ZNSBWBB0is7jnxhm8OlHlKuRs 2.4GB
+                }
+            }
+        },
+        {
+            id: 50,
+            title: "Ditective Ujjawalan",
+            year: 2025,
+            duration: "132 min",
+            rating: 7.2,
+            genres: ["Crime", "Mystery", "Thriller"],
+            director: "Rahul G",
+            cast: ["Dhyan Sreenivasan", "Siju Wilson", "Rony David", "Kottayam Nazeer"],
+            synopsis: "A brilliant detective, Ujjawalan, is called to solve a high-profile murder case that unravels a web of secrets and lies in a small town.",
+            poster: "assets/posters/ditective-ujjawalan.jpg",
+            trailer: "TJOjAaMrnTs", // Replace with actual trailer key if available
+            qualities: {
+                "480p": {
+                size: "1.1 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1d9jXsYc7TAoK0bxA1omFtlt5MK1HWoy0&export=download"
+                },
+                "720p": {
+                size: "1.1 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1dUjJw4lAn25MOVIEID720&export=download"
+                // links.txt: 1dUjJw4lAn25MOVIEID720 1.1GB
+                },
+                "1080p": {
+                size: "2.3 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1dUjJw4lAn25MOVIEID1080&export=download"
+                // links.txt: 1dUjJw4lAn25MOVIEID1080 2.3GB
+                }
+            }
+        },
+        {
+            id: 51,
+            title: "Kuberra",
+            year: 2025,
+            duration: "138 min",
+            rating: 6.6,
+            genres: ["Action", "Thriller", "Tamil"],
+            director: "Sekhar Kammula",
+            cast: ["Dhanush", "Rashmika Mandanna", "Jim Sarbh", "Akkineni Nagarjuna", "Sunaina Yella", "Priyanshu Chatterjee"],
+            synopsis: "A beggar undergoes a dramatic transformation, exploring themes of greed, ambition, and moral dilemmas faced by the characters leading to a quest for redemption.",
+            poster: "assets/posters/kuberra.jpg",
+            trailer: "Zu4-jr0sSBE", // Replace with actual YouTube trailer ID if available
+            qualities: {
+                
+                "1080p": {
+                    size: "2.8 GB",
+                    downloadLink: "https://drive.usercontent.google.com/download?id=1QbIDpttktVlUqep4BMEUxX9Pe1oitYoc&export=download"
+                },
+                "Sinhala Subtitles": {
+                    size: "276 KB",
+                    downloadLink: "https://drive.usercontent.google.com/download?id=1gP2jyx7igTWBxEEzeVS20MithPAJ80D1&export=download"
+
+                }
+            }
+            
+        },
+        {
+            id: 52,
+            title: "Debris (Season 1)",
+            year: 2021,
+            duration: "13 x 43 min",
+            rating: 6.5,
+            genres: ["Drama", "Sci-Fi", "Thriller", "TV Series"],
+            director: "J.H. Wyman",
+            cast: [
+                "Jonathan Tucker",
+                "Riann Steele",
+                "Norbert Leo Butz",
+                "Scroobius Pip",
+                "Anjali Jay",
+                "Gabrielle Ryan"
+            ],
+            synopsis: "Two agents from different continents and different mindsets must work together to investigate when wreckage from a destroyed alien spacecraft has mysterious effects on humankind.",
+            poster: "assets/posters/debris-season-1.jpg",
+            trailer: "duS-mkHKB4M",
+            type: "tv",
+            qualities: {
+                "Episode 01": {
+                    size: "184 MB",
+                    downloadLink: "https://drive.usercontent.google.com/download?id=1ZLRiQ1pEt67tCWq4rbsKrXNG9l9XBxTU&export=download"
+                },
+                "Episode 02": {
+                    size: "178 MB",
+                    downloadLink: "https://drive.usercontent.google.com/download?id=1riL3ghX2vEMRZOXuobvOUjed-yOpq4Ze&export=download"
+                },
+                "Episode 03": {
+                    size: "194 MB",
+                    downloadLink: "https://drive.usercontent.google.com/download?id=11DAu8e7VRH3ypFjXmUbBTKFcstidCE7W&export=download"
+                },
+                "Episode 04": {
+                    size: "242 MB",
+                    downloadLink: "https://drive.usercontent.google.com/download?id=130QfHoXZ2oF7SaROERGU9RuL1e14PIrt&export=download"
+                },
+                "Episode 05": {
+                    size: "186 MB",
+                    downloadLink: "https://drive.usercontent.google.com/download?id=1pNhcKt5vZSwHV6bPmEtgvvjtGX6pxe0v&export=download"
+                },
+                "Episode 06": {
+                    size: "168 MB",
+                    downloadLink: "https://drive.usercontent.google.com/download?id=19HNzwabzC_c_Vzy9aQudfCE6iXmQil1Q&export=download"
+                },
+                "Episode 07": {
+                    size: "205 MB",
+                    downloadLink: "https://drive.usercontent.google.com/download?id=1J68CfbWmJddnWWzUlYQyEzzmDWRcEUSU&export=download"
+                },
+                "Episode 08": {
+                    size: "173 MB",
+                    downloadLink: "https://drive.usercontent.google.com/download?id=1MCDg2UZgqOyFHAMVLnUY0tNm2OwypMsP&export=download"
+                },
+                "Episode 09": {
+                    size: "228 MB",
+                    downloadLink: "https://drive.usercontent.google.com/download?id=1hyiJ4DOa9uFHGaU6MikpGQGViA0VEl1H&export=download"
+                },
+                "Episode 10": {
+                    size: "238 MB",
+                    downloadLink: "https://drive.usercontent.google.com/download?id=108DJZldUHi43AsclWLI7XaCWfnDB8WCY&export=download"
+                },
+                "Episode 11": {
+                    size: "215 MB",
+                    downloadLink: "https://drive.usercontent.google.com/download?id=1WbvJmFPrrKkgf-HUiuiFSTPTm2GpqyMu&export=download"
+                },
+                "Episode 12": {
+                    size: "215 MB",
+                    downloadLink: "https://drive.usercontent.google.com/download?id=1yq55v1hGFOHtzIfMw1TjVCdCT_ESzDkH&export=download"
+                },
+                "Episode 13": {
+                    size: "211 MB",
+                    downloadLink: "https://drive.usercontent.google.com/download?id=1QZ9c3PT7eNoGwKaKAj_C1Lm-1wwPw0Yj&export=download"
+                }
+            }
+        },
+        {
+        id: 53,
+        title: "S Line (Season 1)",
+        year: 2025,
+        duration: "6 x 45 min",
+        rating: 7.5, // Update if IMDb rating available
+        genres: ["Drama", "Crime", "Thriller", "TV Series"],
+        director: "Jooyoung Ahn", // Update with actual director
+        cast: ["Han Ji Uk", "Gyoo-jin", "Hyun Heup", "Joon-seon", "Yoon Ji-na"], // Update with actual cast
+        synopsis: "A young woman with the ability to see mysterious red connections between lovers discovers her secret gift is no longer unique when special glasses granting similar powers appear on the black market.",
+        poster: "assets/posters/s-line-season-1.jpg",
+        trailer: "K1qnT8cjL-k",
+        type: "tv",
+        qualities: {
+            "Episode 01 - 1080p": {
+                size: "814 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1MzccMkKCxWAtmRkitM5wAc7EWhHOae07&export=download"
+            },
+            "Episode 01 - 720p": {
+                size: "313 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=12sBNbC54SDflUBmGiHpW0csqnFE7sBJc&export=download"
+            },
+            "Episode 01 - Sinhala Subtitles": {
+                size: "39 KB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1It7pB6U1EHHhLxoS1gN3TcnQOYLUEte-&export=download"
+            },
+            "Episode 02 - 1080p": {
+                size: "756 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=13RF7Jjz3H8GjIf39tKcUZ2dzZvNj-c6C&export=download"
+            },
+            "Episode 02 - 720p": {
+                size: "317 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1x_m-1saeZZaG2we4ZquFotjQCWAN7wdV&export=download"
+            },
+            "Episode 02 - Sinhala Subtitles": {
+                size: "50 KB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1V7aTK7-7J8mj8xw3YWbK76iNbc4pa4hE&export=download"
+            },
+            "Episode 03 - 1080p": {
+                size: "805 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1DYX7p196L3VD0mS3shPsRaGrZjeQzTLM&export=download"
+            },
+            "Episode 03 - 720p": {
+                size: "341 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1KWtH7XAdK0IQK1glzWePX_q1LilpWsuJ&export=download"
+            },
+            "Episode 03 - Sinhala Subtitles": {
+                size: "62 KB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1yCfHiPj8eUMuZN4xGgjv43EQSEdg-Muy&export=download"
+            },
+            "Episode 04 - 1080p": {
+                size: "751 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1kKcV0XSIax1BcpndOavEXmV7kQH6-8DK&export=download"
+            },
+            "Episode 04 - 720p": {
+                size: "341 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1AS2ZEGzN7k-ppRb_V-_kSzPgHTHuDeEU&export=download"
+            },
+            "Episode 04 - Sinhala Subtitles": {
+                size: "44 KB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1VMOYuUf3yz58OAtfT8lIDopHralK3qT9&export=download"
+            },
+            "Episode 05 - 1080p": {
+                size: "1.9 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1-XpNPvmOYr6T_baXNYfXi7MOfRLWiG8N&export=download"
+            },
+            "Episode 05 - 720p": {
+                size: "226 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1e2f3g4h5i6j7k8l9m0nOpQRS-TUVWXyZ&export=download"
+            },
+            "Episode 05 - Sinhala Subtitles": {
+                size: "58 KB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1xxnFN17V6jMVzFok7iesehGsxX6zRf2c&export=download"
+            },
+            "Episode 06 - 1080p": {
+                size: "1.7 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1-eUOgZRdb2uDQv48gqkqGkk6c0L2l9sO&export=download"
+            },
+            "Episode 06 - 720p": {
+                size: "261 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1I1RZhBrwdeRTmGC5Bd-HOLP2h2VNpQgr&export=download"
+            },
+            "Episode 06 - Sinhala Subtitles": {
+                size: "25 KB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1zhTT74nkl8rZr-y91-G4rP51KHKBxZIP&export=download"
+            }
+
+        }
+    },
+    {
+        id: 54,
+        title: "Ocean's Eight",
+        year: 2018,
+        duration: "110 min",
+        rating: 6.3,
+        genres: ["Action", "Comedy", "Crime"],
+        director: "Gary Ross",
+        cast: [
+            "Sandra Bullock",
+            "Cate Blanchett",
+            "Anne Hathaway",
+            "Mindy Kaling",
+            "Sarah Paulson",
+            "Awkwafina",
+            "Rihanna",
+            "Helena Bonham Carter"
+        ],
+        synopsis: "Debbie Ocean gathers an all-female crew to attempt an impossible heist at New York City's yearly Met Gala.",
+        poster: "assets/posters/oceans-eight-2018.jpg",
+        trailer: "MFWF9dU5Zc0",
+        qualities: {
+            "720p": {
+                size: "932 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=SuAEMIgBeikkLQiSeQLdQfbicNBuN&export=download"
+            },
+            "1080p": {
+                size: "1.8 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=14i9ARlO0BaIiC8wEkpazCRSLV0NkQYLs&export=download"
+            },
+            "4K": {
+                size: "5.2 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1XIyVKdS8LEkUmHpjK8oR7NjAzFhwpgjo&export=download"
+            },
+            "Sinhala Subtitles": {
+                size: "187 KB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1t0woxeuGtAkDFaEhJ8VsyhjX3SnBjWKe&export=download"
             }
         }
+    },
+    {
+        id: 55,
+        title: "Brick",
+        year: 2025,
+        duration: "117 min",
+        rating: 5.4,
+        genres: ["Crime", "Thriller", "Drama"],
+        director: "Philip Koch",
+        cast: ["Matthias Schweighöfer", "Ruby O. Fee", "Murathan Muslu", "Salber Lee Williams", "Frederick Lau"],
+        synopsis: "When a mysterious brick wall encloses their apartment building overnight, Tim and Olivia must unite with their wary neighbours to get out alive.",
+        poster: "assets/posters/brick-2025.jpg",
+        trailer: "fmi4Qc-cvis", // Replace with actual trailer ID if available
+        qualities: {
+            "720p": {
+                size: "925 MB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1o4hfl4OHFYH2XcD_REqVaIZEFoJN-5CV&export=download"
+            },
+            "1080p": {
+                size: "2.2 GB",
+                downloadLink: "https://drive.usercontent.google.com/download?id=1FBwmrlcHcvVwHSEum2xKO4kosJZvIlXf&export=download"
+            },
+            "Sinhala Subtitles": {
+                size: "95 KB", 
+                downloadLink: "https://drive.usercontent.google.com/download?id=16947tLoElNHEAViCKScq6q7TWsEO3C-H&export=download"
+            }
+        },
     }
+    
+
+
+
+
+
 
 ];
 
